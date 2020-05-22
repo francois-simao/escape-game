@@ -7,27 +7,24 @@
 </head>
 <body>
     
+<!--page de connexion-->
+<h1>Me connecter</h1>
+<form action="enigma.php" method="post">
+    <p>
+    <label for="username">Quel est votre nom d'utilisateur ?</label>
+    <input type="text" name="username" required/>
+    <label for="password">Quel est votre mot de passe ?</label>
+    <input type="password" name="password" required />
+    <input type="submit" value="Valider" />
+    </p>
+    </form>
 
-<?php
-try{
-$bdd = new PDO('mysql:host=localhost;dbname=escape_game', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));}
-catch (Exception $e){
-die('Erreur : ' . $e->getMessage());}
+    <a href='reset_password.php'>Mot de passe oublié?</a>
 
-$reponse = $bdd->query('SELECT * FROM enigma');
-while ($donnees = $reponse->fetch())
-{
-?>
-        
-    <p><h1>Durée du jeu</h1> <?php echo $donnees['duration']; ?><br />
-    <h1>Histoire</h1> <?php echo $donnees['content'];?>
-    <h1>Image</h1> <img src="<?php echo $donnees['image']?>" alt="image" width=500 />
-    <h1>Video</h1><video src="<?php echo $donnees['video']?>" controls poster="<?php echo $donnees['image']?>" width="600"></video></p>
-    <?php
-    }
-    
-$reponse->closeCursor();
-?>
+<!--lien d'inscription-->
+<h1>Inscription</h1>
+<a href='registration.php'>Je crée un compte</a>
+
 
 
 
