@@ -23,7 +23,7 @@ include 'connection.php';
 
 if(isset($_POST['reset_password'])){
     $password = uniqid(); /* génère un identifiant unique */
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT); /*password_hash hash l'identifiant contenu dans $password - PASSWORD_DEFAULT est l'algorithme de chiffrement par défaut à utiliser pour le hachage si aucun algorithme n'est fourni */
+    $hashedPassword = sha1($password); /*password_hash hash l'identifiant contenu dans $password - PASSWORD_DEFAULT est l'algorithme de chiffrement par défaut à utiliser pour le hachage si aucun algorithme n'est fourni */
 
     $message = "Bonjour, voici votre nouveau mot de passe: $password";
     $headers = 'Content-Type: text/plain; charset="utf-8"'." ";
