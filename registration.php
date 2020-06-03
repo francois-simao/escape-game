@@ -19,7 +19,7 @@
   include 'connection.php';
 
 if(isset($_POST['inscription'])) {
-    $name1 = htmlspecialchars($_POST['last_name']);
+    $name1 = htmlspecialchars($_POST['last_name']);   /* htmlspecialchars convertit les caractères spéciaux en entité HTML pour éviter les injections de code*/
     $name2 = htmlspecialchars($_POST['first_name']);
     $mail = htmlspecialchars($_POST['email']);
     $mail2 = htmlspecialchars($_POST['confirmation_email']);
@@ -27,14 +27,14 @@ if(isset($_POST['inscription'])) {
     $mdp = sha1($_POST['password']);
     $mdp2 = sha1($_POST['confirmation_password']);
    if(!empty($_POST['last_name']) AND !empty($_POST['first_name']) AND !empty($_POST['email']) AND !empty($_POST['confirmation_email']) AND !empty($_POST['username']) AND !empty($_POST['password']) AND !empty($_POST['confirmation_password'])) {
-      $pseudolength = strlen($pseudo);
+      $pseudolength = strlen($pseudo);  /* strlen calcule la longueur d'une chaîne de caractère*/
       if($pseudolength <= 255) {
          if($mail == $mail2) {
-            if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+            if(filter_var($mail, FILTER_VALIDATE_EMAIL)) { /* filter_var sert à filter une variable avec un filtre spécifique, ici FILTER_VALIDATE_EMAIL qui valide une adresse mail selon la syntaxe défini par le standard RFC 822*/
                $reqmail = $bdd->prepare("SELECT * FROM user WHERE e_mail = ?");
                $reqmail->execute(array($mail));
                $mailexist = $reqmail->rowCount();
-               if($mailexist == 0) {
+               if($mailexist == 0) { /* si aucun mail ne correspond au mail rentré par l'utilisateur et stocké dans la variable $mailexist*/
                   if($mdp == $mdp2) {
                      $insertmbr = $bdd->prepare("INSERT INTO user(username, password, e_mail, last_name, first_name) VALUES(?, ?, ?, ?, ?)");
                      $insertmbr->execute(array($pseudo, $mdp, $mail, $name1, $name2));
