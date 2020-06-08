@@ -1,7 +1,7 @@
 <?php
 session_start();
     // connexion base de données
-    include 'connection.php';
+    include 'connection_bdd.php';
  
     if(isset($_SESSION['id'])) {
        //mise à jour username
@@ -56,6 +56,9 @@ session_start();
             substr: igorera le 1er (car on a mit 1 à la fin de la lgien de code) caractère de la chaîne, strrchr: renvoie l'extension du fichier avec le .
             qui sera donc ignoré grâce à substr donc ca prendra l'extension qui est après le . */
             if(in_array($extensionUpload, $extensionsValides)) {
+                                if(file_exists("membres/avatars/". $_SESSION['id'] . "/" . $_SESSION['avatar']) && isset($_SESSION['avatar'])){
+                                    unlink("membres/avatars/". $_SESSION['id'] . "/" . $_SESSION['avatar']);
+                                }
                $chemin = "membres/avatars/".$_SESSION['id'].".".$extensionUpload; /* chemin vers lequel sera chargée l'image = l'image s'appèlera du numéro de l'id.l'extension*/
                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin); /*move_uploaded_file: déplace un fichier téléchargé
                ( [nom du fichier][stockage temporaire du ficher chargé, là où on va le prendre pour le déplacer], sa destination) */
@@ -65,6 +68,7 @@ session_start();
                      'image' => $_SESSION['id'].".".$extensionUpload,  /* image => nom du fichier */
                      'id' => $_SESSION['id']
                      ));
+                     $user['image'] = $user['id'].".".$extensionUpload;
                      $msgavatar = "votre avatar a bien été mis à jour";
                } else {
                   $msgavatar = "Erreur durant l'importation de votre photo de profil";

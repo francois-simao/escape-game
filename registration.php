@@ -18,7 +18,7 @@
 
 
 <?php 
-  include 'connection.php';
+  include 'connection_bdd.php';
 
 if(isset($_POST['inscription'])) {
     $name1 = htmlspecialchars($_POST['last_name']);   /* htmlspecialchars convertit les caractères spéciaux en entité HTML pour éviter les injections de code*/

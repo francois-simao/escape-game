@@ -5,7 +5,7 @@ if (isset($_SESSION['pseudo'])) {
 
     echo "bienvenue" . " " . ($_SESSION['pseudo']);
     // connexion base de données
-    include 'connection.php';
+    include 'connection_bdd.php';
 
 //requête enigme
 $reponse = $bdd->query('SELECT * FROM enigma');
