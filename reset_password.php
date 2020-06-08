@@ -1,7 +1,7 @@
 <!--page de réinitialisation du mot de passe-->
 <?php 
 //connexion à la base de données
-include 'connection.php';
+include 'connection_bdd.php';
 
 // validation recaptcha
 require_once 'recaptcha/autoload.php';
