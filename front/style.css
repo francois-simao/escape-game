@@ -1,0 +1,583 @@
+body{margin: 0; padding: 0;}
+
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.bg-header{background-image: url('img/img-header-01.jpg');width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; position: relative;}
+.img-logo-head{width: 35%; height: auto;}
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.img-game-explication{width: 486px; height: 347px;}
+.content-img-game-01{margin-right: 110px;}
+.content-img-game-02{margin-left: 110px;}
+.content-img-game-01 { margin-right: -150px; }
+.content-img-game-absolute{z-index: 1; margin-top: 30px;}
+.content-img-game-02 { margin-left: -150px; }
+
+/* PARTIE CREATION NIVEAUX */
+.create-game{background-image: url('img/img-create-game.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; /*padding-bottom: 85px; padding-top: 37px;*/}
+
+
+/* MAQUETTE JEUX DISPONIBLES */
+.img-card-game{width: 100%; height: 360px; border-radius: 6%;}
+
+
+
+/* MAQUETTE FORMULAIRE & CONNEXION  */
+.bg-header-sombre{background-image: url('img/img-header-01.jpg');width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; position: relative;}
+.bg-opac{background-color: rgba(0, 0, 0, 0.726);}
+
+
+/* MAQUETTE PAGE PROFIL */
+.bg-profil{background-image: url('img/img-create-game.jpg');width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; position: relative;}
+
+
+
+
+
+
+/**************************************** TITLES & TEXT  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.title-head{text-transform: uppercase; font-size: 40px;}
+.text-head{font-size: 30px; }
+.container-text-header{ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800;}
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.title-explication{font-size: 30px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; color: #FF9C38;}
+.text-explication{font-size: 25px; color: #464646; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 53px;}
+.title-game-explication-01, .title-game-explication-02, .title-game-explication-03{background-color: rgb(250, 250, 250); text-align: center; font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 0;}
+
+
+/* PARTIE CREATION NIVEAUX */
+.title-create-game{font-size: 30px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800;}
+.text-create-game{font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 50px;}
+
+
+/* MAQUETTE JEUX DISPONIBLES */
+.card-title{font-size: 21px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800;}
+.card-text{font-weight: 17px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;}
+.note-game{font-family: 17px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; position: absolute; right: 10%; bottom: 6%;}
+
+
+/* MAQUETTE FORMULAIRE & CONNEXION  */
+
+
+
+
+
+/**************************************** EFFECT & OTHER  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.foo{ display: inline-block; vertical-align: middle;}
+.rectangle-left, .rectangle-right { height: 31px; width: 360px; margin-top: 65px;}
+.rectangle-left{background: linear-gradient(to right,#fba255, #fba2558f, #fba2552d, #fba25500);}
+.rectangle-right{background: linear-gradient(to left,#fba255, #fba2558f, #fba2552d, #fba25500);}
+.triangle-right { width: 0; height: 0; border-top: 83px solid transparent; border-left: 54px solid #fba255; border-bottom: 83px solid transparent;}
+.triangle-left { width: 0; height: 0; border-top: 83px solid transparent; border-right: 54px solid #fba255; border-bottom: 83px solid transparent;}
+
+
+
+/* MAQUETTE JEUX DISPONIBLES */
+/* SURVOL */
+.card-real{ position: relative;}
+.card-real .bg-overlay{ background-color: #313131cc ; position: absolute;/*pour le mettre en avant*/ left: 0; top: 0; bottom: 0; right: 0; opacity: 0; /*permet de le cacher sans le hover*/ -webkit-transition: all 0.4s ease-in-out 0s;  -moz-transition: all 0.4s ease-in-out 0s; transition: all 0.4s ease-in-out 0s; /*transition de l'apparition du bakground*/}
+.card-real:hover .bg-overlay{ opacity: 1; } /*PERMET DE RENDRE VISIBLE LE BACKGROUND AU SURVOL DU CURSEUR*/
+.img-card-game, .card-real .bg-overlay {border-radius: 6%; }
+/*Div qui comporte ce qu'on veut faire apparaitre au survol*/
+.description-game-hover{ position: absolute; /*pour le mettre en avant*/ text-align: center; width: 100%; height: 100% ;top: 50%; /*positionne au milieu de l'image lorsque top et left sont à 50%*/ left: 50%; opacity: 0; /*permet de le cacher sans le hover*/ -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-transition: all 0.3s ease-in-out 0s; -moz-transition: all 0.3s ease-in-out 0s; transition: all 0.3s ease-in-out 0s; /*transition de l'apparition du texte*/}
+.card-real:hover .description-game-hover{ opacity: 1; } /*PERMET DE RENDRE VISIBLE LE TEXTE AU SURVOL DU CURSEUR*/
+
+
+/**************************************** BUTTON  ****************************************/
+.content-btn-play{margin-top: 65px;}
+.btn-create-width{width: 44%;}
+.btn-play-width{width: 55%;} 
+.btn-inscription-width{width: 70%;}
+.btn-connexion-width{width: 98%;}
+
+.btn-play-width, .btn-create-width{font-size: 49px;}
+.btn-inscription-width, .btn-connexion-width{font-size: 33px;}
+
+
+.btn-play-header{ height: 10%; padding: 10px 40px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 10px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
+.btn-play-header:active{transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); border-bottom: 1px solid;}
+
+a:hover { text-decoration: none;}
+a.text-light:focus, a.text-light:hover {color: white!important; }
+input{border: none;}
+
+
+
+
+/**************************************** CAROUSEL ****************************************/
+
+/* .fa, .fas {
+    font-size: 50px;
+    
+}
+.btn-secondary {
+    color: black;
+    background-color: transparent!important;
+    border-color: transparent!important;
+}
+
+.btn-secondary:hover {
+    color: black;
+    background-color: transparent!important;
+    border-color: transparent!important;
+}
+
+.btn-secondary:active{
+    color: black;
+    background-color: transparent!important;
+    border-color: transparent!important;
+}
+
+.controls-top{outline: none;} */
+
+/* FIN CAROUSEL */
+
+
+
+
+
+
+
+
+
+/**********************MEDIA QUERIES**********************/
+
+@media (max-width: 991.98px) {
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+/* ANIMATION */
+@keyframes cf3FadeInOut {
+    0% { opacity:1; }
+    45% { opacity:1; }
+    55% { opacity:0; }
+    100% { opacity:0; }
+}
+.content-img-explication{ position: relative; width: 100%; }
+.content-img-explication .transition-01 { display: block;  }
+.content-img-explication  .transition-01{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: -1s;}
+.content-img-explication  .transition-02{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: 2s; }
+.content-img-game-absolute, .content-img-game-01, .content-img-game-02{margin: 0;}
+
+
+}
+
+
+
+
+
+@media (max-width: 1199.98px){
+/**************************************** SLIDEBAR MENU ****************************************/
+.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgb(0, 0, 0); overflow-x: hidden; transition: 0.5s; padding-top: 60px; border-right: 5px solid #7F4A88;z-index:2;}
+.sidenav a { text-decoration: none; color: white; display: block; transition: 0.3s; font-family: 'Girassol', cursive; font-size: 50px;}
+.sidenav a:hover { color: #f1f1f1; text-decoration: underline #7F4A88;}
+/*emplacement de la croix*/
+.sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
+.icon-menu{cursor: pointer; font-size: 40px; color: white;position: relative;} 
+.contenu-menu{display: flex; flex-direction: column; align-items: center;} 
+
+
+}
+
+
+
+
+@media (max-width: 575.98px) { 
+
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.img-logo-header img { width: 47%; height: auto; }
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+        /* ANIMATION */
+    
+/* @keyframes cf3FadeInOut {
+    0% { opacity:1; }
+    45% { opacity:1; }
+    55% { opacity:0; }
+    100% { opacity:0; }
+}
+.content-img-explication{ position: relative; width: 100%; }
+.content-img-explication .transition-01 { display: block;  }
+.content-img-explication  .transition-01{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: -1s;}
+.content-img-explication  .transition-02{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: 2s; }
+.content-img-game-absolute, .content-img-game-01, .content-img-game-02{margin: 0;}
+         */
+
+/* MAQUETTE JEUX DISPONIBLES */
+.img-card-game{ border-radius: 0%;}
+.cards-game-presta{display: none;}
+
+/**************************************** TITLES & TEXT  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.text-head { font-size: 25px; }
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.text-explication { font-size: 18px; margin-bottom: 0; }
+
+
+/* PARTIE CREATION NIVEAUX */
+.text-create-game { font-size: 18px; margin-bottom: 50px; width: 96%; }
+
+
+/* MAQUETTE FORMULAIRE & CONNEXION  */
+
+
+
+/**************************************** EFFECT & OTHER  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.rectangle-left, .rectangle-right, .triangle-right, .triangle-left{display: none;}
+
+
+/**************************************** BUTTON  ****************************************/    
+.btn-play-width{ width: 89%; }
+.btn-create-width{width: 83.8%;}
+.btn-inscription-width, .btn-connexion-width{font-size: 30px; padding-left: 0; padding-right: 0}
+
+
+/**************************************** SLIDEBAR MENU ****************************************/
+/* .sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgb(0, 0, 0); overflow-x: hidden; transition: 0.5s; padding-top: 60px; border-right: 5px solid #7F4A88;z-index:2;}
+.sidenav a { text-decoration: none; color: white; display: block; transition: 0.3s; font-family: 'Girassol', cursive; font-size: 50px;}
+.sidenav a:hover { color: #f1f1f1; text-decoration: underline #7F4A88;}
+.sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
+.icon-menu{cursor: pointer; font-size: 40px; color: white;position: relative;} 
+.contenu-menu{display: flex; flex-direction: column; align-items: center;}    */
+}
+    
+ 
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */       
+.img-logo-header img { width: 54%; height: auto; }
+
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+        /* ANIMATION */
+    
+/* @keyframes cf3FadeInOut {
+    0% { opacity:1; }
+    45% { opacity:1; }
+    55% { opacity:0; }
+    100% { opacity:0; }
+}
+.content-img-explication{ position: relative; width: 100%; }
+.content-img-explication .transition-01 { display: block;  }
+.content-img-explication  .transition-01{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: -1s;}
+.content-img-explication  .transition-02{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: 2s; }
+.content-img-game-absolute, .content-img-game-01, .content-img-game-02{margin: 0;} */
+
+
+/* MAQUETTE JEUX DISPONIBLES */
+/* .img-card-game{width: 100%; height: 255px; border-radius: 0%;} */
+.cards-game-presta{display: none;}
+
+
+
+/**************************************** TITLES & TEXT  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.title-head { font-size: 50px;}
+.text-head { font-size: 30px; }
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.title-explication { font-size: 34px; }
+.content-text-explication { text-align: center; width: 95%; }
+.text-explication { font-size: 20px; margin-bottom: 53px; }
+
+/* PARTIE CREATION NIVEAUX */
+.title-create-game { font-size: 37px; }
+.text-create-game { font-size: 20px;}
+
+   
+/**************************************** EFFECT & OTHER  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+.rectangle-left, .rectangle-right, .triangle-right, .triangle-left{display: none;}
+
+
+/**************************************** BUTTON ****************************************/
+
+.btn-create-width{ width: 84.8%; }
+.btn-play-width{ width: 90%; }
+ 
+.btn-inscription-width{width: 70%;}
+.btn-connexion-width{width: 98%;} 
+
+.btn-play-width, .btn-create-width{font-size: 49px;}
+.btn-inscription-width, .btn-connexion-width{font-size: 33px;}
+
+/*SLIDEBAR MENU */
+/* .sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgb(0, 0, 0); overflow-x: hidden; transition: 0.5s; padding-top: 60px; border-right: 5px solid #7F4A88;z-index:2;}
+.sidenav a { text-decoration: none; color: white; display: block; transition: 0.3s; font-family: 'Girassol', cursive; font-size: 50px;}
+.sidenav a:hover { color: #f1f1f1; text-decoration: underline #7F4A88;}
+.sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
+.icon-menu{cursor: pointer; font-size: 40px; color: white;position: relative;} 
+.contenu-menu{display: flex; flex-direction: column; align-items: center;}   */
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */       
+.img-logo-header img { width: 35%; height: auto; }
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+/* ANIMATION */
+/* @keyframes cf3FadeInOut {
+    0% { opacity:1; }
+    45% { opacity:1; }
+    55% { opacity:0; }
+    100% { opacity:0; }
+}
+.content-img-explication{ position: relative; width: 100%; }
+.content-img-explication .transition-01 { display: block;  }
+.content-img-explication  .transition-01{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: -1s;}
+.content-img-explication  .transition-02{ position: absolute; top: 0; animation-name: cf3FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; animation-delay: 2s; }
+.content-img-game-absolute, .content-img-game-01, .content-img-game-02{margin: 0;} */
+
+
+
+/* MAQUETTE JEUX DISPONIBLES */
+/* .img-card-game{width: 100%; height: 345px;} */
+.cards-game-presta{display: none;}
+
+
+
+/**************************************** TITLES & TEXT  ****************************************/
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+/* .title-explication { font-size: 34px; }
+.content-text-explication { text-align: center; width: 95%; }
+.text-explication { font-size: 20px; margin-bottom: 53px; } */
+
+
+
+/**************************************** EFFECT & OTHER  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+/* FLECHES */
+.rectangle-left, .rectangle-right { height: 20px; width: 127px; }
+.triangle-right { border-top: 75px solid transparent; border-left: 45px solid #fba255; border-bottom: 75px solid transparent; }
+.triangle-left { border-top: 75px solid transparent; border-right: 45px solid #fba255; border-bottom: 75px solid transparent; }
+
+
+
+/**************************************** BUTTON ****************************************/
+.btn-play-width, .btn-create-width{font-size: 50px;}
+.btn-play-width { width: 68%; }
+.btn-create-width{width: 53.7%;}
+
+
+/*SLIDEBAR MENU */
+/* .sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgb(0, 0, 0); overflow-x: hidden; transition: 0.5s; padding-top: 60px; border-right: 5px solid #7F4A88;z-index:2;}
+.sidenav a { text-decoration: none; color: white; display: block; transition: 0.3s; font-family: 'Girassol', cursive; font-size: 50px;}
+.sidenav a:hover { color: #f1f1f1; text-decoration: underline #7F4A88;}
+
+.sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
+.icon-menu{cursor: pointer; font-size: 40px; color: white;position: relative;} 
+.contenu-menu{display: flex; flex-direction: column; align-items: center;}   */
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */       
+.img-logo-header img { width: 35%; height: auto; }
+
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+        /* ANIMATION */
+    
+
+/* MAQUETTE JEUX DISPONIBLES */
+.img-card-game{width: 100%; height: 300px;}
+.cards-game-presta{display: none;}
+
+   
+/**************************************** EFFECT & OTHER  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+/* FLECHES */
+.rectangle-left, .rectangle-right { height: 28px; width: 235px; }
+.triangle-right { border-top: 75px solid transparent; border-left: 45px solid #fba255; border-bottom: 75px solid transparent; }
+.triangle-left { border-top: 75px solid transparent; border-right: 45px solid #fba255; border-bottom: 75px solid transparent; }
+
+
+
+/*SLIDEBAR MENU */
+/* .sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgb(0, 0, 0); overflow-x: hidden; transition: 0.5s; padding-top: 60px; border-right: 5px solid #7F4A88;z-index:2;}
+.sidenav a { text-decoration: none; color: white; display: block; transition: 0.3s; font-family: 'Girassol', cursive; font-size: 50px;}
+.sidenav a:hover { color: #f1f1f1; text-decoration: underline #7F4A88;}
+
+.sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
+.icon-menu{cursor: pointer; font-size: 40px; color: white;position: relative;} 
+.contenu-menu{display: flex; flex-direction: column; align-items: center;}   */
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1399.98px) { 
+
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */       
+.img-logo-header img { width: 36%; height: auto; }
+
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.content-img-game-01 { margin-right: -150px; }
+            .content-img-game-absolute{z-index: 1; margin-top: 30px;}
+            .content-img-game-02 { margin-left: -150px; }
+    
+
+/* MAQUETTE JEUX DISPONIBLES */
+.cards-game-presta{display: none;}
+
+   
+/**************************************** EFFECT & OTHER  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+ /* FLECHES */
+ .rectangle-left, .rectangle-right { height: 28px; width: 235px; }
+ .triangle-right { border-top: 75px solid transparent; border-left: 45px solid #fba255; border-bottom: 75px solid transparent; }
+ .triangle-left { border-top: 75px solid transparent; border-right: 45px solid #fba255; border-bottom: 75px solid transparent; }
+
+
+
+ .closebtn, .icon-menu{display: none;}   
+}
+    
+    
+@media (min-width: 1400px) and (max-width: 1599.98px) { 
+    
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */       
+.img-logo-header img { width: 25%; height: auto; }
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.content-img-game-01{margin-right: 110px;}
+.content-img-game-02{margin-left: 110px;}
+.content-img-game-01 { margin-right: -150px; }
+.content-img-game-absolute{z-index: 1; margin-top: 30px;}
+.content-img-game-02 { margin-left: -150px; }
+
+    
+
+/* MAQUETTE JEUX DISPONIBLES */
+.cards-game-presta{display: none;}
+
+.closebtn, .icon-menu{display: none;}
+}
+    
+    
+@media (min-width: 1600px) and (max-width: 1799.98px) { 
+
+/**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */       
+.img-logo-header img { width: 30%; height: auto; }
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.content-img-game-01{margin-right: 110px;}
+.content-img-game-02{margin-left: 110px;}
+.content-img-game-01 { margin-right: -150px; }
+.content-img-game-absolute{z-index: 1; margin-top: 30px;}
+.content-img-game-02 { margin-left: -150px; }
+
+/* MAQUETTE JEUX DISPONIBLES */
+.cards-game-presta{display: none;}
+
+/**************************************** TITLES & TEXT  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.content-text-explication { width: 70%; }
+.text-explication { font-size: 18px; margin-bottom: 50px; }
+.content-text-explication { text-align: center; width: 47%; }
+
+/* PARTIE CREATION NIVEAUX */
+.text-create-game { font-size: 18px; margin-bottom: 50px; width: 96%; }
+
+   
+/**************************************** EFFECT & OTHER  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */
+/* FLECHES */
+.rectangle-left, .rectangle-right { height: 28px; width: 235px; }
+.triangle-right { border-top: 75px solid transparent; border-left: 45px solid #fba255; border-bottom: 75px solid transparent; }
+.triangle-left { border-top: 75px solid transparent; border-right: 45px solid #fba255; border-bottom: 75px solid transparent; }
+
+
+
+/**************************************** BUTTON ****************************************/
+.content-btn-play{text-align: center;} 
+.btn-create-width{width: 44%;}
+.btn-play-width{width: 45.2%;}  
+
+
+
+
+
+.closebtn, .icon-menu{display: none;}
+
+
+
+
+    
+}
+    
+    
+@media (min-width: 1800px) and (max-width: 1999.98px) { 
+  /**************************************** BACKGROUND & IMAGE  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */       
+
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.content-img-game-01{margin-right: 110px;}
+.content-img-game-02{margin-left: 110px;}
+.content-img-game-01 { margin-right: -150px; }
+.content-img-game-absolute{z-index: 1; margin-top: 30px;}
+.content-img-game-02 { margin-left: -150px; }
+
+
+
+/* MAQUETTE JEUX DISPONIBLES */
+.cards-game-presta{display: none;}
+
+
+
+/**************************************** BUTTON ****************************************/
+
+   
+.closebtn, .icon-menu{display: none;}
+            
+}

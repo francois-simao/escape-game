@@ -8,7 +8,7 @@ session_start();
       $requser = $bdd->prepare("SELECT * FROM user WHERE id = ?");
       $requser->execute(array($_SESSION['id']));
       $user = $requser->fetch(); /*inutile de faire une boucle while car il n'y a qu'un résultat par id, on peut donc le stocker directement dans une variable*/
-      if(isset($_POST['newpseudo']) AND !empty($_POST['newpseudo']) AND $_POST['newpseudo'] != $user['username']) {
+      if(isset($_POST['newpseudo']) AND !empty($_POST['newpseudo'])) {
          $newpseudo = htmlspecialchars($_POST['newpseudo']);
          $pseudo = htmlspecialchars($user['username']);
          if($newpseudo != $pseudo){
@@ -22,7 +22,7 @@ session_start();
       }
 
       //mise à jour adresse mail
-      if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $user['e_mail']) {
+      if(isset($_POST['newmail']) AND !empty($_POST['newmail'])) {
          $newmail = htmlspecialchars($_POST['newmail']);
          $mail = htmlspecialchars($user['e_mail']);
          if($newmail != $mail){
@@ -41,9 +41,9 @@ session_start();
          if($mdp1 == $mdp2) {
             $insertmdp = $bdd->prepare("UPDATE user SET password = ? WHERE id = ?");
             $insertmdp->execute(array($mdp1, $_SESSION['id']));
-            $msg = "votre mot de passe a bien été modifié";
+            $msgmdp = "votre mot de passe a bien été modifié";
          } else {
-            $msg = "Vos deux mdp ne correspondent pas !";
+            $msgmdp = "Vos deux mdp ne correspondent pas !";
          }
       }
 
@@ -109,10 +109,14 @@ session_start();
                ?>
                <img src="membres/avatars/<?php echo $user['image'];?>" width="150" /> <!-- ca va prendre la hauteur automatiquement-->
                <?php
+               } else {
+               ?>
+               <img src="membres/avatars/default-avatar.jpg" width="150" />
+               <?php
                }
                ?>
 
-               <?php if(isset($msg)) { echo $msg; } ?> </br>
+               <?php if(isset($msgmdp)) { echo $msgmdp; } ?> </br>
                <?php if(isset($msgpseudo)) { echo $msgpseudo; } ?> </br>
                <?php if(isset($msgmail)) { echo $msgmail; } ?>
                <?php if(isset($msgavatar)) { echo $msgavatar; } ?>
