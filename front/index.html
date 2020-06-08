@@ -15,9 +15,9 @@
     <header>
         <div class="container-fluid bg-header">
 
-            <!-- <div class="container">
+        <div class="container">
                 <div class="row">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -52,32 +52,11 @@
                     </nav>
                 </div>
 
-            </div> -->
-
-            <div class="container">
-                <div class="row">
-                    
-                    <div id="mySidenav" class="sidenav">
-                        <div class="closebtn text-center" onclick="closeNav()">&times;</div>
-                        <!--&times; = croix de closeNav-->
-                        <div class=" contenu-menu text-center">
-                            <a href="#presentation" onclick="closeNav()" class="title-menu px-0">Présentation</a>
-                            <a href="#competences" onclick="closeNav()" class="title-menu px-0">Compétences</a>
-                            <a href="#realisations" onclick="closeNav()" class="title-menu px-0">Réalisations</a>
-   
-                        </div>
-        
-                    </div>
-                    <div id="ecart-menu">
-                        <!--&#9776;=icon menu-->
-                        <div class="icon-menu ml-3" onclick="openNav()">&#9776;</div>
-                    </div>
-  
-                </div>
             </div>
 
+
             <div class="container">
-                <!-- NAV -->
+
                 <div class="col-12">
                     <div class="img-logo-header d-flex justify-content-center">
                         <img src="img/logo-world.png" class="img-logo-head img-fluid" alt="logo-world">
@@ -170,27 +149,6 @@
     <!-- FIN PARTIE CREATION JEUX -->
 
 
-<!-- reauigbre -->
-
-
-
-
-
-
-
-
-
-    <script>
-        function openNav() { //openNav est le nom donné au onclick qui, lorsqu'on clique sur le menu, il s'ouvrira grâce au getElementById qui récupère l'id "mySidenav" dans la div principale
-            document.getElementById("mySidenav").style.width = "100%"; //style.width permet de donner une largeur au menu lorsque celui-ci est ouvert (mettre en 100% pour qu'il puisse prendre toute la page)
-            // document.getElementById("ecart-menu").style.marginLeft = "50%"; // permet de faire décaler le texte et l'icon du menu
-        }
-
-        function closeNav() { //closeNav est le nom donné au onclick pour fermer le menu (même système que celui du openNav)
-            document.getElementById("mySidenav").style.width = "0"; // mettre 0 pour qu'il ne soit pas visible
-            // document.getElementById("ecart-menu").style.marginLeft = "0";
-        }
-    </script>
 
 
 
