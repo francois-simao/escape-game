@@ -15,41 +15,49 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav text-uppercase d-flex">
-                <li class="nav-item active">
-                    <a class="nav-link " href="#">Créer son escape game</a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Accueil
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="index.html">Accueil</a>
-                        <a class="dropdown-item" href="page-profil.html">Profil</a>
-                        <a class="dropdown-item" href="#">?</a>
+    <div class="container">
+        <div class="row  ">
+
+            <div id="mySidenav" class="sidenav size-width-menu">
+                <div class="closebtn text-center" onclick="closeNav(x)">&times;</div>
+                <!--&times; = croix de closeNav-->
+                <div class=" contenu-menu text-center">
+                    <ul>
+                        <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                        <li><a href="#" onclick="closeNav(x)" class="title-menu btn-orange-create ">Créer son
+                                escape game</a></li>
+                        <li class="nav-item dropdown " onclick="closeNav(x)">
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Accueil
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item text-dark" href="index.html">Accueil</a>
+                                <a class="dropdown-item text-dark" href="page-profil.html">Profil</a>
+                                <a class="dropdown-item text-dark" href="#">?</a>
+                            </div>
+                        </li>
                     </div>
-                </li>
-                <!-- <div class="d-flex justify-content-end"> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="formulaire_inscription.html">S'inscrire</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="formulaire_connexion.html">Se connecter</a>
-                    </li>
+                    <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                        <li><a href="formulaire_inscription.html" onclick="closeNav(x)"
+                                class="title-menu">S'inscrire</a></li>
+                        <li><a href="formulaire_connexion.html" onclick="closeNav(x)" class="title-menu ">Se
+                                connecter</a></li>
+                            </div>
+
+                    </ul>
+
                 </div>
 
-            </ul>
+            </div>
+            <div id="ecart-menu">
+                <!--&#9776;=icon menu-->
+                <div class="icon-menu ml-3" onclick="openNav(y)">&#9776;</div>
+            </div>
         </div>
-    </nav>
+    </div>
 
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="container-escape">
         <div class="container p-0 ">
             <div class="row row-cols-1 row-cols-md-3 text-light cards-game-presta">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0 ">
@@ -305,7 +313,29 @@
 
 
 
+    <script>
+        function openNav(y) {
+            if (y.matches) { //openNav est le nom donné au onclick qui, lorsqu'on clique sur le menu, il s'ouvrira grâce au getElementById qui récupère l'id "mySidenav" dans la div principale
+                document.getElementById("mySidenav").style.width = "100%"; //style.width permet de donner une largeur au menu lorsque celui-ci est ouvert (mettre en 100% pour qu'il puisse prendre toute la page)
+                // document.getElementById("ecart-menu").style.marginLeft = "50%"; // permet de faire décaler le texte et l'icon du menu
+            }
+        }
 
+        function closeNav(x) {
+            if (x.matches) {//closeNav est le nom donné au onclick pour fermer le menu (même système que celui du openNav)
+                document.getElementById("mySidenav").style.width = "0"; // mettre 0 pour qu'il ne soit pas visible
+                // document.getElementById("ecart-menu").style.marginLeft = "0";
+            }
+        }
+
+        var y = window.matchMedia("(max-width: 1199.98px)")
+        openNav(y) // Call listener function at run time
+        y.addListener(openNav) // Attach listener function on state changes
+        var x = window.matchMedia("(max-width: 1199.98px)")
+        closeNav(x) // Call listener function at run time
+        x.addListener(closeNav) // Attach listener function on state changes
+        
+    </script>
 
 
 

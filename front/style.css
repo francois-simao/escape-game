@@ -1,10 +1,12 @@
 body{margin: 0; padding: 0;}
 
+
+.container-logo{margin-top: 148px;}
 /**************************************** BACKGROUND & IMAGE  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */
 .bg-header{background-image: url('img/img-header-01.jpg');width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; position: relative;}
-.img-logo-head{width: 35%; height: auto;}
+.img-logo-head{width: 26%; height: auto;}
 
 
 /* PARTIE CE QU'EST UN ESCAPE GAME */
@@ -34,21 +36,18 @@ body{margin: 0; padding: 0;}
 
 
 
-
-
-
 /**************************************** TITLES & TEXT  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */
 .title-head{text-transform: uppercase; font-size: 40px;}
 .text-head{font-size: 30px; }
-.container-text-header{ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800;}
+.container-text-header{text-shadow: 0px 6px 7px #000000; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800;}
 
 
 /* PARTIE CE QU'EST UN ESCAPE GAME */
 .title-explication{font-size: 30px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; color: #FF9C38;}
 .text-explication{font-size: 25px; color: #464646; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 53px;}
-.title-game-explication-01, .title-game-explication-02, .title-game-explication-03{background-color: rgb(250, 250, 250); text-align: center; font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 0;}
+.title-game-explication-01, .title-game-explication-02, .title-game-explication-03{background-color: white; text-align: center; font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 0;}
 
 
 /* PARTIE CREATION NIVEAUX */
@@ -101,19 +100,58 @@ body{margin: 0; padding: 0;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
 .btn-inscription-width, .btn-connexion-width{font-size: 33px;}
 
-
 .btn-play-header{ height: 10%; padding: 10px 40px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 10px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
 .btn-play-header:active{transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); border-bottom: 1px solid;}
+
+.btn-orange-create{ height: 10%; padding: 10px 15px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 5px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
 
 a:hover { text-decoration: none;}
 a.text-light:focus, a.text-light:hover {color: white!important; }
 input{border: none;}
 
 
+/**************************************** MENU ****************************************/
+
+ul{list-style: none; }
+.contenu-menu ul{display: flex; justify-content: space-between;}
+.sidenav a { text-decoration: none; color: white; transition: 0.3s; font-size: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-transform: uppercase; margin-left: 15px; margin-right: 15px;}
+.sidenav a:hover { color: #f1f1f1;}
+.btn-orange-create{display: unset;}
+.sidenav{margin-top: 30px;}
+.nav-link{margin-top: 2px;}
+.dropdown-item:hover{background-color: transparent;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /**********************MEDIA QUERIES**********************/
+
+@media (max-width: 1199.98px) {
+
+/*SLIDEBAR MENU */
+.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.87); overflow-x: hidden; transition: 0.5s; padding-top: 60px; z-index:2;}
+.sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
+.icon-menu{cursor: pointer; font-size: 40px;  position: relative;} 
+.contenu-menu ul{display: flex; flex-direction: column; align-items: center;}
+.sidenav{margin-top: 0;}
+ul{padding: 0;}
+}
 
 @media (max-width: 991.98px) {
 
@@ -140,7 +178,8 @@ input{border: none;}
 /**************************************** BACKGROUND & IMAGE  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */
-.img-logo-header img { width: 47%; height: auto; }
+.img-logo-header img { width: 53%; height: auto; }
+.container-logo{margin-top: 0;}
 
 
 
@@ -151,7 +190,8 @@ input{border: none;}
 /**************************************** TITLES & TEXT  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */
-.text-head { font-size: 25px; }
+.text-head { font-size: 22px; margin-bottom: 32px;}
+.title-head{font-size: 30px;}
 
 /* PARTIE CE QU'EST UN ESCAPE GAME */
 .text-explication { font-size: 18px; margin-bottom: 0; }
@@ -172,13 +212,21 @@ input{border: none;}
 
 
 /**************************************** BUTTON  ****************************************/    
-.btn-play-width{ width: 89%; }
+.btn-play-width{ width: 82%; }
 .btn-create-width{width: 83.8%;}
 .btn-inscription-width, .btn-connexion-width{font-size: 30px; padding-left: 0; padding-right: 0}
+.btn-play-width, .btn-create-width {font-size: 24px;}
+.content-btn-play {margin-top: -15px;}
+
+
+/**************************************** MENU ****************************************/
+.contenu-menu{ margin-top: 50px;} 
+.sidenav a{font-size: 15px; line-height: 35px;}
+
+
 
 }
-    
- 
+
 
 @media (min-width: 576px) and (max-width: 767.98px) { 
 
@@ -186,6 +234,7 @@ input{border: none;}
 /* MAQUETTE ACCUEIL */
 /* HEADER */       
 .img-logo-header img { width: 54%; height: auto; }
+.container-logo{margin-top: 0;}
 
 
 
@@ -230,7 +279,9 @@ input{border: none;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
 .btn-inscription-width, .btn-connexion-width{font-size: 33px;}
 
-
+/**************************************** MENU ****************************************/
+.contenu-menu{ margin-top: 50px;} 
+.sidenav a{font-size: 23px; line-height: 54px;}
 }
 
 
@@ -240,6 +291,7 @@ input{border: none;}
 /* MAQUETTE ACCUEIL */
 /* HEADER */       
 .img-logo-header img { width: 35%; height: auto; }
+.container-logo{margin-top: 0;}
 
 
 /* PARTIE CE QU'EST UN ESCAPE GAME */
@@ -265,6 +317,10 @@ input{border: none;}
 
 
 /**************************************** TITLES & TEXT  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */  
+.title-head{font-size: 50px;}
+.text-head{font-size: 35px;}
 
 
 /* PARTIE CE QU'EST UN ESCAPE GAME */
@@ -289,7 +345,9 @@ input{border: none;}
 .btn-play-width { width: 68%; }
 .btn-create-width{width: 53.7%;}
 
-
+/**************************************** MENU ****************************************/
+.contenu-menu{ margin-top: 50px;} 
+.sidenav a{font-size: 23px; line-height: 54px;}
 }
 
 
@@ -299,6 +357,7 @@ input{border: none;}
 /* MAQUETTE ACCUEIL */
 /* HEADER */       
 .img-logo-header img { width: 35%; height: auto; }
+.container-logo{margin-top: 0;}
 
 
 
@@ -310,7 +369,16 @@ input{border: none;}
 .img-card-game{width: 100%; height: 300px;}
 .cards-game-presta{display: none;}
 
-   
+/**************************************** TITLES & TEXT  ****************************************/
+/* MAQUETTE ACCUEIL */
+/* HEADER */  
+.title-head{font-size: 50px;}
+.text-head{font-size: 35px;}
+
+/* PARTIE CE QU'EST UN ESCAPE GAME */
+.title-game-explication-01{margin-right: 93px;}
+.title-game-explication-03{margin-left: 93px;}
+
 /**************************************** EFFECT & OTHER  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */
@@ -320,7 +388,9 @@ input{border: none;}
 .triangle-left { border-top: 75px solid transparent; border-right: 45px solid #fba255; border-bottom: 75px solid transparent; }
 
 
-
+/**************************************** MENU ****************************************/
+.contenu-menu{ margin-top: 50px;} 
+.sidenav a{font-size: 23px; line-height: 54px;}
 }
 
 
@@ -329,7 +399,8 @@ input{border: none;}
 /**************************************** BACKGROUND & IMAGE  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */       
-.img-logo-header img { width: 36%; height: auto; }
+.img-logo-header img { width: 23%; height: auto; }
+.container-logo{margin-top: 75px;}
 
 
 
@@ -363,6 +434,7 @@ input{border: none;}
 /* MAQUETTE ACCUEIL */
 /* HEADER */       
 .img-logo-header img { width: 25%; height: auto; }
+.container-logo{margin-top: 85px;}
 
 
 /* PARTIE CE QU'EST UN ESCAPE GAME */
@@ -377,6 +449,10 @@ input{border: none;}
 /* MAQUETTE JEUX DISPONIBLES */
 .cards-game-presta{display: none;}
 
+
+
+.closebtn, .icon-menu{display: none;}
+
 }
     
     
@@ -385,7 +461,8 @@ input{border: none;}
 /**************************************** BACKGROUND & IMAGE  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */       
-.img-logo-header img { width: 30%; height: auto; }
+.img-logo-header img { width: 24%; height: auto; }
+.container-logo{margin-top: 85px;}
 
 
 /* PARTIE CE QU'EST UN ESCAPE GAME */
@@ -430,6 +507,7 @@ input{border: none;}
 
 
 
+.closebtn, .icon-menu{display: none;}
 
     
 }
@@ -454,5 +532,12 @@ input{border: none;}
 .cards-game-presta{display: none;}
 
 
+ .closebtn, .icon-menu{display: none;}
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1999.98px) {
+.size-width-menu{width: 100%!important;}
 
 }
