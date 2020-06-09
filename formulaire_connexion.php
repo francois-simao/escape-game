@@ -39,7 +39,7 @@ include 'connection_bdd.php';
                     <div class="text-center">
                         <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a
                                 href="formulaire_inscription.php">Inscrivez-vous maintenant</a> <br>ou<br> </p>
-                        <a href="index.html" class="mb-3 ">Revenir à la page d'accueil</a>
+                        <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
                     </div>
                 </div>
             </div>
