@@ -1,3 +1,11 @@
+<!--page de déconnexion-->
+<?php
+session_start();
+$_SESSION = array(); /*on vide les variables de session */
+session_destroy();
+header("Location:index.php");
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,7 +25,7 @@
             <div class="bloc-form bg-light p-5">
                 <h1 class="text-uppercase text-center">A bientôt !</h1>
                 <p>Vous vous êtes déconnecté.</p>
-                <a href="index.html" class="mb-3 ">Revenir à la page d'accueil</a>
+                <!-- <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a> -->
             </div>
         </div>
     </div>

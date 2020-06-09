@@ -1,24 +1,65 @@
-<!--page d'inscription-->
-<h1>Formulaire d'inscription</h1>
-<form action="" method="post" enctype="multipart/form-data">
-    <p>
-    <input type="text" name="last_name" required placeholder="entrez votre nom"/>
-    <input type="text" name="first_name" required placeholder="entrez votre prénom"/>
-    <input type="email" name="email" required placeholder="entrez votre email"/>
-    <input type="email" name="confirmation_email" required placeholder="confirmez votre email"/>
-    <input type="text" name="username" required placeholder="entrez votre nom d'utilisateur"/>
-    <input type="password" name="password" required placeholder="entrez votre mot de passe"/>
-    <input type="password" name="confirmation_password" required placeholder="confirmez votre mot de passe"/>
-    <label>Avatar :</label>
-    <input type="file" name="avatar"/><br /><br />
-    <input type="submit" name="inscription" value="inscription" />
-    </p>
-</form>
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>W.E.G - Inscription</title>
+</head>
 
+<body>
+    <header class="bg-header-sombre">
+        <div class="container-fluid p-0">
+            
+
+            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
+
+                <div class="bloc-form bg-light p-5 text-center">
+                    <h1 class="title-form text-uppercase mb-4">Créer votre compte</h1>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="row ">
+                            <div class="input-text mb-4 mr-2">
+                                <input type="text" class="form-control" placeholder="Nom*" name="last_name" required>
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="text" class="form-control" placeholder="Prénom*" name="first_name" required>
+                            </div>
+                        </div>
+                        <div class="row flex-column">
+                            <div class="input-text mb-4">
+                                <input type="text" class="form-control" placeholder="Nom d'utilisateur*" name="username" required>
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="email" class="form-control" placeholder="Email*" name="email" required>
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="email" class="form-control" placeholder="Confirmez email*" name="confirmation_email" required>
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type=password class="form-control" placeholder="Mot de passe*" name="password" required>
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="password" class="form-control" placeholder="Confirmez le mot de passe*" name="confirmation_password" required>
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="file" class="form-control" placeholder="Avatar*" name="avatar">
+                            </div>
+                            <a href="index.php" class="mb-3 text-left">Revenir à la page d'accueil</a>
+                            <div class="d-flex justify-content-center">
+                                <input type="submit" value="S'inscrire" class="btn-play-header text-light btn-inscription-width" name="inscription">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
 
 <?php 
-  include 'connection_bdd.php';
+include 'connection_bdd.php';
 
 if(isset($_POST['inscription'])) {
     $name1 = htmlspecialchars($_POST['last_name']);   /* htmlspecialchars convertit les caractères spéciaux en entité HTML pour éviter les injections de code*/
@@ -97,10 +138,7 @@ if(isset($_POST['inscription'])) {
          }
       }
       }
-
-
 }
-
 ?>
 
 <?php
@@ -116,7 +154,6 @@ if(!empty($userinfo['image'])){
 ?>
 
 
+</body>
 
-
-
-<a href='index.php'>Revenir à la page d'accueil</a>
+</html>

@@ -1,8 +1,62 @@
 <?php
 session_start();
-    // connexion base de données
-    include 'connection_bdd.php';
- 
+// connexion base de données
+include 'connection_bdd.php';
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>W.E.G - Editeur de profil</title>
+</head>
+
+<body>
+    <div class="container-fluid bg-profil">
+        
+        <div class="container" id="container-escape">
+            <div class="row flex-column">
+                <div class="bloc-page bg-light vh-100 d-flex justify-content-center ">
+                    <div class="col-6">
+                        
+                        <h1 class="title-form text-uppercase mb-4">Editer votre profil</h1>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="input-text mb-4">
+                                <input type="text" class="form-control" placeholder="Pseudo" name="newpseudo" value="<?php echo $user['username']; ?>">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="email" class="form-control" placeholder="Email" name="newmail" value="<?php echo $user['e_mail']; ?>">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type=password class="form-control" placeholder="Mot de passe" name="newmdp1">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="password" class="form-control" placeholder="Confirmation mot de passe" name="newmdp2">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="file" name="avatar" id="avatar">
+                            </div>
+                            <a href="enigma.php" class="mb-3 text-left">Revenir à la page énigme</a>
+                            <div class="d-flex justify-content-center">
+                                <input type="submit" value="Editer"
+                                    class="btn-play-header text-light btn-inscription-width">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<?php
     if(isset($_SESSION['id'])) {
        //mise à jour username
       $requser = $bdd->prepare("SELECT * FROM user WHERE id = ?");
@@ -80,59 +134,48 @@ session_start();
             $msgavatar = "Votre photo de profil ne doit pas dépasser 2Mo";
          }
       }
+?>
 
 
-   ?>
-   <html>
-      <head>
-         <title>TUTO PHP</title>
-         <meta charset="utf-8">
-      </head>
-      <body>
-         <div align="center">
-            <h2>Edition de mon profil</h2>
-            <div align="left">
-               <form method="POST" action="" enctype="multipart/form-data"> <!--enctype: encodage qui permet de charger des fichiers pour l'avatar -->
-                  <label>Pseudo :</label>
-                  <input type="text" name="newpseudo" placeholder="Pseudo" value="<?php echo $user['username']; ?>" /><br /><br />
-                  <label>Mail :</label>
-                  <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['e_mail']; ?>" /><br /><br />
-                  <label>Mot de passe :</label>
-                  <input type="password" name="newmdp1" placeholder="Mot de passe"/><br /><br />
-                  <label>Confirmation - mot de passe :</label>
-                  <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" /><br /><br />
-                  <label>Avatar :</label>
-                  <input type="file" name="avatar"/><br /><br />
-                  <input type="submit" value="Mettre à jour mon profil !" />
-               </form></br>
 
-               <!-- affichage de l'avatar-->
-               <?php
-               if(!empty($user['image']))
-               {
-               ?>
-               <img src="membres/avatars/<?php echo $user['image'];?>" width="150" /> <!-- ca va prendre la hauteur automatiquement-->
-               <?php
-               } else {
-               ?>
-               <img src="membres/avatars/default-avatar.jpg" width="150" />
-               <?php
-               }
-               ?>
+<!-- affichage de l'avatar-->
+<?php
+    if(!empty($user['image']))
+    {
+    ?>
+    <img src="membres/avatars/<?php echo $user['image'];?>" width="150" /> <!-- ca va prendre la hauteur automatiquement-->
+    <?php
+    } else {
+    ?>
+    <img src="membres/avatars/default-avatar.jpg" width="150" />
+    <?php
+    }
+    ?>
 
-               <?php if(isset($msgmdp)) { echo $msgmdp; } ?> </br>
-               <?php if(isset($msgpseudo)) { echo $msgpseudo; } ?> </br>
-               <?php if(isset($msgmail)) { echo $msgmail; } ?>
-               <?php if(isset($msgavatar)) { echo $msgavatar; } ?>
-            </div>
-         </div>
-      </body>
-   </html>
-   <?php   
+    <?php if(isset($msgmdp)) { echo $msgmdp; } ?> </br>
+    <?php if(isset($msgpseudo)) { echo $msgpseudo; } ?> </br>
+    <?php if(isset($msgmail)) { echo $msgmail; } ?>
+    <?php if(isset($msgavatar)) { echo $msgavatar; } ?>
+         
+<?php   
    }
    else {
       header("Location: index.php");
    }
-   ?>
+?>
 
-<a href='enigma.php'>Revenir à la page enigme</a>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

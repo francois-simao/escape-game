@@ -32,10 +32,10 @@ echo '<p>Mot de passe ou nom d\'utilisateur incorrect</p>';
 ?>
 
 <!--lien de déconnexion-->
-<a href='logout.php'>déconnexion</a>
+<a href='page-logout.php'>déconnexion</a>
 
 <!--lien pour éditer profil-->
-<a href='editing_profil.php'>éditer profil</a>
+<a href='page-profil.php'>éditer profil</a>
 
 
 
