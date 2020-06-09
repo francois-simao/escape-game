@@ -33,7 +33,7 @@ require_once 'recaptcha/autoload.php';
                 <form action="" method="POST">
                     <div class="input-text mb-4">
                         <input type="email" class="form-control" placeholder="Email" name="reset_password" required>
-                        <div class="g-recaptcha" data-sitekey="6LfbQf0UAAAAACVhp2sFMLRt6mEfvyYqPlqoRVIP"></div>
+                        <div class="g-recaptcha mt-3" data-sitekey="6LfbQf0UAAAAACVhp2sFMLRt6mEfvyYqPlqoRVIP"></div>
                         <input type="submit" value="Envoyer" class="mt-3" name="valider">
                     </div>
                 </form>

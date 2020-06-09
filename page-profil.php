@@ -1,3 +1,4 @@
+<!-- page d'édition profil-->
 <?php
 session_start();
 // connexion base de données
@@ -19,13 +20,11 @@ include 'connection_bdd.php';
 </head>
 
 <body>
-    <div class="container-fluid bg-profil">
-        
+    <div class="container-fluid bg-profil">        
         <div class="container" id="container-escape">
             <div class="row flex-column">
                 <div class="bloc-page bg-light vh-100 d-flex justify-content-center ">
-                    <div class="col-6">
-                        
+                    <div class="col-6">                        
                         <h1 class="title-form text-uppercase mb-4">Editer votre profil</h1>
                         <form action="" method="POST" enctype="multipart/form-data">
                             <div class="input-text mb-4">
@@ -152,11 +151,13 @@ include 'connection_bdd.php';
     }
     ?>
 
+<!-- affichage des messages-->
     <?php if(isset($msgmdp)) { echo $msgmdp; } ?> </br>
     <?php if(isset($msgpseudo)) { echo $msgpseudo; } ?> </br>
-    <?php if(isset($msgmail)) { echo $msgmail; } ?>
+    <?php if(isset($msgmail)) { echo $msgmail; } ?> </br>
     <?php if(isset($msgavatar)) { echo $msgavatar; } ?>
-         
+
+<!-- sécurité page-->         
 <?php   
    }
    else {

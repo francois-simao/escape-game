@@ -139,6 +139,7 @@ if(isset($_POST['inscription'])) {
       }
       }
 }
+echo($msgavatar);
 ?>
 
 <?php
