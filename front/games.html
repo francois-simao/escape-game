@@ -8,314 +8,170 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
- 
+
     <link rel="stylesheet" href="style.css">
     <title>W.E.G - Jeux</title>
 </head>
 
 <body>
-<div class="container-fluid">
+    <!-- <div class="container-fluid p-0"> -->
     <div class="container">
-        <div class="row  ">
+            <div class="row  ">
 
-            <div id="mySidenav" class="sidenav size-width-menu">
-                <div class="closebtn text-center" onclick="closeNav(x)">&times;</div>
-                <!--&times; = croix de closeNav-->
-                <div class=" contenu-menu text-center">
-                    <ul>
-                        <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
-                        <li><a href="#" onclick="closeNav(x)" class="title-menu btn-orange-create ">Créer son
-                                escape game</a></li>
-                        <li class="nav-item dropdown " onclick="closeNav(x)">
-                            <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdownMenuLink"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Accueil
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item text-dark" href="index.html">Accueil</a>
-                                <a class="dropdown-item text-dark" href="page-profil.html">Profil</a>
-                                <a class="dropdown-item text-dark" href="#">?</a>
+                <div id="mySidenav" class="sidenav size-width-menu">
+                    <div class="closebtn text-center" onclick="closeNav(x)">&times;</div>
+                    <div class=" contenu-menu text-center">
+                        <ul>
+                            <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                                <li><a href="#" onclick="closeNav(x)" class="title-menu btn-orange-create ">Créer son
+                                        escape game</a></li>
+                                <li class="nav-item dropdown " onclick="closeNav(x)">
+                                    <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdownMenuLink"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Accueil
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item text-dark" href="index.html">Accueil</a>
+                                        <a class="dropdown-item text-dark" href="page-profil.html">Profil</a>
+                                        <a class="dropdown-item text-dark" href="#">?</a>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
+                            <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                                <li><a href="formulaire_inscription.html" onclick="closeNav(x)"
+                                        class="title-menu">S'inscrire</a></li>
+                                <li><a href="formulaire_connexion.html" onclick="closeNav(x)" class="title-menu ">Se
+                                        connecter</a></li>
+                            </div>
+
+                        </ul>
+
                     </div>
-                    <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
-                        <li><a href="formulaire_inscription.html" onclick="closeNav(x)"
-                                class="title-menu">S'inscrire</a></li>
-                        <li><a href="formulaire_connexion.html" onclick="closeNav(x)" class="title-menu ">Se
-                                connecter</a></li>
-                            </div>
-
-                    </ul>
 
                 </div>
-
-            </div>
-            <div id="ecart-menu">
-                <!--&#9776;=icon menu-->
-                <div class="icon-menu ml-3" onclick="openNav(y)">&#9776;</div>
+                <div id="ecart-menu">
+                    <div class="icon-menu ml-3" onclick="openNav(y)">&#9776;</div>
+                </div>
             </div>
         </div>
+
+   
+
+<div class="container-fluid p-0">
+    <!-- Page Wrapper  -->
+    <div class="page-wrapper">
+
+        <!-- Post slider -->
+        <div class="post-slider position-relative">
+            <!-- <h1 class="slider-title text-center">Nos jeux</h1> -->
+            <i class="fas fa-chevron-left prev position-absolute"></i>
+            <i class="fas fa-chevron-right next position-absolute"></i>
+
+            <div class="post-wrapper">
+                <div class="post">
+                    <img src="img/monde-post-apo.jpg" alt="" class="slider-image w-100">
+                    <div class="circle-singleline">
+                        <p>2-3 personnes</p>
+                    </div>
+                    <div class="post-info p-2">
+                        <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                        <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                            ducimus tempore, qui
+                            recusandae, quidem possimus in architecto rerum cupiditate...</p>
+                        <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="img/princess-world.jpg" alt="" class="slider-image w-100">
+                    <div class="circle-singleline">
+                        <p>1 personne</p>
+                    </div>
+                    <div class="post-info p-2">
+                        <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                        <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                            ducimus tempore, qui
+                            recusandae, quidem possimus in architecto rerum cupiditate...</p>
+                        <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="img/escape-the-planet.jpg" alt="" class="slider-image w-100">
+                    <div class="circle-singleline">
+                        <p>2-6 personnes</p>
+                    </div>
+                    <div class="post-info p-2">
+                        <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                        <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                            ducimus tempore, qui
+                            recusandae, quidem possimus in architecto rerum cupiditate...</p>
+
+                        <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="img/monde-post-apo.jpg" alt="" class="slider-image w-100">
+                    <div class="circle-singleline">
+                        <p>2-3 personnes</p>
+                    </div>
+                    <div class="post-info p-2">
+                        <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                        <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                            ducimus tempore, qui
+                            recusandae, quidem possimus in architecto rerum cupiditate...</p>
+                        <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="img/princess-world.jpg" alt="" class="slider-image w-100">
+                    <div class="circle-singleline">
+                        <p>1 personne</p>
+                    </div>
+                    <div class="post-info p-2">
+                        <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                        <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                            ducimus tempore, qui
+                            recusandae, quidem possimus in architecto rerum cupiditate...</p>
+                        <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="img/escape-the-planet.jpg" alt="" class="slider-image w-100">
+                    <div class="circle-singleline">
+                        <p>2-6 personnes</p>
+                    </div>
+                    <div class="post-info p-2">
+                        <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                        <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                            ducimus tempore, qui
+                            recusandae, quidem possimus in architecto rerum cupiditate...</p>
+                        <p class="text-right mx-3"><a href="#" class="text-right">En savoir plus</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
+   
 </div>
 
 
 
 
 
-    <div class="container-fluid p-0" id="container-escape">
-        <div class="container p-0 ">
-            <div class="row row-cols-1 row-cols-md-3 text-light cards-game-presta">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0 ">
-                    <div class="card-real mx-2">
-
-                        <!-- FUTUR LIEN DU JEU -->
-                        <div class="bg-overlay"></div>
-                        <div class="triangle-right position-absolute"></div>
-                        <img src="img/monde-post-apo.jpg" class="card-img img-card-game " alt="...">
-
-                        <div class="card-img-overlay description-game-hover px-5 pt-5">
-                            <h5 class="card-title text-uppercase">Warrior Game</h5>
-                            <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                            <p class="note-game">18/20</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 mx-card-game p-sm-0 ">
-                    <div class="card-real mx-2">
-                        <!-- FUTUR LIEN DU JEU -->
-                        <div class="bg-overlay"></div>
-                        <img src="img/princess-world.jpg" class="card-img img-card-game" alt="...">
-                        <div class="card-img-overlay description-game-hover px-5 pt-5">
-                            <h5 class="card-title text-uppercase">Warrior Game</h5>
-                            <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                            <p class="note-game">18/20</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0">
-                    <div class="card-real mx-2">
-                        <!-- FUTUR LIEN DU JEU -->
-                        <div class="bg-overlay"></div>
-                        <img src="img/escape-the-planet.jpg" class="card-img img-card-game" alt="...">
-                        <div class="card-img-overlay description-game-hover px-5 pt-5">
-                            <h5 class="card-title text-uppercase">Warrior Game</h5>
-                            <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                            <p class="note-game">18/20</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0">
-                    <div class="card-real mx-2">
-                        <!-- FUTUR LIEN DU JEU -->
-                        <div class="bg-overlay"></div>
-                        <img src="img/monde-post-apo.jpg" class="card-img img-card-game" alt="...">
-                        <div class="card-img-overlay description-game-hover px-5 pt-5">
-                            <h5 class="card-title text-uppercase">Warrior Game</h5>
-                            <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                            <p class="note-game">18/20</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 mx-card-game p-sm-0">
-                    <div class="card-real mx-2">
-                        <!-- FUTUR LIEN DU JEU -->
-                        <div class="bg-overlay"></div>
-                        <img src="img/princess-world.jpg" class="card-img img-card-game " alt="...">
-                        <div class="card-img-overlay description-game-hover px-5 pt-5">
-                            <h5 class="card-title text-uppercase">Warrior Game</h5>
-                            <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-
-                            <p class="note-game ">18/20</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0">
-                    <div class="card-real mx-2">
-                        <!-- FUTUR LIEN DU JEU -->
-                        <div class="bg-overlay"></div>
-                        <img src="img/escape-the-planet.jpg" class="card-img img-card-game" alt="...">
-                        <div class="card-img-overlay description-game-hover px-5 pt-5">
-                            <h5 class="card-title text-uppercase">Warrior Game</h5>
-                            <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                            <p class="note-game">18/20</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-       <div id="carousel-with-lb" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-
-            <div class="carousel-inner mdb-lightbox" role="listbox">
-                <div id="mdb-lightbox-ui"></div>
-
-                <div class=" carousel-item active text-center">
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/monde-post-apo.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/princess-world.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/escape-the-planet.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="carousel-item text-center">
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/monde-post-apo.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/princess-world.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/escape-the-planet.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="carousel-item text-center">
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/monde-post-apo.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/princess-world.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-
-                    <figure class="col-md-3 d-md-inline-block">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="img/escape-the-planet.jpg" alt="Card image cap">
-                            <div class="card-body">
-
-                                <h5 class="card-title text-uppercase">Warrior Game</h5>
-                                <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                                <p class="note-game">18/20</p>
-
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-            <div class="controls-top d-flex justify-content-between">
-                <a class="btn-floating btn-secondary" href="#carousel-with-lb" data-slide="prev"><i
-                        class="fas fa-chevron-left ml-5"></i></a>
-                <a class="btn-floating btn-secondary" href="#carousel-with-lb" data-slide="next"><i
-                        class="fas fa-chevron-right mr-5"></i></a>
-            </div>
-        </div>
-
-    
-    </div>
 
 
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Slick Carousel -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
     <script>
@@ -339,12 +195,67 @@
         var x = window.matchMedia("(max-width: 1199.98px)")
         closeNav(x) // Call listener function at run time
         x.addListener(closeNav) // Attach listener function on state changes
-        
+
+
+
+        $('.post-wrapper').slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: $('.next'),
+      prevArrow: ('.prev'),
+    responsive: [
+        {
+            breakpoint: 1400,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+    
+            }
+          },
+      {
+        breakpoint: 1034,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+
+        }
+      },
+      {
+        breakpoint: 890,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 660,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 590,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+
+
+
+
     </script>
 
 
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
