@@ -11,52 +11,6 @@
 </head>
 
 <body>
-    <header class="bg-header-sombre">
-        <div class="container-fluid p-0">
-            
-
-            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
-
-                <div class="bloc-form bg-light p-5 text-center">
-                    <h1 class="title-form text-uppercase mb-4">Créer votre compte</h1>
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        <div class="row ">
-                            <div class="input-text mb-4 mr-2">
-                                <input type="text" class="form-control" placeholder="Nom*" name="last_name" required>
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="text" class="form-control" placeholder="Prénom*" name="first_name" required>
-                            </div>
-                        </div>
-                        <div class="row flex-column">
-                            <div class="input-text mb-4">
-                                <input type="text" class="form-control" placeholder="Nom d'utilisateur*" name="username" required>
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="email" class="form-control" placeholder="Email*" name="email" required>
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="email" class="form-control" placeholder="Confirmez email*" name="confirmation_email" required>
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type=password class="form-control" placeholder="Mot de passe*" name="password" required>
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="password" class="form-control" placeholder="Confirmez le mot de passe*" name="confirmation_password" required>
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="file" class="form-control" placeholder="Avatar*" name="avatar">
-                            </div>
-                            <a href="index.php" class="mb-3 text-left">Revenir à la page d'accueil</a>
-                            <div class="d-flex justify-content-center">
-                                <input type="submit" value="S'inscrire" class="btn-play-header text-light btn-inscription-width" name="inscription">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
 
 <?php 
 include 'connection_bdd.php';
@@ -101,7 +55,7 @@ if(isset($_POST['inscription'])) {
    } else {
       $erreur = "Tous les champs doivent être complétés !";
    }
-   echo($erreur);
+   
 
 
 
@@ -126,7 +80,7 @@ if(isset($_POST['inscription'])) {
                      'id' => $userinfo['id']
                      ));
                      $userinfo['image'] = $userinfo['id'].".".$extensionUpload;
-                     $msgavatar = "votre avatar a bien été mis à jour";
+                     $msgavatar = "votre avatar a été chargé avec succès";
                } else {
                   $msgavatar = "Erreur durant l'importation de votre photo de profil";
                }
@@ -139,20 +93,78 @@ if(isset($_POST['inscription'])) {
       }
       }
 }
-echo($msgavatar);
 ?>
 
+
+
+
+    <header class="bg-header-sombre">
+        <div class="container-fluid p-0">
+            
+
+            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
+
+                <div class="bloc-form bg-light p-5 text-center">
+                    <h1 class="title-form text-uppercase mb-4">Créer votre compte</h1>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="row ">
+                            <div class="input-text mb-3 mr-2">
+                                <input type="text" class="form-control" placeholder="Nom*" name="last_name" required>
+                            </div>
+                            <div class="input-text mb-3">
+                                <input type="text" class="form-control" placeholder="Prénom*" name="first_name" required>
+                            </div>
+                        </div>
+                        <div class="row flex-column">
+                            <div class="input-text mb-3">
+                                <input type="text" class="form-control" placeholder="Nom d'utilisateur*" name="username" required>
+                            </div>
+                            <div class="input-text mb-3">
+                                <input type="email" class="form-control" placeholder="Email*" name="email" required>
+                            </div>
+                            <div class="input-text mb-3">
+                                <input type="email" class="form-control" placeholder="Confirmez email*" name="confirmation_email" required>
+                            </div>
+                            <div class="input-text mb-3">
+                                <input type=password class="form-control" placeholder="Mot de passe*" name="password" required>
+                            </div>
+                            <div class="input-text mb-3">
+                                <input type="password" class="form-control" placeholder="Confirmez le mot de passe*" name="confirmation_password" required>
+                            </div>
+                            <div class="input-text mb-3">
+                                <input type="file" class="form-control" placeholder="Avatar*" name="avatar">
+                            </div>
+                        
+                            
+<!-- affichage de l'avatar-->
 <?php
 if(!empty($userinfo['image'])){
 ?>
-<img src="membres/avatars/<?php echo $userinfo['image'];?>" width="150" /> <!-- ca va prendre la hauteur automatiquement-->
+<img src="membres/avatars/<?php echo $userinfo['image'];?>" width="100" /> <!-- ca va prendre la hauteur automatiquement-->
 <?php
 } else {
 ?>
-<img src="membres/avatars/default-avatar.jpg" width="150" />
+<img src="membres/avatars/default-avatar.jpg" width="100" />
 <?php
 }
 ?>
+
+<!-- affichage des messages-->
+<?php if(isset($erreur)) { echo $erreur; } ?> </br>
+<?php if(isset($msgavatar)) { echo $msgavatar; } ?> </br>
+
+                            <a href="index.php" class="mb-3 text-left">Revenir à la page d'accueil</a>
+                            <div class="d-flex justify-content-center">
+                                <input type="submit" value="S'inscrire" class="btn-play-header text-light btn-inscription-width" name="inscription">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
 
 
 </body>

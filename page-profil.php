@@ -20,40 +20,6 @@ include 'connection_bdd.php';
 </head>
 
 <body>
-    <div class="container-fluid bg-profil">        
-        <div class="container" id="container-escape">
-            <div class="row flex-column">
-                <div class="bloc-page bg-light vh-100 d-flex justify-content-center ">
-                    <div class="col-6">                        
-                        <h1 class="title-form text-uppercase mb-4">Editer votre profil</h1>
-                        <form action="" method="POST" enctype="multipart/form-data">
-                            <div class="input-text mb-4">
-                                <input type="text" class="form-control" placeholder="Pseudo" name="newpseudo" value="<?php echo $user['username']; ?>">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="email" class="form-control" placeholder="Email" name="newmail" value="<?php echo $user['e_mail']; ?>">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type=password class="form-control" placeholder="Mot de passe" name="newmdp1">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="password" class="form-control" placeholder="Confirmation mot de passe" name="newmdp2">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="file" name="avatar" id="avatar">
-                            </div>
-                            <a href="enigma.php" class="mb-3 text-left">Revenir à la page énigme</a>
-                            <div class="d-flex justify-content-center">
-                                <input type="submit" value="Editer"
-                                    class="btn-play-header text-light btn-inscription-width">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 <?php
     if(isset($_SESSION['id'])) {
@@ -68,6 +34,7 @@ include 'connection_bdd.php';
             $insertpseudo = $bdd->prepare("UPDATE user SET username = ? WHERE id = ?");
             $insertpseudo->execute(array($newpseudo, $_SESSION['id']));
             $msgpseudo = "votre nom d'utilisateur a bien été modifié";
+            $user['username'] = $newpseudo;
             $_SESSION['pseudo'] = $newpseudo;
          } else {
             $msgpseudo = "votre nom d'utilisateur est identique";
@@ -82,6 +49,7 @@ include 'connection_bdd.php';
             $insertmail = $bdd->prepare("UPDATE user SET e_mail = ? WHERE id = ?");
             $insertmail->execute(array($newmail, $_SESSION['id']));
             $msgmail = "votre adresse email a bien été modifié";
+            $user['e_mail'] = $newmail;
          } else {
             $msgmail = "votre mail existe déjà dans la base de donnée";
          }
@@ -137,16 +105,40 @@ include 'connection_bdd.php';
 
 
 
+
+    <div class="container-fluid bg-profil">        
+        <div class="container" id="container-escape">
+            <div class="row flex-column">
+                <div class="bloc-page bg-light vh-100 d-flex justify-content-center ">
+                    <div class="col-6">                        
+                        <h1 class="title-form text-uppercase mb-4">Editer votre profil</h1>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="input-text mb-4">
+                                <input type="text" class="form-control" placeholder="Pseudo" name="newpseudo" value="<?php echo $user['username']; ?>">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="email" class="form-control" placeholder="Email" name="newmail" value="<?php echo $user['e_mail']; ?>">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type=password class="form-control" placeholder="Mot de passe" name="newmdp1">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="password" class="form-control" placeholder="Confirmation mot de passe" name="newmdp2">
+                            </div>
+                            <div class="input-text mb-4">
+                                <input type="file" name="avatar" id="avatar">
+                            </div>
+                            
 <!-- affichage de l'avatar-->
 <?php
     if(!empty($user['image']))
     {
     ?>
-    <img src="membres/avatars/<?php echo $user['image'];?>" width="150" /> <!-- ca va prendre la hauteur automatiquement-->
+    <img src="membres/avatars/<?php echo $user['image'];?>" width="130" /> <!-- ca va prendre la hauteur automatiquement-->
     <?php
     } else {
     ?>
-    <img src="membres/avatars/default-avatar.jpg" width="150" />
+    <img src="membres/avatars/default-avatar.jpg" width="130" />
     <?php
     }
     ?>
@@ -155,7 +147,25 @@ include 'connection_bdd.php';
     <?php if(isset($msgmdp)) { echo $msgmdp; } ?> </br>
     <?php if(isset($msgpseudo)) { echo $msgpseudo; } ?> </br>
     <?php if(isset($msgmail)) { echo $msgmail; } ?> </br>
-    <?php if(isset($msgavatar)) { echo $msgavatar; } ?>
+    <?php if(isset($msgavatar)) { echo $msgavatar; } ?> </br>
+
+                            <a href="enigma.php" class="mb-3 text-left">Revenir à la page énigme</a>
+                            <div class="d-flex justify-content-center">
+                            <input type="submit" value="Editer" class="mt-3 btn-play-header text-light btn-inscription-width">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
 
 <!-- sécurité page-->         
 <?php   
