@@ -151,6 +151,7 @@
 
 
 
+
     <script>
         function openNav(y) {
             if (y.matches) { //openNav est le nom donné au onclick qui, lorsqu'on clique sur le menu, il s'ouvrira grâce au getElementById qui récupère l'id "mySidenav" dans la div principale

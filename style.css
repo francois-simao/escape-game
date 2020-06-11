@@ -1,4 +1,4 @@
-body{margin: 0; padding: 0;}
+body{margin: 0; padding: 0; }
 
 
 .container-logo{margin-top: 148px;}
@@ -117,7 +117,6 @@ ul{list-style: none; }
 .sidenav a { text-decoration: none; color: white; transition: 0.3s; font-size: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-transform: uppercase; margin-left: 15px; margin-right: 15px;}
 .sidenav a:hover { color: #f1f1f1;}
 .btn-orange-create{display: unset;}
-.sidenav{margin-top: 30px;}
 .nav-link{margin-top: 2px;}
 .dropdown-item:hover{background-color: transparent;}
 
@@ -139,20 +138,19 @@ ul{list-style: none; }
 
 
 
+/**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
+
+ul{list-style: none; margin: 5px;}
+
+.sidenav a, li { text-decoration: none; color: white; transition: 0.3s;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-transform: uppercase; margin-left: 15px; margin-right: 15px;}
+
+.sidenav a{font-size: 15px;}
+.sidenav li{font-size: 20px;}
+
+.bg-color{background-color: #FF9C38;}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.img-avatar{width: 110px; height: 110px; clip-path: circle(50% at 50% 50%);}
 
 
 /**********************MEDIA QUERIES**********************/
@@ -160,12 +158,15 @@ ul{list-style: none; }
 @media (max-width: 1199.98px) {
 
 /*SLIDEBAR MENU */
-.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.87); overflow-x: hidden; transition: 0.5s; padding-top: 60px; z-index:2;}
+
+.sidenav, .sidenav-color { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.87); overflow-x: hidden; transition: 0.5s; padding-top: 60px; z-index:2;}
 .sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
 .icon-menu{cursor: pointer; font-size: 40px;  position: relative;} 
 .contenu-menu ul{display: flex; flex-direction: column; align-items: center;}
 .sidenav{margin-top: 0;}
 ul{padding: 0;}
+.sidenav{background-color: rgba(0, 0, 0, 0.87);}
+.sidenav-color{background-color: #FF9C38;}
 }
 
 @media (max-width: 991.98px) {
@@ -245,9 +246,12 @@ ul{padding: 0;}
 .post-slider .prev{left: 6px;}
 
 
+/**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
+
+.img-avatar { width: 124px; height: 124px;}
+
+
 }
-
-
 
 
 
@@ -310,6 +314,13 @@ ul{padding: 0;}
 .post-slider .next{right: 15px;}
 .post-slider .prev{left: 15px;}
 
+
+/**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
+
+.img-avatar { width: 155px; height: 155px;}
+.sidenav li {font-size: 35px;}
+
+
 }
 
 
@@ -364,6 +375,11 @@ ul{padding: 0;}
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
 .sidenav a{font-size: 23px; line-height: 54px;}
+
+/**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
+
+.img-avatar { width: 155px; height: 155px;}
+.sidenav li {font-size: 35px;}
 }
 
 
@@ -407,6 +423,11 @@ ul{padding: 0;}
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
 .sidenav a{font-size: 23px; line-height: 54px;}
+
+/**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
+
+.img-avatar { width: 155px; height: 155px;}
+.sidenav li {font-size: 35px;}
 }
 
 
