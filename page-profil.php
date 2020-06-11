@@ -42,10 +42,11 @@ include 'connection_bdd.php';
       }
 
       //mise à jour adresse mail
-      if(isset($_POST['newmail']) AND !empty($_POST['newmail'])) {
+      if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND isset($_POST['newmail2']) AND !empty($_POST['newmail2'])) {
          $newmail = htmlspecialchars($_POST['newmail']);
+         $newmail2 = htmlspecialchars($_POST['newmail2']);
          $mail = htmlspecialchars($user['e_mail']);
-         if($newmail != $mail){
+         if($newmail != $mail AND $newmail == $newmail2){
             $insertmail = $bdd->prepare("UPDATE user SET e_mail = ? WHERE id = ?");
             $insertmail->execute(array($newmail, $_SESSION['id']));
             $msgmail = "votre adresse email a bien été modifié";
@@ -120,6 +121,9 @@ include 'connection_bdd.php';
                                 <input type="email" class="form-control" placeholder="Email" name="newmail" value="<?php echo $user['e_mail']; ?>">
                             </div>
                             <div class="input-text mb-4">
+                                <input type="email" class="form-control" placeholder="Confirmation de votre email" name="newmail2">
+                            </div>
+                            <div class="input-text mb-4">
                                 <input type=password class="form-control" placeholder="Mot de passe" name="newmdp1">
                             </div>
                             <div class="input-text mb-4">
@@ -151,7 +155,7 @@ include 'connection_bdd.php';
 
                             <a href="enigma.php" class="mb-3 text-left">Revenir à la page énigme</a>
                             <div class="d-flex justify-content-center">
-                            <input type="submit" value="Editer" class="mt-3 btn-play-header text-light btn-inscription-width">
+                            <input type="submit" value="Enregistrez vos modifications" class="mt-3 btn-play-header text-light btn-inscription-width">
                             </div>
                         </form>
                     </div>
