@@ -1,4 +1,4 @@
-body{margin: 0; padding: 0; }
+body, html{margin: 0; padding: 0; height: 100%;}
 
 
 .container-logo{margin-top: 148px;}
@@ -132,11 +132,13 @@ ul{list-style: none; margin: 12px;}
 
 
 
+/* FOOTER */
 
-
-
-
-
+.page-wrap { min-height: 92%; margin-bottom: 0; }
+.page-wrap:after { content: ""; display: block;}
+.site-footer, .page-wrap:after { height: auto; }
+.site-footer { background: #406BD2;}
+.footer-realisation{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px; font-weight: 800;}
 
 
 

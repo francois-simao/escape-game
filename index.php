@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+<div class="page-wrap">
     <header>
         <div class="container-fluid bg-header">
             <div class="container">
@@ -148,8 +148,15 @@
     </div>
 
     <!-- FIN PARTIE CREATION JEUX -->
+    </div>
+<footer>
+        <div class="container-fluid site-footer ">
+            <div class="contenu-footer text-light d-flex justify-content-around text-center">
+                <p class="footer-realisation my-2 py-3">World Escape Game 2020 - Mentions légales</p>
 
-
+            </div>
+        </div>
+    </footer>
 
 
     <script>
