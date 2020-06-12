@@ -51,7 +51,7 @@
                     </div>
                     <div id="ecart-menu">
                         <!--&#9776;=icon menu-->
-                        <div class="icon-menu ml-3" onclick="openNav(y)">&#9776;</div>
+                        <div class="icon-menu ml-3 text-light" onclick="openNav(y)">&#9776;</div>
                     </div>
                 </div>
             </div>
