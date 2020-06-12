@@ -104,14 +104,14 @@ if(isset($_POST['inscription'])) {
 
             <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
 
-                <div class="bloc-form bg-light p-5 text-center">
-                    <h1 class="title-form text-uppercase mb-4">Créer votre compte</h1>
+                <div class="bloc-form bg-light px-5 py-2 text-center">
+                    <h1 class="title-form text-uppercase mb-4">Inscription</h1>
                     <form action="" method="POST" enctype="multipart/form-data">
-                        <div class="row ">
-                            <div class="input-text mb-3 mr-2">
+                        <div class="row justify-content-between ">
+                            <div class="input-text input-text-name mb-3 mr-2">
                                 <input type="text" class="form-control" placeholder="Nom*" name="last_name" required>
                             </div>
-                            <div class="input-text mb-3">
+                            <div class="input-text input-text-name mb-3">
                                 <input type="text" class="form-control" placeholder="Prénom*" name="first_name" required>
                             </div>
                         </div>
@@ -131,8 +131,9 @@ if(isset($_POST['inscription'])) {
                             <div class="input-text mb-3">
                                 <input type="password" class="form-control" placeholder="Confirmez le mot de passe*" name="confirmation_password" required>
                             </div>
+                            <div class="row flex-row-reverse justify-content-around mb-2">
                             <div class="input-text mb-3">
-                                <input type="file" class="form-control" placeholder="Avatar*" name="avatar">
+                                <input type="file" placeholder="Avatar*" name="avatar">
                             </div>
                         
                             
@@ -148,7 +149,7 @@ if(!empty($userinfo['image'])){
 <?php
 }
 ?>
-
+</div>
 <!-- affichage des messages-->
 <?php if(isset($erreur)) { echo $erreur; } ?> </br>
 <?php if(isset($msgavatar)) { echo $msgavatar; } ?> </br>

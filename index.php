@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+<div class="page-wrap">
     <header>
         <div class="container-fluid bg-header">
             <div class="container">
@@ -25,7 +25,7 @@
                                 <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
                                 <li><a href="#" onclick="closeNav(x)" class="title-menu btn-orange-create ">Créer son
                                         escape game</a></li>
-                                <li class="nav-item dropdown " onclick="closeNav(x)">
+                                <li class="nav-item dropdown mt-1" onclick="closeNav(x)">
                                     <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdownMenuLink"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Accueil
@@ -51,7 +51,7 @@
                     </div>
                     <div id="ecart-menu">
                         <!--&#9776;=icon menu-->
-                        <div class="icon-menu ml-3" onclick="openNav(y)">&#9776;</div>
+                        <div class="icon-menu ml-3 text-light" onclick="openNav(y)">&#9776;</div>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,15 @@
     </div>
 
     <!-- FIN PARTIE CREATION JEUX -->
+    </div>
+<footer>
+        <div class="container-fluid site-footer ">
+            <div class="contenu-footer text-light d-flex justify-content-around text-center">
+                <p class="footer-realisation my-2 py-3">World Escape Game 2020 - Mentions légales</p>
 
+            </div>
+        </div>
+    </footer>
 
 
     <script>
