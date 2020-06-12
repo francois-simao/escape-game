@@ -20,7 +20,7 @@ include 'connection_bdd.php';
 </head>
 
 <body>
-
+<!-- traitement du formulaire-->
 <?php
     if(isset($_SESSION['id'])) {
        //mise à jour username
@@ -106,14 +106,14 @@ include 'connection_bdd.php';
 
 
 
-
+    <!-- formulaire-->
     <div class="container-fluid bg-profil">        
         <div class="container" id="container-escape">
             <div class="row flex-column">
                 <div class="bloc-page bg-light vh-100 d-flex justify-content-center ">
                     <div class="col-6">                        
                         <h1 class="title-form text-uppercase mb-4">Editer votre profil</h1>
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form id="myForm" action="" method="POST" enctype="multipart/form-data">
                             <div class="input-text mb-4">
                                 <input type="text" class="form-control" placeholder="Pseudo" name="newpseudo" value="<?php echo $user['username']; ?>">
                             </div>
@@ -155,7 +155,7 @@ include 'connection_bdd.php';
 
                             <a href="enigma.php" class="mb-3 text-left">Revenir à la page énigme</a>
                             <div class="d-flex justify-content-center">
-                            <input type="submit" value="Enregistrez vos modifications" class="mt-3 btn-play-header text-light btn-inscription-width">
+                            <button type="button" id="essai" onclick="record_form()" class="mt-3 btn-play-header text-light btn-inscription-width" data-toggle="modal" data-target="#exampleModalCenter">Enregistrez vos modifications</button>
                             </div>
                         </form>
                     </div>
@@ -165,7 +165,26 @@ include 'connection_bdd.php';
     </div>
 
 
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -181,7 +200,7 @@ include 'connection_bdd.php';
 
 
 
-
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
