@@ -25,7 +25,7 @@
                                 <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
                                 <li><a href="#" onclick="closeNav(x)" class="title-menu btn-orange-create ">Créer son
                                         escape game</a></li>
-                                <li class="nav-item dropdown " onclick="closeNav(x)">
+                                <li class="nav-item dropdown mt-1" onclick="closeNav(x)">
                                     <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdownMenuLink"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Accueil
