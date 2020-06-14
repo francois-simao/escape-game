@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,15 +31,24 @@
                             <div class=" w-50">
                                 <li
                                     class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center  title-menu">
-                                    <img src="img/img-header-01.jpg" alt="..." class="img-fluid img-avatar mr-xl-3">
-                                    Soso</li>
+                                    <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
+                                        ?>
+                                        <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar mr-xl-3"/>
+                                        <?php
+                                        } else {
+                                        ?>
+                                        <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar mr-xl-3"/>
+                                        <?php
+                                        }
+                                        ?>
+                                    <?php echo ($_SESSION['pseudo']);?></li>
 
                             </div>
                             <div
                                 class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
-                                <li><a href="page-profil.html" onclick="closeNav(x)" class="title-menu">Editer
+                                <li><a href="page-profil.php" onclick="closeNav(x)" class="title-menu">Editer
                                         profil</a></li>
-                                <li><a href="page-logout.html" onclick="closeNav(x)" class="title-menu">Déconnexion</a>
+                                <li><a href="page-logout.php" onclick="closeNav(x)" class="title-menu">Déconnexion</a>
                                 </li>
                             </div>
 

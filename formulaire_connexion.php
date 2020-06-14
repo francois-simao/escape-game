@@ -63,7 +63,7 @@ if(isset($_POST['connection'])) {
           $_SESSION['pseudo'] = $userinfo['username'];
           $_SESSION['mail'] = $userinfo['e_mail'];
           $_SESSION['avatar'] = $userinfo['image'];
-          header("Location: enigma.php?id=".$_SESSION['id']);
+          header("Location: games.php?id=".$_SESSION['id']);
        } else {
           $erreur = "Mauvais mail ou mot de passe !";
        }

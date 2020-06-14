@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -36,7 +40,7 @@ if(isset($_POST['inscription'])) {
                      $insertmbr = $bdd->prepare("INSERT INTO user(username, password, e_mail, last_name, first_name) VALUES(?, ?, ?, ?, ?)");
                      $insertmbr->execute(array($pseudo, $mdp, $mail, $name1, $name2));
                      // var_dump($_POST);
-                     $erreur = "Votre compte a bien été créé !";
+                    //  $erreur = "Votre compte a bien été créé !";
                   } else {
                      $erreur = "Vos mots de passes ne correspondent pas !";
                   }
@@ -92,6 +96,22 @@ if(isset($_POST['inscription'])) {
          }
       }
       }
+
+    $mailconnect = htmlspecialchars($_POST['email']);
+    $mdpconnect = sha1($_POST['password']);
+    if(!empty($mailconnect) AND !empty($mdpconnect)) {
+       $requser = $bdd->prepare("SELECT * FROM user WHERE e_mail = ? AND password = ?");
+       $requser->execute(array($mailconnect, $mdpconnect));
+       $userexist = $requser->rowCount(); /*row=rangée, count=compte -> rowCount est une fonction qui permet de compter le nombre de rangées donc en l'occurence 2 dans notre requête pour s'assurer que les 2 rangées appelées, correspondent */
+       if($userexist == 1) {
+          $userinfo = $requser->fetch();
+          $_SESSION['id'] = $userinfo['id'];
+          $_SESSION['pseudo'] = $userinfo['username'];
+          $_SESSION['mail'] = $userinfo['e_mail'];
+          $_SESSION['avatar'] = $userinfo['image'];
+          header("Location: games.php?id=".$_SESSION['id']);
+       } 
+    } 
 }
 ?>
 
