@@ -1,7 +1,7 @@
 <!--page de réinitialisation du mot de passe-->
 <?php 
 //connexion à la base de données
-include 'connection_bdd.php';
+include 'connection_database.php';
 // validation recaptcha
 require_once 'recaptcha/autoload.php';
 ?>
@@ -22,6 +22,7 @@ require_once 'recaptcha/autoload.php';
 
 <body>
 
+<!--formulaire-->
     <div class="container-fluid p-0 bg-header-sombre">
 
         <div class="d-flex justify-content-center align-items-center vh-100 bg-opac " id="container-escape">
@@ -42,7 +43,7 @@ require_once 'recaptcha/autoload.php';
         </div>
     </div>
 
-
+<!--traitement du formulaire-->
 <?php
 if(isset($_POST['valider'])) {
     if(isset($_POST['g-recaptcha-response'])){

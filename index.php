@@ -38,10 +38,9 @@
                                 </li>
                             </div>
                             <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
-                                <li><a href="formulaire_inscription.php" onclick="closeNav(x)"
+                                <li><a href="registration.php" onclick="closeNav(x)"
                                         class="title-menu">S'inscrire</a></li>
-                                <li><a href="formulaire_connexion.php" onclick="closeNav(x)" class="title-menu ">Se
-                                        connecter</a></li>
+                                <li><a href="connection_user.php" onclick="closeNav(x)" class="title-menu ">Se connecter</a></li>
                                     </div>
 
                             </ul>
@@ -64,7 +63,7 @@
                     </div>
                     <div class="container-text-header text-light text-center">
                         <h1 class="title-head text-uppercase">world escape game</h1>
-                        <p class="text-head">BIENVENUE, venez vous éclater sur des games éclatées !</p>
+                        <p class="text-head">BIENVENUE, venez vous éclater sur des games éclatés !</p>
                     </div>
 
                     <div class="content-btn-play text-center d-flex justify-content-center">

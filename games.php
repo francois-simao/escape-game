@@ -1,3 +1,4 @@
+<!--page des jeux-->
 <?php
 session_start();
 ?>
@@ -46,9 +47,8 @@ session_start();
                             </div>
                             <div
                                 class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
-                                <li><a href="page-profil.php" onclick="closeNav(x)" class="title-menu">Editer
-                                        profil</a></li>
-                                <li><a href="page-logout.php" onclick="closeNav(x)" class="title-menu">Déconnexion</a>
+                                <li><a href="my_account.php" onclick="closeNav(x)" class="title-menu">Mon compte</a></li>
+                                <li><a href="page_logout.php" onclick="closeNav(x)" class="title-menu">Déconnexion</a>
                                 </li>
                             </div>
 
