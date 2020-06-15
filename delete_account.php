@@ -1,3 +1,4 @@
+<!--page de suppression du compte-->
 <?php
 session_start();
 ?>
@@ -16,7 +17,7 @@ if(isset($_SESSION['id'])) {
 
     $id = $_SESSION['id'];
     if(!empty($id) && is_numeric($id)){
-        include 'connection_bdd.php';
+        include 'connection_database.php';
         $query = "DELETE FROM user WHERE id=$id";
         $stmt = $bdd->prepare($query);
 	    $stmt->execute();

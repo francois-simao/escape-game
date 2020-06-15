@@ -16,8 +16,9 @@ session_start();
 
 <body>
 
+<!--traitement du formulaire-->
 <?php 
-include 'connection_bdd.php';
+include 'connection_database.php';
 
 if(isset($_POST['inscription'])) {
     $name1 = htmlspecialchars($_POST['last_name']);   /* htmlspecialchars convertit les caractères spéciaux en entité HTML pour éviter les injections de code*/
@@ -117,7 +118,7 @@ if(isset($_POST['inscription'])) {
 
 
 
-
+<!--formulaire-->
     <header class="bg-header-sombre">
         <div class="container-fluid p-0">
             

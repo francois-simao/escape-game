@@ -1,6 +1,7 @@
+<!--page de connexion-->
 <?php 
 session_start();
-include 'connection_bdd.php';
+include 'connection_database.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,7 @@ include 'connection_bdd.php';
 </head>
 
 <body>
+<!--formulaire-->
     <header class="bg-header-sombre">
         <div class="container-fluid p-0">
             <!-- <div class="container "> -->
@@ -38,7 +40,7 @@ include 'connection_bdd.php';
 
                     <div class="text-center">
                         <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a
-                                href="formulaire_inscription.php">Inscrivez-vous maintenant</a> <br>ou<br> </p>
+                                href="registration.php">Inscrivez-vous maintenant</a> <br>ou<br> </p>
                         <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
                     </div>
                 </div>
@@ -48,7 +50,7 @@ include 'connection_bdd.php';
 
     </header>
 
-
+<!--traitement du formulaire-->
 <?php
 if(isset($_POST['connection'])) {
     $mailconnect = htmlspecialchars($_POST['email']);
