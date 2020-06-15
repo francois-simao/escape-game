@@ -30,17 +30,21 @@ session_start();
                             class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
                             <div class=" w-50">
                                 <li
-                                    class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center  title-menu">
+                                    class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
+
                                     <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
                                         ?>
-                                        <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar mr-xl-3"/>
+                                        <div class="img-avatar-ronde mr-xl-3">
+                                        <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar "/>
                                         <?php
                                         } else {
                                         ?>
-                                        <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar mr-xl-3"/>
+                                        <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar "/>
                                         <?php
                                         }
                                         ?>
+                                        </div>
+
                                     <?php echo ($_SESSION['pseudo']);?></li>
 
                             </div>
