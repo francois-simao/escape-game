@@ -22,7 +22,13 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 
 /* MAQUETTE JEUX DISPONIBLES */
-.img-avatar{width: 110px;height: 110px; clip-path: circle();}
+/* .img-avatar{width: 110px;height: 110px; clip-path: circle();} */
+.img-avatar-ronde-01, .img-avatar-ronde-02 { display: inline-block; width: 110px; border-radius: 50%; overflow: hidden;}
+.img-avatar-ronde-01{height: 110px;}
+.img-avatar-ronde-02{height: auto;}
+.img-avatar { width: inherit; height: inherit; border-radius: inherit;}
+
+.img-avatar { object-fit: cover; object-position: right center;}
 
 
 /* MAQUETTE FORMULAIRE & CONNEXION  */
@@ -257,8 +263,9 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar { width: 124px; height: 124px;}
-
+/* .img-avatar { width: 124px; height: 124px;} */
+.img-avatar-ronde-01, .img-avatar-ronde-02{width: 124px;}
+.img-avatar-ronde-01{height: 124px;}
 
 }
 
@@ -323,7 +330,10 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar { width: 155px; height: 155px;}
+/* .img-avatar { width: 155px; height: 155px;} */
+.img-avatar-ronde-01, .img-avatar-ronde-02{width: 155px;}
+.img-avatar-ronde-01{height: 155px;}
+
 .sidenav li {font-size: 35px;}
 
 
@@ -377,7 +387,10 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar { width: 155px; height: 155px;}
+/* .img-avatar { width: 155px; height: 155px;} */
+.img-avatar-ronde-01, .img-avatar-ronde-02{width: 155px;}
+.img-avatar-ronde-01{height: 155px;}
+
 .sidenav li {font-size: 35px;}
 }
 
@@ -420,6 +433,9 @@ ul{padding: 0;}
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
 .img-avatar{ width: 155px; height: 155px;}
+.img-avatar-ronde-01, .img-avatar-ronde-02{width: 155px;}
+.img-avatar-ronde-01{height: 155px;}
+
 .sidenav li {font-size: 35px;}
 }
 
