@@ -154,11 +154,17 @@ include 'connection_bdd.php';
     <?php if(isset($msgmail)) { echo $msgmail; } ?> </br>
     <?php if(isset($msgavatar)) { echo $msgavatar; } ?> </br>
 
-                            <a href="games.php" class="mb-3 text-left">Revenir à la page des jeux</a>
+                        
                             <div class="d-flex justify-content-center">
-                            <button type="button" id="essai" onclick="record_form()" class="mt-3 btn-play-header text-light btn-inscription-width" data-toggle="modal" data-target="#exampleModalCenter">Enregistrez vos modifications</button>
+                            <button type="button" id="essai" onclick="record_form()" class="mb-2 mt-3 btn-play-header text-light btn-inscription-width" data-toggle="modal" data-target="#exampleModalCenter">Enregistrez vos modifications</button>
                             </div>
                         </form>
+
+                        <div class="d-flex justify-content-around mt-2 mb-2">
+                            <!-- suppression compte-->
+                            <a href="delete_account.php" onclick="return confirm('Etes-vous sûr de vouloir supprimer votre compte?');" class=" text-danger">Supprimer mon compte</a>
+                            <a href="games.php" class=" text-left">Revenir à la page des jeux</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,8 +193,6 @@ include 'connection_bdd.php';
   </div>
 </div>
 
-<!-- suppression compte-->
-<a href="delete_account.php" onclick="return confirm('Etes-vous sûr de vouloir supprimer votre compte?');" class="mb-3 text-left text-danger">Supprimer mon compte</a>
 
 
 
