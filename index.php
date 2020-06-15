@@ -69,7 +69,7 @@
                     <div class="content-btn-play text-center d-flex justify-content-center">
 
                         <div class="foo rectangle-right"></div>
-                        <div class="foo triangle-right"></div> <a href="games.html"
+                        <div class="foo triangle-right"></div> <a href="games.php"
                             class="btn-play-header btn-play-width text-light py-4 text-uppercase  ">Jouer</a>
                         <div class="foo triangle-left"></div>
                         <div class="foo rectangle-left"></div>
