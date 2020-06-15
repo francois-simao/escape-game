@@ -1,8 +1,5 @@
 //envoi du formulaire de la page profil
-function record_form() {
-    document.getElementById("myForm").submit();
-    document.getElementById("exampleModalCenter").modal('show');
-  }
+
 
 
 // if(record_form) {
