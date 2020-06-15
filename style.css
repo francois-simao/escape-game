@@ -22,13 +22,8 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 
 /* MAQUETTE JEUX DISPONIBLES */
-.img-card-game{width: 100%; height: 360px; border-radius: 6%;}
+.img-avatar{width: 110px;height: 110px; clip-path: circle();}
 
-.img-avatar-ronde{width: 100px;height: 100px;border-radius: 50%;overflow: hidden;}
-.img-avatar { width: inherit; height: inherit;}
-
-/* Bonus : keep aspect-ratio */ 
-.img-avatar { object-fit: cover; object-position: center;}
 
 /* MAQUETTE FORMULAIRE & CONNEXION  */
 .bg-header-sombre{background-image: url('img/img-header-01.jpg');width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; position: relative;}
@@ -262,7 +257,7 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar-ronde { width: 124px; height: 124px;}
+.img-avatar { width: 124px; height: 124px;}
 
 
 }
@@ -328,7 +323,7 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar-ronde { width: 155px; height: 155px;}
+.img-avatar { width: 155px; height: 155px;}
 .sidenav li {font-size: 35px;}
 
 
@@ -382,7 +377,7 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar-ronde { width: 155px; height: 155px;}
+.img-avatar { width: 155px; height: 155px;}
 .sidenav li {font-size: 35px;}
 }
 
@@ -424,7 +419,7 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar-ronde{ width: 155px; height: 155px;}
+.img-avatar{ width: 155px; height: 155px;}
 .sidenav li {font-size: 35px;}
 }
 
