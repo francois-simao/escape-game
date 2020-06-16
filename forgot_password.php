@@ -26,7 +26,7 @@ require_once 'recaptcha/autoload.php';
     <div class="container-fluid p-0 bg-header-sombre">
 
         <div class="d-flex justify-content-center align-items-center vh-100 bg-opac " id="container-escape">
-            <div class="bloc-form bg-light p-5 ">
+            <div class="bloc-form bg-light py-5 px-2 px-sm-2 px-md-5 px-lg-5 px-xl-5 ">
                 <h1>Réinitialiser mot de passe ?</h1>
                 <p>Vous avez oublié votre mot de passe ?<br> Veuillez entrer votre adresse e-mail, vous
                     receverai un nouveau votre mot de passe.</p>

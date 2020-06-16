@@ -46,7 +46,7 @@ session_start();
                                         <?php
                                         }
                                         ?>
-                                    <?php echo ($_SESSION['pseudo']);?></li>
+                                    <p class="ml-xl-3 mt-xl-3"><?php echo ($_SESSION['pseudo']);?></p></li>
                             </div>
                             <div
                                 class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
