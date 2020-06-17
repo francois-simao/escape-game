@@ -175,7 +175,7 @@ if(!empty($userinfo['image'])){
 
                             <a href="index.php" class="mb-3 text-left">Revenir à la page d'accueil</a>
                             <div class="d-flex justify-content-center">
-                                <input type="submit" value="S'inscrire" class="mt-3 btn-play-header text-light btn-inscription-width" name="inscription">
+                                <input type="submit" value="S'inscrire" class="mb-3 btn-play-header text-light btn-inscription-width" name="inscription">
                             </div>
                         </div>
                     </form>
