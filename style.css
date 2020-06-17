@@ -89,7 +89,7 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .content-btn-play{margin-top: 65px;}
 .btn-create-width{width: 44%;}
 .btn-play-width{width: 55%;} 
-.btn-inscription-width, .btn-connexion-width{width: 78%;}
+.btn-inscription-width, .btn-connexion-width{width: 88%;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
 .btn-inscription-width, .btn-connexion-width{font-size: 27px;}
 .btn-play-header{ height: 10%; padding: 10px 40px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 10px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}

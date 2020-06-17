@@ -112,7 +112,7 @@ include 'connection_database.php';
         <div class="container" id="container-escape">
             <div class="row flex-column">
                 <div class="bloc-page bg-light d-flex justify-content-center ">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 pt-xl-4">                        
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">                        
                         <h1 class="title-form text-uppercase mb-4 text-center mt-4">Editer votre profil</h1>
 
 <div class="d-flex justify-content-center mb-4">
