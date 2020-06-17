@@ -70,7 +70,7 @@
 
                         <div class="foo rectangle-right"></div>
                         <div class="foo triangle-right"></div> <a href="games.php"
-                            class="btn-play-header btn-play-width text-light py-4 text-uppercase  ">Jouer</a>
+                            class="btn-play-header btn-play-width text-light py-4 text-uppercase ">Jouer</a>
                         <div class="foo triangle-left"></div>
                         <div class="foo rectangle-left"></div>
 

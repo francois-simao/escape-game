@@ -106,14 +106,35 @@ include 'connection_database.php';
 ?>
 
 
-
+<div class="page-wrap">
     <!-- formulaire-->
-    <div class="container-fluid bg-profil">        
+    <div class="container-fluid bg-profil p-0">        
         <div class="container" id="container-escape">
             <div class="row flex-column">
-                <div class="bloc-page bg-light vh-100 d-flex justify-content-center ">
-                    <div class="col-6">                        
-                        <h1 class="title-form text-uppercase mb-4">Editer votre profil</h1>
+                <div class="bloc-page bg-light d-flex justify-content-center ">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 pt-xl-4">                        
+                        <h1 class="title-form text-uppercase mb-4 text-center mt-4">Editer votre profil</h1>
+
+<div class="d-flex justify-content-center mb-4">
+<!-- affichage de l'avatar-->
+<?php
+    if(!empty($user['image']))
+    {
+    ?>
+    <div class="img-avatar-ronde-account-01">
+        <img src="membres/avatars/<?php echo $user['image'];?>" width="130" class="img-fluid img-avatar"/> <!-- ca va prendre la hauteur automatiquement-->
+    </div>
+    <?php
+    } else {
+    ?>
+    <div class="img-avatar-ronde-account-02">
+        <img src="membres/avatars/default-avatar.jpg" width="130" class="img-fluid img-avatar"/>
+    </div>
+    <?php
+    }
+    ?>
+</div>
+
                         <form id="myForm" action="" method="POST" enctype="multipart/form-data">
                             <div class="input-text mb-4">
                                 <input type="text" class="form-control" placeholder="Pseudo" name="newpseudo" value="<?php echo $user['username']; ?>">
@@ -131,41 +152,40 @@ include 'connection_database.php';
                                 <input type="password" class="form-control" placeholder="Confirmation mot de passe" name="newmdp2">
                             </div>
                             <div class="input-text mb-4">
+                            <p>Veuillez choisir votre avatar :</p>
                                 <input type="file" name="avatar" id="avatar">
                             </div>
                             
-<!-- affichage de l'avatar-->
-<?php
-    if(!empty($user['image']))
-    {
-    ?>
-    <img src="membres/avatars/<?php echo $user['image'];?>" width="130" /> <!-- ca va prendre la hauteur automatiquement-->
-    <?php
-    } else {
-    ?>
-    <img src="membres/avatars/default-avatar.jpg" width="130" />
-    <?php
-    }
-    ?>
+
 
 <!-- affichage des messages-->
 
                         
                             <div class="d-flex justify-content-center">
-                            <button type="submit" class="mb-2 mt-3 btn-play-header text-light btn-inscription-width">Enregistrez vos modifications</button>
+                            <button type="submit" class="mb-4 mt-3 btn-play-header text-light btn-inscription-width">Enregistrez vos modifications</button>
                             </div>
                         </form>
 
-                        <div class="d-flex justify-content-around mt-2 mb-2">
+                        <div class="d-flex justify-content-around mt-2 mb-3 text-center">
                             <!-- suppression compte-->
                             <a href="delete_account.php" onclick="return confirm('Etes-vous sûr de vouloir supprimer votre compte?');" class=" text-danger">Supprimer mon compte</a>
-                            <a href="games.php" class=" text-left">Revenir à la page des jeux</a>
+                            <a href="games.php">Revenir à la page des jeux</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+</div>
+<footer>
+        <div class="container-fluid site-footer">
+            <div class="contenu-footer text-light d-flex justify-content-around text-center">
+                <p class="footer-realisation my-2 py-3">World Escape Game 2020 - Mentions légales</p>
+
+            </div>
+        </div>
+    </footer>
 
 
 <!-- Modal -->

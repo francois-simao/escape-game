@@ -23,12 +23,14 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 /* MAQUETTE JEUX DISPONIBLES */
 /* .img-avatar{width: 110px;height: 110px; clip-path: circle();} */
-.img-avatar-ronde-01, .img-avatar-ronde-02 { display: inline-block; width: 110px; border-radius: 50%; overflow: hidden;}
-.img-avatar-ronde-01{height: 110px;}
-.img-avatar-ronde-02{height: auto;}
-.img-avatar { width: inherit; height: inherit; border-radius: inherit;}
-
-.img-avatar { object-fit: cover; object-position: right center;}
+.img-avatar-ronde-games-01, .img-avatar-ronde-games-02, .img-avatar-ronde-account-01, .img-avatar-ronde-account-02{ display: inline-block;  border-radius: 50%; overflow: hidden;}
+.img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 110px;}
+.img-avatar-ronde-account-01, .img-avatar-ronde-account-02{width: 130px;}
+.img-avatar-ronde-games-01{height: 110px;}
+.img-avatar-ronde-account-01{height: 130px;}
+.img-avatar-ronde-games-02, .img-avatar-ronde-account-02{height: auto;}
+.img-avatar, .img-avatar-account { width: inherit; height: inherit; border-radius: inherit;}
+.img-avatar, .img-avatar-account { object-fit: cover; object-position:center;}
 
 
 /* MAQUETTE FORMULAIRE & CONNEXION  */
@@ -37,7 +39,7 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 
 /* MAQUETTE PAGE PROFIL */
-.bg-profil{background-image: url('img/img-create-game.jpg');width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; position: relative;}
+.bg-profil{background-image: url('img/img-create-game.jpg');width: 100%; height: auto; background-repeat: no-repeat; background-size: cover; position: relative;}
 
 
 
@@ -87,16 +89,13 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .content-btn-play{margin-top: 65px;}
 .btn-create-width{width: 44%;}
 .btn-play-width{width: 55%;} 
-.btn-inscription-width{width: 70%;}
-.btn-connexion-width{width: 98%;}
-
+.btn-inscription-width, .btn-connexion-width{width: 78%;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
-.btn-inscription-width, .btn-connexion-width{font-size: 33px;}
-
+.btn-inscription-width, .btn-connexion-width{font-size: 27px;}
 .btn-play-header{ height: 10%; padding: 10px 40px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 10px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
-.btn-play-header:active{transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); border-bottom: 1px solid;}
-
+.btn-play-header:active{transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); border-bottom: 1px solid; outline: none;}
 .btn-orange-create{ height: 10%; padding: 10px 15px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 5px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
+button:active{outline: none;}
 
 a:hover { text-decoration: none;}
 a.text-light:focus, a.text-light:hover {color: white!important; }
@@ -245,9 +244,10 @@ ul{padding: 0;}
 /**************************************** BUTTON  ****************************************/    
 .btn-play-width{ width: 82%; }
 .btn-create-width{width: 83.8%;}
-.btn-inscription-width, .btn-connexion-width{font-size: 30px; padding-left: 0; padding-right: 0}
+.btn-inscription-width, .btn-connexion-width{font-size: 21px; padding-left: 0; padding-right: 0}
 .btn-play-width, .btn-create-width {font-size: 24px;}
 .content-btn-play {margin-top: -15px;}
+
 
 
 /**************************************** MENU ****************************************/
@@ -263,9 +263,8 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-/* .img-avatar { width: 124px; height: 124px;} */
-.img-avatar-ronde-01, .img-avatar-ronde-02{width: 124px;}
-.img-avatar-ronde-01{height: 124px;}
+.img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 124px;}
+.img-avatar-ronde-games-01{height: 124px;}
 
 }
 
@@ -309,12 +308,10 @@ ul{padding: 0;}
 
 .btn-create-width{ width: 84.8%; }
 .btn-play-width{ width: 90%; }
- 
-.btn-inscription-width{width: 70%;}
-.btn-connexion-width{width: 98%;} 
 
+.btn-inscription-width, .btn-connexion-width{width: 63%;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
-.btn-inscription-width, .btn-connexion-width{font-size: 33px;}
+.btn-inscription-width, .btn-connexion-width{font-size: 25px;}
 
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
@@ -330,9 +327,9 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-/* .img-avatar { width: 155px; height: 155px;} */
-.img-avatar-ronde-01, .img-avatar-ronde-02{width: 155px;}
-.img-avatar-ronde-01{height: 155px;}
+
+.img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 155px;}
+.img-avatar-ronde-games-01{height: 155px;}
 
 .sidenav li {font-size: 35px;}
 
@@ -387,9 +384,9 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-/* .img-avatar { width: 155px; height: 155px;} */
-.img-avatar-ronde-01, .img-avatar-ronde-02{width: 155px;}
-.img-avatar-ronde-01{height: 155px;}
+
+.img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 155px;}
+.img-avatar-ronde-games-01{height: 155px;}
 
 .sidenav li {font-size: 35px;}
 }
@@ -432,9 +429,9 @@ ul{padding: 0;}
 
 /**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar{ width: 155px; height: 155px;}
-.img-avatar-ronde-01, .img-avatar-ronde-02{width: 155px;}
-.img-avatar-ronde-01{height: 155px;}
+
+.img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 155px;}
+.img-avatar-ronde-games-01{height: 155px;}
 
 .sidenav li {font-size: 35px;}
 }

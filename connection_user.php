@@ -33,7 +33,9 @@ include 'connection_database.php';
                                 <input type="password" class="form-control" placeholder="Mot de passe" name="password" required>
                             </div>
                             <a href="forgot_password.php" class="mb-3 text-left">Mot de passe oublié ?</a>
-                            <input type="submit" value="Validez" class="btn-play-header text-light btn-connexion-width" name="connection">
+                            <div class="d-flex justify-content-center">
+                                <input type="submit" value="Validez" class="btn-play-header text-light btn-connexion-width" name="connection">
+                            </div>
                         </div>
                     </form>
                         <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a

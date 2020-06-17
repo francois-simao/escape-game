@@ -34,13 +34,13 @@ session_start();
                                     class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
                                     <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
                                         ?>
-                                        <div class="img-avatar-ronde-01 mr-xl-3">
+                                        <div class="img-avatar-ronde-games-01 mr-xl-3">
                                         <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar"/>
                                         </div>
                                         <?php
                                         } else {
                                         ?>
-                                        <div class="img-avatar-ronde-02">
+                                        <div class="img-avatar-ronde-games-02">
                                         <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar "/>
                                         </div>
                                         <?php
