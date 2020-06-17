@@ -22,7 +22,7 @@ include 'connection_database.php';
         <div class="container-fluid p-0">
             <!-- <div class="container "> -->
             <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
-                <div class="bloc-form bg-light p-5">
+                <div class="bloc-form bg-light p-5 text-center">
                     <h2 class="title-form text-uppercase mb-4">Se connecter</h2>
                     <form action="" method="POST">
                         <div class="row flex-column">
@@ -32,17 +32,16 @@ include 'connection_database.php';
                             <div class="input-text mb-2">
                                 <input type="password" class="form-control" placeholder="Mot de passe" name="password" required>
                             </div>
-                            <a href="forgot_password.php" class="mb-3">Mot de passe oublié ?</a>
-                            <input type="submit" value="Validez" class="btn-play-header text-light btn-connexion-width" name="connection">
+                            <a href="forgot_password.php" class="mb-3 text-left">Mot de passe oublié ?</a>
+                            <div class="d-flex justify-content-center">
+                                <input type="submit" value="Validez" class="btn-play-header text-light btn-connexion-width" name="connection">
+                            </div>
                         </div>
                     </form>
-
-
-                    <div class="text-center">
                         <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a
                                 href="registration.php">Inscrivez-vous maintenant</a> <br>ou<br> </p>
                         <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>

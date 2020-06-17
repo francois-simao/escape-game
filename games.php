@@ -34,19 +34,23 @@ session_start();
                                     class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
                                     <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
                                         ?>
-                                        <div class="img-avatar-ronde-01 mr-xl-3">
+                                        <div class="img-avatar-ronde-games-01 mr-xl-3">
                                         <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar"/>
                                         </div>
                                         <?php
                                         } else {
                                         ?>
-                                        <div class="img-avatar-ronde-02">
+                                        <div class="img-avatar-ronde-games-02">
                                         <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar "/>
                                         </div>
                                         <?php
                                         }
                                         ?>
+<<<<<<< HEAD
                                     <p class="pl-3 pt-3"><?php echo ($_SESSION['pseudo']);?></p></li>
+=======
+                                    <p class="ml-xl-3 mt-xl-3"><?php echo ($_SESSION['pseudo']);?></p></li>
+>>>>>>> 908b9f1fa66a88bafa7aea1170cab572e6e941d6
                             </div>
                             <div
                                 class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">

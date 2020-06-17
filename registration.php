@@ -120,13 +120,11 @@ if(isset($_POST['inscription'])) {
 
 <!--formulaire-->
     <header class="bg-header-sombre">
-        <div class="container-fluid p-0">
-            
+        <div class="container-fluid bg-opac p-0">
+            <div class="h-100 d-flex justify-content-center py-0 py-sm-3 py-md-3 py-lg-3 py-xl-3">
 
-            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
-
-                <div class="bloc-form bg-light px-5 py-2 text-center">
-                    <h1 class="title-form text-uppercase mb-4">Inscription</h1>
+                <div class="bg-light px-5 py-2 text-center ">
+                    <h1 class="title-form text-uppercase my-3">Inscription</h1>
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="row justify-content-between ">
                             <div class="input-text input-text-name mb-3 mr-2">
@@ -177,7 +175,7 @@ if(!empty($userinfo['image'])){
 
                             <a href="index.php" class="mb-3 text-left">Revenir à la page d'accueil</a>
                             <div class="d-flex justify-content-center">
-                                <input type="submit" value="S'inscrire" class="btn-play-header text-light btn-inscription-width" name="inscription">
+                                <input type="submit" value="S'inscrire" class="mb-3 btn-play-header text-light btn-inscription-width" name="inscription">
                             </div>
                         </div>
                     </form>
