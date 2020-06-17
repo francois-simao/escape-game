@@ -24,6 +24,8 @@ include 'connection_database.php';
 <?php
     if(isset($_SESSION['id'])) {
        //mise à jour username
+       $msgerror = array();
+       $msgsucces = "";
       $requser = $bdd->prepare("SELECT * FROM user WHERE id = ?");
       $requser->execute(array($_SESSION['id']));
       $user = $requser->fetch(); /*inutile de faire une boucle while car il n'y a qu'un résultat par id, on peut donc le stocker directement dans une variable*/
@@ -33,11 +35,12 @@ include 'connection_database.php';
          if($newpseudo != $pseudo){
             $insertpseudo = $bdd->prepare("UPDATE user SET username = ? WHERE id = ?");
             $insertpseudo->execute(array($newpseudo, $_SESSION['id']));
-            $msgpseudo = "votre nom d'utilisateur a bien été modifié";
+            $msgerror[] = "vos modifications ont été effectuées avec succès";
             $user['username'] = $newpseudo;
             $_SESSION['pseudo'] = $newpseudo;
          } else {
             $msgpseudo = "votre nom d'utilisateur est identique";
+            $msgerror[] = "votre nom d'utilisateur est identique";
          }
       }
 
@@ -49,10 +52,11 @@ include 'connection_database.php';
          if($newmail != $mail AND $newmail == $newmail2){
             $insertmail = $bdd->prepare("UPDATE user SET e_mail = ? WHERE id = ?");
             $insertmail->execute(array($newmail, $_SESSION['id']));
-            $msgmail = "votre adresse email a bien été modifié";
+            $msgerror[] = "vos modifications ont été effectuées avec succès";
             $user['e_mail'] = $newmail;
          } else {
             $msgmail = "votre mail existe déjà dans la base de donnée";
+            $msgerror[] = "votre mail existe déjà dans la base de données";
          }
       }
 
@@ -63,9 +67,10 @@ include 'connection_database.php';
          if($mdp1 == $mdp2) {
             $insertmdp = $bdd->prepare("UPDATE user SET password = ? WHERE id = ?");
             $insertmdp->execute(array($mdp1, $_SESSION['id']));
-            $msgmdp = "votre mot de passe a bien été modifié";
+            $msgerror[] = "vos modifications ont été effectuées avec succès";
          } else {
             $msgmdp = "Vos deux mdp ne correspondent pas !";
+            $msgerror[] = "vos deux mot de passe ne correspondent pas !";
          }
       }
 
@@ -92,15 +97,18 @@ include 'connection_database.php';
                      ));
                      $user['image'] = $user['id'].".".$extensionUpload;
                      $_SESSION['avatar'] = $user['image'];
-                     $msgavatar = "votre avatar a bien été mis à jour";
+                     $msgerror[] = "vos modifications ont été effectuées avec succès";
                } else {
                   $msgavatar = "Erreur durant l'importation de votre photo de profil";
+                  $msgerror[] = "Erreur durant l'importation de votre photo de profil";
                }
             } else {
                $msgavatar = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
+               $msgerror[] = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
             }
          } else {
             $msgavatar = "Votre photo de profil ne doit pas dépasser 2Mo";
+            $msgerror[] = "Votre photo de profil ne doit pas dépasser 2Mo";
          }
       }
 ?>
@@ -179,10 +187,12 @@ include 'connection_database.php';
         </button>
       </div>
       <div class="modal-body">
-        <?php if(isset($msgmdp)) { echo $msgmdp; } ?> </br>
-        <?php if(isset($msgpseudo)) { echo $msgpseudo; } ?> </br>
-        <?php if(isset($msgmail)) { echo $msgmail; } ?> </br>
-        <?php if(isset($msgavatar)) { echo $msgavatar; } ?> </br>
+      <?php if (count($msgerror) == 0 ) {
+            echo "vos modifications ont été effectuées avec succès";
+            } else { ?>
+            <p class="text-success"> <?php echo implode($msgerror, "<br>");?> </p>
+            <?php
+            }?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
@@ -215,9 +225,9 @@ include 'connection_database.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-        <? if( isset($msgavatar) || isset($msgmail) || isset($msgmdp) || isset($msgpseudo) ){ ?>
+        <?php if( isset($msgavatar) || isset($msgmail) || isset($msgmdp) || isset($msgpseudo) ){ ?>
         <script>$("#exampleModalCenter").modal('show');</script>
-        <? } ?>
+        <?php } ?>
 </body>
 
 </html>
