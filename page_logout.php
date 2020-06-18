@@ -24,7 +24,7 @@ session_destroy();
             <div class="bloc-form bg-light p-5 text-center">
                 <h1 class="text-uppercase text-center">A bientôt !</h1>
                 <p>Vous avez été déconnecté avec succès!</p>
-                <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
+                <p class="mb-3 ">Vous allez être redirigé sur la page d'accueil automatiquement</p>
             </div>
         </div>
     </div>
@@ -33,6 +33,15 @@ session_destroy();
 
 
 
+    <script>
+// une fois la page completement chargée
+document.addEventListener('DOMContentLoaded', function() {
+    // mise en attente 20sec (20000ms)
+      setTimeout(function(){
+        window.location.href = 'index.php';
+    }, 5000);
+    }, false);
+</script>
 
 
 
