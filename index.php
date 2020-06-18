@@ -69,12 +69,7 @@
                     <div class="content-btn-play text-center d-flex justify-content-center">
 
                         <div class="foo rectangle-right"></div>
-<<<<<<< HEAD
                         <div class="foo triangle-right"></div> <a href="connection_user.php" class="btn-play-header btn-play-width text-light py-4 text-uppercase  ">Jouer</a>
-=======
-                        <div class="foo triangle-right"></div> <a href="games.php"
-                            class="btn-play-header btn-play-width text-light py-4 text-uppercase ">Jouer</a>
->>>>>>> 908b9f1fa66a88bafa7aea1170cab572e6e941d6
                         <div class="foo triangle-left"></div>
                         <div class="foo rectangle-left"></div>
 
