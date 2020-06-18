@@ -22,7 +22,7 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 
 /* MAQUETTE JEUX DISPONIBLES */
-/* .img-avatar{width: 110px;height: 110px; clip-path: circle();} */
+
 .img-avatar-ronde-games-01, .img-avatar-ronde-games-02, .img-avatar-ronde-account-01, .img-avatar-ronde-account-02{ display: inline-block;  border-radius: 50%; overflow: hidden;}
 .img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 110px;}
 .img-avatar-ronde-account-01, .img-avatar-ronde-account-02{width: 130px;}
@@ -33,6 +33,14 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .img-avatar, .img-avatar-account { object-fit: cover; object-position:center;}
 
 
+/* MAQUETTE PAGE ADMIN */
+.img-admin-01{ display: inline-block;overflow: hidden;}
+.img-admin-01{ height:200px; border-top-left-radius: 30px; border-top-right-radius: 30px;}
+.img-admin-02 { width: inherit; height: inherit; border-radius: inherit; object-fit: cover; object-position:center;}
+.post-admin{height: 460px; display: inline-block; background-color: white; margin: 0px 10px; border-radius: 30px; box-shadow: 1rem 1rem 1rem -1rem #0000003a;}
+
+
+
 /* MAQUETTE FORMULAIRE & CONNEXION  */
 .bg-header-sombre{background-image: url('img/img-header-01.jpg');width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; position: relative;}
 .bg-opac{background-color: rgba(0, 0, 0, 0.726); height: 100vh;}
@@ -40,6 +48,12 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 /* MAQUETTE PAGE PROFIL */
 .bg-profil{background-image: url('img/img-create-game.jpg');width: 100%; height: auto; background-repeat: no-repeat; background-size: cover; position: relative;}
+
+/* MAQUETTE PAGE ADMIN */
+
+
+
+
 
 
 
@@ -95,11 +109,12 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .btn-play-header{ height: 10%; padding: 10px 40px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 10px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
 .btn-play-header:active{transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); border-bottom: 1px solid; outline: none;}
 .btn-orange-create{ height: 10%; padding: 10px 15px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 5px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
-button:active{outline: none;}
+button{outline: none;}
+.button-admin-creation{font-size: 28px;}
 
 a:hover { text-decoration: none;}
 a.text-light:focus, a.text-light:hover {color: white!important; }
-input{border: none;}
+input{border: none; outline: none;}
 
 
 /**************************************** MENU ****************************************/
@@ -136,13 +151,37 @@ ul{list-style: none; margin: 12px;}
 
 
 
-/* FOOTER */
+/**************************************** FOOTER ****************************************/
 
 .page-wrap { min-height: 92%; margin-bottom: 0; }
 .page-wrap:after { content: ""; display: block;}
 .site-footer, .page-wrap:after { height: auto; }
 .site-footer { background: #406BD2;}
 .footer-realisation{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px; font-weight: 800;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

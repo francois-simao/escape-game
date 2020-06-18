@@ -13,59 +13,58 @@ session_start();
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-
     <link rel="stylesheet" href="style.css">
     <title>W.E.G - Jeux</title>
 </head>
 
 <body>
     <div class="page-wrap">
-    <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
-        <div class="container ">
-            <div class="row  ">
+        <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
+            <div class="container ">
+                <div class="row  ">
 
-                <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
-                    <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
-                    <div class=" contenu-menu ">
-                        <ul
-                            class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
-                            <div class=" w-50">
-                                <li
-                                    class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
-                                    <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
-                                        ?>
-                                        <div class="img-avatar-ronde-games-01 mr-xl-3">
-                                        <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar"/>
-                                        </div>
-                                        <?php
-                                        } else {
-                                        ?>
-                                        <div class="img-avatar-ronde-games-02">
-                                        <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar "/>
-                                        </div>
-                                        <?php
-                                        }
-                                        ?>
-                                    <p class="pl-3 pt-3"><?php echo ($_SESSION['pseudo']);?></p></li>
-                            </div>
-                            <div
-                                class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
-                                <li><a href="my_account.php" onclick="closeNav(x)" class="title-menu">Mon compte</a></li>
-                                <li><a href="page_logout.php" onclick="closeNav(x)" class="title-menu">Déconnexion</a>
-                                </li>
-                            </div>
+                    <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
+                        <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
+                        <div class=" contenu-menu ">
+                            <ul
+                                class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
+                                <div class=" w-50">
+                                    <li
+                                        class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
+                                        <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
+                                            ?>
+                                            <div class="img-avatar-ronde-games-01 mr-xl-3">
+                                            <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar"/>
+                                            </div>
+                                            <?php
+                                            } else {
+                                            ?>
+                                            <div class="img-avatar-ronde-games-02">
+                                            <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar "/>
+                                            </div>
+                                            <?php
+                                            }
+                                            ?>
+                                        <p class="pl-3 pt-3"><?php echo ($_SESSION['pseudo']);?></p></li>
+                                </div>
+                                <div
+                                    class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
+                                    <li><a href="my_account.php" onclick="closeNav(x)" class="title-menu">Mon compte</a></li>
+                                    <li><a href="page_logout.php" onclick="closeNav(x)" class="title-menu">Déconnexion</a>
+                                    </li>
+                                </div>
 
-                        </ul>
+                            </ul>
+
+                        </div>
 
                     </div>
-
-                </div>
-                <div id="ecart-menu">
-                    <div class="icon-menu ml-3 text-light" onclick="openNav(y)">&#9776;</div>
+                    <div id="ecart-menu">
+                        <div class="icon-menu ml-3 text-light" onclick="openNav(y)">&#9776;</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -193,6 +192,7 @@ session_start();
 
     </div>
 </div>
+
     <footer>
         <div class="container-fluid site-footer">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
