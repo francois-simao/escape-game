@@ -23,7 +23,9 @@ include 'connection_database.php';
 </head>
 
 <body>
-
+<?php
+    if(isset($_SESSION['id'])) {          
+?>
     <div class="page-wrap">
 
         <div class="container-fluid p-0 mb-4">
