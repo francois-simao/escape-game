@@ -110,7 +110,7 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .btn-play-header:active{transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); border-bottom: 1px solid; outline: none;}
 .btn-orange-create{ height: 10%; padding: 10px 15px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 5px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
 button{outline: none;}
-.button-admin-creation{font-size: 28px;}
+.button-admin-creation{font-size: 28px; width: 20%;}
 
 a:hover { text-decoration: none;}
 a.text-light:focus, a.text-light:hover {color: white!important; }
@@ -255,6 +255,11 @@ ul{padding: 0;}
 .img-logo-header img { width: 53%; height: auto; }
 .container-logo{margin-top: 0;}
 
+/* MAQUETTE JEUX DISPONIBLES */
+.img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 124px;}
+.img-avatar-ronde-games-01{height: 124px;}
+
+
 
 /**************************************** TITLES & TEXT  ****************************************/
 /* MAQUETTE ACCUEIL */
@@ -286,7 +291,7 @@ ul{padding: 0;}
 .btn-inscription-width, .btn-connexion-width{font-size: 21px; padding-left: 0; padding-right: 0}
 .btn-play-width, .btn-create-width {font-size: 24px;}
 .content-btn-play {margin-top: -15px;}
-
+.button-admin-creation{font-size: 20px; width: 90%;}
 
 
 /**************************************** MENU ****************************************/
@@ -300,10 +305,7 @@ ul{padding: 0;}
 .post-slider .prev{left: 6px;}
 
 
-/**************************************** MODIFICATIONS A METTRE DANS LE FICHIER ORIGINAL ****************************************/
 
-.img-avatar-ronde-games-01, .img-avatar-ronde-games-02{width: 124px;}
-.img-avatar-ronde-games-01{height: 124px;}
 
 }
 
@@ -351,6 +353,8 @@ ul{padding: 0;}
 .btn-inscription-width, .btn-connexion-width{width: 63%;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
 .btn-inscription-width, .btn-connexion-width{font-size: 25px;}
+
+.button-admin-creation{font-size: 26px; width: 64%;}
 
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
@@ -417,6 +421,7 @@ ul{padding: 0;}
 .btn-play-width { width: 68%; }
 .btn-create-width{width: 53.7%;}
 
+.button-admin-creation{ width: 53%;}
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
 .sidenav a{font-size: 23px; line-height: 54px;}
@@ -460,7 +465,7 @@ ul{padding: 0;}
 
 /**************************************** BUTTON ****************************************/
 .content-btn-play{margin-top: 29px;}
-
+.button-admin-creation{ width: 43%;}
 
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
@@ -489,7 +494,7 @@ ul{padding: 0;}
 /**************************************** BUTTON ****************************************/
 .content-btn-play{margin-top: 36px;}
 
-
+.button-admin-creation{width: 33%;}
 
 /**************************************** EFFECT & OTHER  ****************************************/
 /* MAQUETTE ACCUEIL */
@@ -516,11 +521,10 @@ ul{padding: 0;}
 
 /**************************************** BUTTON ****************************************/
 .content-btn-play{margin-top: 36px;}
+.closebtn, .icon-menu{display: none;}
+.button-admin-creation{ width: 30%;}
 
 .sidenav a, li{margin-left: 15px; margin-right: 15px;}
-
-.closebtn, .icon-menu{display: none;}
-
 }
     
     
@@ -564,7 +568,7 @@ ul{padding: 0;}
 .content-btn-play{text-align: center;} 
 .btn-create-width{width: 44%;}
 .btn-play-width{width: 45.2%;}  
-
+.button-admin-creation{ width: 25%;}
 
 .sidenav a, li{margin-left: 15px; margin-right: 15px;}
 
