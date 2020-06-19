@@ -28,30 +28,41 @@ include 'connection_database.php';
 ?>
     <div class="page-wrap">
 
-        <div class="container-fluid p-0 mb-4">
-
+        <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
             <div class="container">
                 <div class="row">
                     <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
-                        <div class="closebtn text-center text-light"onclick="closeNav(x)">&times;</div>
+                        <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
                         <div class="contenu-menu">
-                            <ul class>
-
+                            <ul class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
+                                <div class=" w-50">
+                                    <!-- <li class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
+                                    </li> -->
+                                </div>
+                                    <li><a href="page_logout.php" onclick="closeNav(x)"
+                                            class="title-menu">Déconnexion</a>
+                                    </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
+
+        <div class="container-fluid p-0 mb-4">
             <div class="d-flex justify-content-center">
+<<<<<<< HEAD
+                <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';"
+                    class="text-light btn-play-header button-admin-creation my-3 mt-5">
+=======
                 <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';" class="text-light btn-play-header button-admin-creation my-3 mt-5">
+>>>>>>> df0620c4913f7254732fea0f9b6dc235f2b62726
             </div>
-
             <div class="container  ">
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
                         <div class="post-admin mx-2 mb-5">
-
                             <div class="img-admin-01">
                                 <img src="img/monde-post-apo.jpg" alt="" class="img-admin-02 w-100">
                             </div>
@@ -184,12 +195,8 @@ include 'connection_database.php';
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </div>
+
     </div>
 
     <footer>
