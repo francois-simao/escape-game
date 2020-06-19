@@ -139,8 +139,7 @@
                     voulez,<br>
                     pour en faire un escape game unique !<br>
                     Votre seule limite, votre imagination !</p>
-                <a href="#"
-                    class="btn-play-header btn-create-width text-light py-4 text-uppercase action-button">Créer</a>
+                <a href="connection_admin.php" class="btn-play-header btn-create-width text-light py-4 text-uppercase action-button">Créer</a>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<!--page de connexion-->
+<!--page de connexion utilisateurs-->
 <?php 
 session_start();
 include 'connection_database.php';
