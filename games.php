@@ -18,6 +18,10 @@ session_start();
 </head>
 
 <body>
+<?php
+    if(isset($_SESSION['id'])) {  
+        
+?>
     <div class="page-wrap">
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
             <div class="container ">
@@ -285,11 +289,15 @@ session_start();
             ]
         });
 
-
-
-
     </script>
 
+<!-- sécurité page-->         
+<?php   
+}
+else {
+    header("Location: index.php");
+    }
+    ?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

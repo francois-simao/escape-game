@@ -13,7 +13,10 @@ include 'connection_database.php';
     <title>Document</title>
 </head>
 <body>
-    
+<?php
+    if(isset($_SESSION['id'])) {  
+        
+?>
 
 
 
@@ -24,6 +27,26 @@ include 'connection_database.php';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- sécurité page-->         
+<?php   
+}
+else {
+    header("Location: index.php");
+    }
+    ?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

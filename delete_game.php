@@ -14,12 +14,40 @@ include 'connection_database.php';
 </head>
 <body>
     
+<?php
+    if(isset($_SESSION['id'])) {  
+
+?>
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- sécurité page-->         
+<?php   
+}
+else {
+    header("Location: index.php");
+    }
+    ?>
 
 
 
