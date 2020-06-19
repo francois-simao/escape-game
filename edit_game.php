@@ -16,25 +16,30 @@ include 'connection_database.php';
     
 <?php
     // if(isset($_SESSION['id'])) {  
+        
+        $sql="SELECT * FROM game WHERE id=".$_GET['id']." ";
+        $req = $bdd->query($sql);
 
+
+
+            echo "<form action='' method='post'>";
+            while ($row=$req->fetch()){
+
+	        echo $row['id']." <input type='text' name ='new_name' value='".$row['name']."'>";
+            echo " <textarea rows='10' cols='50' name='new_history'> ".$row['history']." </textarea>";
+            }
+    echo "<input type='submit' value='modifier'>";
+    echo "</form>";
+
+        if (isset($_POST) AND !empty($_POST) ){
+            if (!empty($_POST['new_name']) AND !empty($_POST['new_history']) ) {	
+	
+	            $update = $bdd->prepare("UPDATE game SET name = ?, history = ?  WHERE id=".$_GET['id']." ");
+	            $update->execute(array($_POST['new_name'], $_POST['new_history'] ));
+                // header("Location: page_admin.php");
+                }
+            }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

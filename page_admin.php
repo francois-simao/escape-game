@@ -24,7 +24,9 @@ include 'connection_database.php';
 
 <body>
 <?php
-    // if(isset($_SESSION['id'])) {          
+    // if(isset($_SESSION['id'])) { 
+        $sql="SELECT * FROM game ";
+        $req = $bdd->query($sql);         
 ?>
     <div class="page-wrap">
 
@@ -52,35 +54,42 @@ include 'connection_database.php';
 
         <div class="container-fluid p-0 mb-4">
             <div class="d-flex justify-content-center">
-<<<<<<< HEAD
                 <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';"
                     class="text-light btn-play-header button-admin-creation my-3 mt-5">
-=======
-                <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';" class="text-light btn-play-header button-admin-creation my-3 mt-5">
->>>>>>> df0620c4913f7254732fea0f9b6dc235f2b62726
             </div>
+
+
             <div class="container  ">
                 <div class="row row-cols-1 row-cols-md-3">
+                    <?php
+                    while ($row=$req->fetch()){
+                    ?>
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
                         <div class="post-admin mx-2 mb-5">
+                            <?php if($row['image'] == NULL) { ?>
                             <div class="img-admin-01">
-                                <img src="img/monde-post-apo.jpg" alt="" class="img-admin-02 w-100">
+                                <img src="membres/jeux/default-game.jpg" alt="" class="img-admin-02 w-100">
                             </div>
+                            <?php } else {?>
+                            <div class="img-admin-01">
+                                <img src="membres/jeux/<?php echo ($_SESSION['image']);?>" alt="" class="img-admin-02 w-100">
+                            </div>
+                            <?php } ?>
 
                             <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                                <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo $row['name'] ?></h4>
                                 <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
+                                    <input type="button" value="Modifier" onclick="window.location.href ='edit_game.php?id=<?= $row['id'] ?>';" class="btn-play-header button-admin-slide text-light my-3">
+                                    <input type="button" value="Supprimer" onclick="window.location.href ='delete_game.php?id=<?= $row['id'] ?>';"class="btn-play-header button-admin-slide text-light my-3">
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
+                    <?php
+                    }
+                    ?>
+                    
+                    <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
                         <div class="post-admin mx-2 mb-5">
                             <div class="img-admin-01">
                                 <img src="img/princess-world.jpg" alt="" class="img-admin-02 w-100">
@@ -192,7 +201,7 @@ include 'connection_database.php';
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -249,12 +258,6 @@ include 'connection_database.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Slick Carousel -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-
-
-
-
-    </script>
 
 
 
