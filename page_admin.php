@@ -23,7 +23,9 @@ include 'connection_database.php';
 </head>
 
 <body>
-
+<?php
+    if(isset($_SESSION['id'])) {          
+?>
     <div class="page-wrap">
 
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
@@ -50,8 +52,12 @@ include 'connection_database.php';
 
         <div class="container-fluid p-0 mb-4">
             <div class="d-flex justify-content-center">
+<<<<<<< HEAD
                 <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';"
                     class="text-light btn-play-header button-admin-creation my-3 mt-5">
+=======
+                <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';" class="text-light btn-play-header button-admin-creation my-3 mt-5">
+>>>>>>> df0620c4913f7254732fea0f9b6dc235f2b62726
             </div>
             <div class="container  ">
                 <div class="row row-cols-1 row-cols-md-3">
