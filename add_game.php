@@ -8,21 +8,91 @@ include 'connection_database.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>Add Game</title>
 </head>
-<body>
+<body class="bg-add-game">
 <?php
     // if(isset($_SESSION['id'])) {  
         
 ?>
+<div class="page-wrap">
 
+    <div class="container-fluid bg-color p-0">
+        <div class="container">
+            <div class="row">
+                <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
+                    <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
+                    <div class="contenu-menu">
+                        <ul class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
+                            <div class=" w-50">
+                                <!-- <li class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
+                                </li> -->
+                            </div>
+                                <li><a href="page_logout.php" onclick="closeNav(x)"
+                                                class="title-menu">Déconnexion</a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+            <div class="container-fluid p-0 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                                <h1 class="text-dark text-uppercase text-center pb-md-4 pt-md-5 pb-xl-4 pt-xl-5">Créer un nouveau jeu</h1>
+                                <div class="d-flex justify-content-center">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control h-100"  placeholder="Entrer le nom du jeu">
+                                            </div>
+                                            <div class="form-group">
+                                                <label name="img-card-game">Choisissez un fond d'écran </label>
+                                                <input type="file" class="form-control h-100" >
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="number" class="form-control h-100" " placeholder="Entrer le nombre de joueurs">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="time" class="form-control h-100" placeholder="Entrer la durée du jeu">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Entrer la solution" rows="6"></textarea>
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                                <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5">Validez</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
 
-
-
-
+<footer>
+    <div class="container-fluid site-footer ">
+        <div class="col-12">
+            <div class="contenu-footer text-light d-flex justify-content-around text-center">
+            <p class="footer-realisation my-2 py-3">World Escape Game 2020 - Mentions légales</p>
+            </div>
+        </div>
+    </div>
+ </footer>
 
 
 

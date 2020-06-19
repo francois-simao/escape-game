@@ -53,8 +53,9 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 
 
-
-
+/* MAQUETTE PAGE ADD GAME ADMIN */
+textarea{resize: none;}
+/* .bg-add-game{background-color: #FF9C38;} */
 
 
 /**************************************** TITLES & TEXT  ****************************************/
@@ -111,6 +112,7 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .btn-orange-create{ height: 10%; padding: 10px 15px; border-radius: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800; text-decoration: none; background-color: #FF9C38; border-bottom: 5px solid rgb(197,104,22,1); transition: all 0.1s; -webkit-transition: all 0.1s; outline: none;}
 button{outline: none;}
 .button-admin-creation{font-size: 28px; width: 20%;}
+.btn-add-game{font-size: 23px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800;}
 
 a:hover { text-decoration: none;}
 a.text-light:focus, a.text-light:hover {color: white!important; }

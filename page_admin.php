@@ -52,12 +52,7 @@ include 'connection_database.php';
 
         <div class="container-fluid p-0 mb-4">
             <div class="d-flex justify-content-center">
-<<<<<<< HEAD
-                <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';"
-                    class="text-light btn-play-header button-admin-creation my-3 mt-5">
-=======
                 <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';" class="text-light btn-play-header button-admin-creation my-3 mt-5">
->>>>>>> df0620c4913f7254732fea0f9b6dc235f2b62726
             </div>
             <div class="container  ">
                 <div class="row row-cols-1 row-cols-md-3">
@@ -215,27 +210,6 @@ include 'connection_database.php';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- sécurité page-->         
 <?php   
 // }
@@ -244,17 +218,6 @@ include 'connection_database.php';
 //     }
     ?>
 
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Slick Carousel -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-
-
-
-
-    </script>
 
 
 
