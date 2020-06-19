@@ -1,3 +1,13 @@
+<!-- page admin-->
+<?php
+session_start();
+// connexion base de données
+include 'connection_database.php';
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,8 +42,7 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <input type="button" value="Ajouter un nouveau jeu"
-                    class="text-light btn-play-header button-admin-creation my-5 mt-5 text-center">
+                <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php;'" class="text-light btn-play-header button-admin-creation my-3 mt-5">
             </div>
 
             <div class="container  ">

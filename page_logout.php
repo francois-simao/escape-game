@@ -36,7 +36,7 @@ session_destroy();
     <script>
 // une fois la page completement chargée
 document.addEventListener('DOMContentLoaded', function() {
-    // mise en attente 20sec (20000ms)
+    // mise en attente 5sec et redirection
       setTimeout(function(){
         window.location.href = 'index.php';
     }, 5000);
