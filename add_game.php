@@ -14,7 +14,7 @@ include 'connection_database.php';
 </head>
 <body>
 <?php
-    if(isset($_SESSION['id'])) {  
+    // if(isset($_SESSION['id'])) {  
         
 ?>
 
@@ -42,10 +42,10 @@ include 'connection_database.php';
 
 <!-- sécurité page-->         
 <?php   
-}
-else {
-    header("Location: index.php");
-    }
+// }
+// else {
+//     header("Location: index.php");
+//     }
     ?>
 
 

@@ -24,7 +24,7 @@ include 'connection_database.php';
 
 <body>
 <?php
-    if(isset($_SESSION['id'])) {          
+    // if(isset($_SESSION['id'])) {          
 ?>
     <div class="page-wrap">
 
@@ -229,7 +229,13 @@ include 'connection_database.php';
 
 
 
-
+<!-- sécurité page-->         
+<?php   
+// }
+// else {
+//     header("Location: index.php");
+//     }
+    ?>
 
 
 
