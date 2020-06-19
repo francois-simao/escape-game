@@ -30,13 +30,26 @@ include 'connection_database.php';
 
         <div class="container-fluid p-0 mb-4">
 
+            <div class="container">
+                <div class="row">
+                    <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
+                        <div class="closebtn text-center text-light"onclick="closeNav(x)">&times;</div>
+                        <div class="contenu-menu">
+                            <ul class>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="d-flex justify-content-center">
                 <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';" class="text-light btn-play-header button-admin-creation my-3 mt-5">
             </div>
 
-            <div class="container p-0 ">
+            <div class="container  ">
                 <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0 ">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
                         <div class="post-admin mx-2 mb-5">
 
                             <div class="img-admin-01">
@@ -56,7 +69,7 @@ include 'connection_database.php';
 
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0 ">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
                         <div class="post-admin mx-2 mb-5">
                             <div class="img-admin-01">
                                 <img src="img/princess-world.jpg" alt="" class="img-admin-02 w-100">
@@ -72,7 +85,7 @@ include 'connection_database.php';
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
                         <div class="post-admin mx-2 mb-5">
                             <div class="img-admin-01">
                                 <img src="img/escape-the-planet.jpg" alt="" class="img-admin-02 w-100">
@@ -89,7 +102,7 @@ include 'connection_database.php';
 
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
                         <div class="post-admin mx-2 mb-5">
                             <div class="img-admin-01">
                                 <img src="img/monde-post-apo.jpg" alt="" class="img-admin-02 w-100">
@@ -105,7 +118,7 @@ include 'connection_database.php';
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 mx-card-game p-sm-0">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 mx-card-game p-sm-0">
                         <div class="post-admin mx-2 mb-5">
                             <div class="img-admin-01">
                                 <img src="img/princess-world.jpg" alt="" class="img-admin-02 w-100">
@@ -121,7 +134,7 @@ include 'connection_database.php';
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-sm-0">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
                         <div class="post-admin mx-2 mb-5">
                             <div class="img-admin-01">
                                 <img src="img/escape-the-planet.jpg" alt="" class="img-admin-02 w-100">
@@ -135,7 +148,38 @@ include 'connection_database.php';
                                         class="btn-play-header button-admin-slide text-light my-3">
                                 </div>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
+                        <div class="post-admin mx-2 mb-5">
+                            <div class="img-admin-01">
+                                <img src="img/monde-post-apo.jpg" alt="" class="img-admin-02 w-100">
+                            </div>
+                            <div class="post-info p-2">
+                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                                <div class="d-flex flex-column align-items-center">
+                                    <input type="button" value="Modifier"
+                                        class="btn-play-header button-admin-slide text-light my-3">
+                                    <input type="button" value="Supprimer"
+                                        class="btn-play-header button-admin-slide text-light my-3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 mx-card-game p-sm-0">
+                        <div class="post-admin mx-2 mb-5">
+                            <div class="img-admin-01">
+                                <img src="img/princess-world.jpg" alt="" class="img-admin-02 w-100">
+                            </div>
+                            <div class="post-info p-2">
+                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
+                                <div class="d-flex flex-column align-items-center">
+                                    <input type="button" value="Modifier"
+                                        class="btn-play-header button-admin-slide text-light my-3">
+                                    <input type="button" value="Supprimer"
+                                        class="btn-play-header button-admin-slide text-light my-3">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
