@@ -21,7 +21,7 @@ include 'connection_database.php';
     <header class="bg-header-sombre">
         <div class="container-fluid p-0">
             <!-- <div class="container "> -->
-            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
+            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" >
                 <div class="bloc-form bg-light p-5 text-center">
                     <h2 class="title-form text-uppercase mb-4">Se connecter</h2>
                     <form action="" method="POST">
