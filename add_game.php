@@ -35,9 +35,13 @@ include 'connection_database.php';
                                 <!-- <li class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
                                 </li> -->
                             </div>
+                                <li><a href="page_admin.php" onclick="closeNav(x)"
+                                                class="title-menu">Retour à la page admin</a>
+                                </li>
                                 <li><a href="page_logout.php" onclick="closeNav(x)"
                                                 class="title-menu">Déconnexion</a>
                                 </li>
+                               
                         </ul>
                     </div>
                 </div>
@@ -45,6 +49,8 @@ include 'connection_database.php';
         </div>
     </div>
 
+
+<!-- formulaire-->
             <div class="container-fluid p-0 ">
                 <div class="container">
                     <div class="row">
@@ -52,28 +58,28 @@ include 'connection_database.php';
                                 <h1 class="text-dark text-uppercase text-center pb-md-4 pt-md-5 pb-xl-4 pt-xl-5">Créer un nouveau jeu</h1>
                                 <div class="d-flex justify-content-center">
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                        <form>
+                                        <form action="" method="POST" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <input type="text" class="form-control h-100"  placeholder="Entrer le nom du jeu">
+                                                <input type="text" class="form-control h-100"  placeholder="Entrer le nom du jeu" name ="name" required>
                                             </div>
                                             <div class="form-group">
                                                 <label name="img-card-game">Choisissez un fond d'écran </label>
-                                                <input type="file" class="form-control h-100" >
+                                                <input type="file" class="form-control h-100" name="image">
                                             </div>
                                             <div class="form-group">
-                                                <input type="number" class="form-control h-100" " placeholder="Entrer le nombre de joueurs">
+                                                <input type="number" class="form-control h-100" placeholder="Entrer le nombre de joueurs" name="number" required>
                                             </div>
                                             <div class="form-group">
-                                                <input type="time" class="form-control h-100" placeholder="Entrer la durée du jeu">
+                                                <input type="number" class="form-control h-100" placeholder="Entrer la durée du jeu" name="duration" required>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6"></textarea>
+                                                <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6" name="enigma" required></textarea>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" placeholder="Entrer la solution" rows="6"></textarea>
+                                                <textarea class="form-control" placeholder="Entrer la solution" rows="6" name="solution" required></textarea>
                                             </div>
                                             <div class="d-flex justify-content-center">
-                                                <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5">Validez</button>
+                                                <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5" name="ajouter">Validez</button>
                                             </div>
                                         </form>
                                     </div>
@@ -83,6 +89,64 @@ include 'connection_database.php';
                 </div>
             </div>
 </div>
+
+
+<!-- traitement du formulaire-->
+<?php
+if(isset($_POST['ajouter'])) {
+    $name = htmlspecialchars($_POST['name']);
+    $number = intval(htmlspecialchars($_POST['number']));
+    $duration = intval(htmlspecialchars($_POST['duration']));
+    $enigma = htmlspecialchars($_POST['enigma']);
+    $solution = intval(htmlspecialchars($_POST['solution']));
+        if(!empty($_POST['name']) AND !empty($_POST['number']) AND !empty($_POST['duration']) AND !empty($_POST['enigma']) AND !empty($_POST['solution'])) {
+            $reqgame = $bdd->prepare("SELECT * FROM game WHERE name = ?");
+            $reqgame->execute(array($name));
+            $nameexist = $reqgame->rowCount();
+            if($nameexist == 0) {
+            $insertmbr = $bdd->prepare("INSERT INTO game(name, duration, number_players, history, solution) VALUES(?, ?, ?, ?, ?)");
+            $insertmbr->execute(array($name, $duration, $number, $enigma, $solution));
+            } else {
+                echo "Ce nom est déjà utilisé";
+            }            
+        }
+
+
+        $reqgame->execute(array($name));    
+        $nameexist = $reqgame->rowCount(); 
+        if($nameexist == 1) {
+        $gameinfo = $reqgame->fetch();
+            if(isset($_FILES['image']) AND !empty($_FILES['image']['name'])) { 
+                $tailleMax = 2097152;
+                $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+                if($_FILES['image']['size'] <= $tailleMax) {
+                $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
+                    if(in_array($extensionUpload, $extensionsValides)) {
+                    $chemin = "membres/jeux/".$gameinfo['id'].".".$extensionUpload; 
+                    $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
+                        if($resultat) {
+                        $updateavatar = $bdd->prepare('UPDATE game SET image = :image WHERE id = :id');
+                        $updateavatar->execute(array(
+                        'image' => $gameinfo['id'].".".$extensionUpload,  /* image => nom du fichier */
+                        'id' => $gameinfo['id']
+                        ));
+                        $gameinfo['image'] = $gameinfo['id'].".".$extensionUpload;
+                        $msgavatar = "votre avatar a été chargé avec succès";
+                        } else {
+                        $msgavatar = "Erreur durant l'importation de votre photo de profil";
+                        }
+                    } else {
+                    $msgavatar = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
+                    }
+                } else {
+                $msgavatar = "Votre photo de profil ne doit pas dépasser 2Mo";
+                }
+            }
+        }
+    header("Location: page_admin.php");
+}
+?>
+
 
 <footer>
     <div class="container-fluid site-footer ">
