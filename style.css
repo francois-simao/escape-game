@@ -54,8 +54,8 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 
 /* MAQUETTE PAGE ADD GAME ADMIN */
-textarea{resize: none;}
-/* .bg-add-game{background-color: #FF9C38;} */
+textarea{resize: none; outline: none;}
+/* .bg-color-body{background-color: #FF9C38;} */
 
 
 /**************************************** TITLES & TEXT  ****************************************/
@@ -85,6 +85,8 @@ textarea{resize: none;}
 .title-form{font-size: 38px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 800;}
 .input-text-name{width: 48%;}
 .form-control{height: 29px;}
+
+
 
 
 /**************************************** EFFECT & OTHER  ****************************************/
@@ -307,7 +309,7 @@ ul{padding: 0;}
 .post-slider .prev{left: 6px;}
 
 
-
+.button-edit{display: flex; flex-direction: column; align-items: center;}
 
 }
 
@@ -357,6 +359,7 @@ ul{padding: 0;}
 .btn-inscription-width, .btn-connexion-width{font-size: 25px;}
 
 .button-admin-creation{font-size: 26px; width: 64%;}
+.button-edit{display: flex; flex-direction: column; align-items: center;}
 
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
