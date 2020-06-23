@@ -51,6 +51,7 @@ include 'connection_database.php';
             <div class="row flex-column">
                 <div class="d-flex justify-content-center ">
                     <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 px-2">
+                        <h1 class="title-form text-uppercase text-center mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0 mb-0 mb-sm-0 mb-md-0 mb-lg-4 mb-xl-4">Modifications du jeu</h1>
                         <?php
                             // if(isset($_SESSION['id'])) {  
                                 

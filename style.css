@@ -87,6 +87,8 @@ textarea{resize: none; outline: none;}
 .form-control{height: 29px;}
 
 
+
+
 /**************************************** EFFECT & OTHER  ****************************************/
 /* MAQUETTE ACCUEIL */
 /* HEADER */
@@ -357,6 +359,7 @@ ul{padding: 0;}
 .btn-inscription-width, .btn-connexion-width{font-size: 25px;}
 
 .button-admin-creation{font-size: 26px; width: 64%;}
+.button-edit{display: flex; flex-direction: column; align-items: center;}
 
 /**************************************** MENU ****************************************/
 .contenu-menu{ margin-top: 50px;} 
@@ -378,7 +381,7 @@ ul{padding: 0;}
 
 .sidenav li {font-size: 35px;}
 
-.button-edit{display: flex; flex-direction: column; align-items: center;}
+
 }
 
 

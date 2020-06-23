@@ -58,7 +58,7 @@ include 'connection_database.php';
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                                <h1 class="text-dark text-uppercase text-center pb-md-4 pt-md-5 pb-xl-4 pt-xl-5">Créer un nouveau jeu</h1>
+                                <h1 class="text-dark title-form text-uppercase text-center pb-md-4 pt-md-5 pb-xl-4 pt-xl-5">Créer un nouveau jeu</h1>
                                 <div class="d-flex justify-content-center">
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                         <form action="" method="POST" enctype="multipart/form-data">
