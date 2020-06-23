@@ -307,7 +307,7 @@ ul{padding: 0;}
 .post-slider .prev{left: 6px;}
 
 
-
+.button-edit{display: flex; flex-direction: column; align-items: center;}
 
 }
 
@@ -378,7 +378,7 @@ ul{padding: 0;}
 
 .sidenav li {font-size: 35px;}
 
-
+.button-edit{display: flex; flex-direction: column; align-items: center;}
 }
 
 

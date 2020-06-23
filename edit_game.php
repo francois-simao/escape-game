@@ -50,7 +50,7 @@ include 'connection_database.php';
         <div class="container">
             <div class="row flex-column">
                 <div class="d-flex justify-content-center ">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 px-2">
                         <?php
                             // if(isset($_SESSION['id'])) {  
                                 
@@ -59,7 +59,7 @@ include 'connection_database.php';
 
 
 
-                                    echo "<form action='' method='post' class='d-flex flex-column'>";
+                                    echo "<form action='' method='post' class='d-flex flex-column mt-5 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0'>";
                                     while ($row=$req->fetch()){
 
                                     echo "<div class='d-flex '>";
@@ -73,7 +73,7 @@ include 'connection_database.php';
                                     echo "</div>";
 
                                     echo "<label for='new_history' class=''>Histoire : </label>";
-                                    echo " <textarea rows='10' cols='50' class='mb-4' name='new_history'> ".$row['history']." </textarea>";
+                                    echo " <textarea rows='10' class='mb-4' name='new_history'> ".$row['history']." </textarea>";
 
                                     echo "<div class='d-flex flex-column'>";
                                     echo "<textarea name='' placeholder='Enigme 1' class='mb-3'></textarea>";
@@ -85,8 +85,8 @@ include 'connection_database.php';
                                     
                                     }
 
-                                    echo"<div class='d-flex justify-content-between mb-5'>";
-                                    echo "<a href='#' class='btn-play-header text-light'>Ajouter une énigme</a>";
+                                    echo"<div class='button-edit d-flex justify-content-between d-flex mb-5'>";
+                                    echo "<a href='#' class='btn-play-header text-light text-center mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0'>Ajouter une énigme</a>";
                                         echo "<input type='submit' class='btn-play-header  text-light text-center' value='Valider'>";
                                     echo "</div>";
                             echo "</form>";
