@@ -54,8 +54,8 @@ body, html{margin: 0; padding: 0; height: 100%;}
 
 
 /* MAQUETTE PAGE ADD GAME ADMIN */
-textarea{resize: none;}
-/* .bg-add-game{background-color: #FF9C38;} */
+textarea{resize: none; outline: none;}
+/* .bg-color-body{background-color: #FF9C38;} */
 
 
 /**************************************** TITLES & TEXT  ****************************************/
