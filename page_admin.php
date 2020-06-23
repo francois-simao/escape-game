@@ -72,7 +72,7 @@ include 'connection_database.php';
                             </div>
                             <?php } else {?>
                             <div class="img-admin-01">
-                                <img src="membres/jeux/<?php echo ($_SESSION['image']);?>" alt="" class="img-admin-02 w-100">
+                                <img src="membres/jeux/<?php echo ($row['image']);?>" alt="" class="img-admin-02 w-100">
                             </div>
                             <?php } ?>
 
@@ -89,119 +89,6 @@ include 'connection_database.php';
                     }
                     ?>
                     
-                    <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
-                        <div class="post-admin mx-2 mb-5">
-                            <div class="img-admin-01">
-                                <img src="img/princess-world.jpg" alt="" class="img-admin-02 w-100">
-                            </div>
-                            <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
-                        <div class="post-admin mx-2 mb-5">
-                            <div class="img-admin-01">
-                                <img src="img/escape-the-planet.jpg" alt="" class="img-admin-02 w-100">
-                            </div>
-                            <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
-                        <div class="post-admin mx-2 mb-5">
-                            <div class="img-admin-01">
-                                <img src="img/monde-post-apo.jpg" alt="" class="img-admin-02 w-100">
-                            </div>
-                            <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 mx-card-game p-sm-0">
-                        <div class="post-admin mx-2 mb-5">
-                            <div class="img-admin-01">
-                                <img src="img/princess-world.jpg" alt="" class="img-admin-02 w-100">
-                            </div>
-                            <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
-                        <div class="post-admin mx-2 mb-5">
-                            <div class="img-admin-01">
-                                <img src="img/escape-the-planet.jpg" alt="" class="img-admin-02 w-100">
-                            </div>
-                            <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0">
-                        <div class="post-admin mx-2 mb-5">
-                            <div class="img-admin-01">
-                                <img src="img/monde-post-apo.jpg" alt="" class="img-admin-02 w-100">
-                            </div>
-                            <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 mx-card-game p-sm-0">
-                        <div class="post-admin mx-2 mb-5">
-                            <div class="img-admin-01">
-                                <img src="img/princess-world.jpg" alt="" class="img-admin-02 w-100">
-                            </div>
-                            <div class="post-info p-2">
-                                <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input type="button" value="Modifier"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer"
-                                        class="btn-play-header button-admin-slide text-light my-3">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
