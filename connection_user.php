@@ -18,7 +18,7 @@ include 'connection_database.php';
 
 <body>
 <!--formulaire-->
-    <header class="bg-header-sombre">
+    <header class="bg-header">
         <div class="container-fluid p-0">
             <!-- <div class="container "> -->
             <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" >

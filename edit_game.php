@@ -67,10 +67,15 @@ include 'connection_database.php';
                                     echo $row['id']." <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value='".$row['name']."'>";
                                     echo "</div>";
 
-                                    echo"<div class='d-flex justify-content-between mb-3'>";
-                                        echo "<input type='number' placeholder='Nombre de joueurs'>";
-                                        echo "<label for='time_game' class='m-0'>Durée du jeu : </label>";
-                                        echo "<input type='time' placeholder='Durée du jeu' name='time_game' >";
+                                    echo"<div class='input-game-admin mb-3'>";
+                                        echo "<div class='input-number-admin mb-3'>"; 
+                                            echo "<label for='number_user' class='m-0'>Nombre de joueurs: </label>";
+                                            echo "<input type='number' name='number_user' class='border text-center'>";
+                                        echo "</div>";
+                                        echo "<div class='input-time-admin mb-3'>"; 
+                                            echo "<label for='time_game' class='m-0'>Durée du jeu : </label>";
+                                            echo "<input type='time' name='time_game' >";
+                                        echo "</div>";
                                     echo "</div>";
 
                                     echo "<label for='new_history' class=''>Histoire : </label>";

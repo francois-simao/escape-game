@@ -19,7 +19,7 @@ session_destroy();
 
 <body>
 
-    <div class="container-fluid p-0 bg-header-sombre">
+    <div class="container-fluid p-0 bg-header">
         <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
             <div class="bloc-form bg-light p-5 text-center">
                 <h1 class="text-uppercase text-center">A bientôt !</h1>

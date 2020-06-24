@@ -116,8 +116,8 @@ include 'connection_database.php';
 
 <div class="page-wrap">
     <!-- formulaire-->
-    <div class="container-fluid bg-profil p-0">        
-        <div class="container" id="container-escape">
+    <div class="container-fluid create-game p-0">        
+        <div class="container">
             <div class="row flex-column">
                 <div class="bloc-page bg-light d-flex justify-content-center ">
                     <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">                        

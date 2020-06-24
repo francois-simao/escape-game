@@ -53,8 +53,6 @@ include 'connection_database.php';
     </div>
 
 
-<<<<<<< HEAD
-=======
 <!-- formulaire-->
             <div class="container-fluid p-0 ">
                 <div class="container">
@@ -95,7 +93,6 @@ include 'connection_database.php';
             </div>
 </div>
 
->>>>>>> 9860e3ccb4d7d3f2ebbec7599dd7319e3df25ea2
 
 <!-- traitement du formulaire-->
 <?php
