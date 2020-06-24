@@ -53,6 +53,49 @@ include 'connection_database.php';
     </div>
 
 
+<<<<<<< HEAD
+=======
+<!-- formulaire-->
+            <div class="container-fluid p-0 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                                <h1 class="text-dark title-form text-uppercase text-center pb-md-4 pt-md-5 pb-xl-4 pt-xl-5">Créer un nouveau jeu</h1>
+                                <div class="d-flex justify-content-center">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                        <form action="" method="POST" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control h-100"  placeholder="Entrer le nom du jeu" name ="name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label name="img-card-game">Choisissez un fond d'écran </label>
+                                                <input type="file" class="form-control h-100" name="image">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="number" class="form-control h-100" placeholder="Entrer le nombre de joueurs" name="number" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="number" class="form-control h-100" placeholder="Entrer la durée du jeu" name="duration" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6" name="enigma" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Entrer la solution" rows="6" name="solution" required></textarea>
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                                <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5" name="ajouter">Validez</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+>>>>>>> 23c71b9eb584928040ce49d164109afafb0a9d96
 
 <!-- traitement du formulaire-->
 <?php

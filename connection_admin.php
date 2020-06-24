@@ -17,7 +17,7 @@ include 'connection_database.php';
 </head>
 <body>
    <!--formulaire-->
-   <header class="bg-header-sombre">
+   <header class="create-game">
         <div class="container-fluid p-0">
             <!-- <div class="container "> -->
             <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
