@@ -56,7 +56,7 @@ include 'connection_database.php';
                     <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 px-2">
                         <h1 class="title-form text-uppercase text-center mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0 mb-0 mb-sm-0 mb-md-0 mb-lg-4 mb-xl-4">Modifications du jeu</h1>
                         <?php                                
-                        $sql="SELECT * FROM game WHERE id=".$_GET['id']." ";
+                        $sql="SELECT * FROM game INNER JOIN enigma ON enigma.id_game = game.id WHERE game.id=".$_GET['id']." ";
                         $req = $bdd->query($sql);
                         ?>
 
@@ -68,35 +68,21 @@ include 'connection_database.php';
                         <?php $row['id'] ?> <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                         </div>
 
-<<<<<<< HEAD
                         <div class='d-flex justify-content-between mb-3'>
                         <label for='time_game' class='m-0'>Nombre de joueurs : </label>
                         <input type='text' value="<?php echo $row['number_players'] ?>">
                         <label for='time_game' class='m-0'>Durée du jeu : </label>
                         <input type='text' name='time_game' value="<?php echo $row['duration'] ?>">
                         </div>
-=======
-                                    echo"<div class='input-game-admin mb-3'>";
-                                        echo "<div class='input-number-admin mb-3'>"; 
-                                            echo "<label for='number_user' class='m-0'>Nombre de joueurs: </label>";
-                                            echo "<input type='number' name='number_user' class='border text-center'>";
-                                        echo "</div>";
-                                        echo "<div class='input-time-admin mb-3'>"; 
-                                            echo "<label for='time_game' class='m-0'>Durée du jeu : </label>";
-                                            echo "<input type='time' name='time_game' >";
-                                        echo "</div>";
-                                    echo "</div>";
->>>>>>> 23c71b9eb584928040ce49d164109afafb0a9d96
 
                         <label for='new_history' class=''>Histoire : </label>
                         <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
 
                         <div class='d-flex flex-column'>
-                        <textarea name='' placeholder='Enigme 1' class='mb-3'></textarea>
-                        <textarea name='' placeholder='Solution énigme 1' class='mb-5'></textarea>
+                        <textarea name='' placeholder='Enigme 1' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
+                        <textarea name='' placeholder='Solution énigme 1' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
 
-                        <textarea name='' placeholder='Enigme 2' class='mb-3'></textarea>
-                        <textarea name='' placeholder='Solution énigme 2' class='mb-5'></textarea>
+                        
                         </div>
                                     
                                                     <?php } ?>    

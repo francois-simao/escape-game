@@ -58,7 +58,7 @@ include 'connection_database.php';
         <div class="container-fluid p-0 mb-4">
             <div class="d-flex justify-content-center">
                 <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';"
-                    class="text-light btn-play-header button-admin-creation my-3 mt-5 px-3">
+                    class="text-light btn-play-header button-admin-creation my-3 mt-5">
             </div>
 
 
