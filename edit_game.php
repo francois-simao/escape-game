@@ -68,25 +68,16 @@ include 'connection_database.php';
                         <?php $row['id'] ?> <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                         </div>
 
-<<<<<<< HEAD
-                        <div class='d-flex justify-content-between mb-3'>
-                        <label for='time_game' class='m-0'>Nombre de joueurs : </label>
-                        <input type='text' value="<?php echo $row['number_players'] ?>">
-                        <label for='time_game' class='m-0'>Durée du jeu : </label>
-                        <input type='text' name='time_game' value="<?php echo $row['duration'] ?>">
+                        <div class='input-game-admin mb-3 text-center'>
+                            <div class="input-number-admin">
+                                <label for='time_game' class='mb-2'>Nombre de joueurs : </label>
+                                <input type='text' class='w-25 text-center border mb-3 mb-sm-3' value="<?php echo $row['number_players'] ?>">
+                            </div>
+                            <div class="input-time-admin">
+                                <label for='time_game' class='mb-2'>Durée du jeu : </label>
+                                <input type='text' class='w-25 text-center border mb-3 mb-sm-3' name='time_game' value="<?php echo $row['duration'] ?>">
+                            </div>
                         </div>
-=======
-                                    echo"<div class='input-game-admin mb-3'>";
-                                        echo "<div class='input-number-admin mb-3'>"; 
-                                            echo "<label for='number_user' class='m-0'>Nombre de joueurs: </label>";
-                                            echo "<input type='number' name='number_user' class='border text-center'>";
-                                        echo "</div>";
-                                        echo "<div class='input-time-admin mb-3'>"; 
-                                            echo "<label for='time_game' class='m-0'>Durée du jeu : </label>";
-                                            echo "<input type='time' name='time_game' >";
-                                        echo "</div>";
-                                    echo "</div>";
->>>>>>> 23c71b9eb584928040ce49d164109afafb0a9d96
 
                         <label for='new_history' class=''>Histoire : </label>
                         <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>

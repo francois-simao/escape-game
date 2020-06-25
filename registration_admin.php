@@ -110,11 +110,7 @@ if(isset($_POST['inscription'])) {
           $_SESSION['pseudo'] = $userinfo['username'];
           $_SESSION['mail'] = $userinfo['e_mail'];
           $_SESSION['avatar'] = $userinfo['image'];
-<<<<<<< HEAD
           header("Location: page_admin.php?id=".$_SESSION['id']);
-=======
-          header("Location: games.php?id=".$_SESSION['id']);
->>>>>>> 23c71b9eb584928040ce49d164109afafb0a9d96
        } 
     } 
 }
@@ -123,11 +119,7 @@ if(isset($_POST['inscription'])) {
 
 
 <!--formulaire-->
-<<<<<<< HEAD
-    <header class="bg-header-sombre">
-=======
     <header class="create-game">
->>>>>>> 23c71b9eb584928040ce49d164109afafb0a9d96
         <div class="container-fluid bg-opac p-0">
             <div class="h-100 d-flex justify-content-center py-0 py-sm-3 py-md-3 py-lg-3 py-xl-3">
 
