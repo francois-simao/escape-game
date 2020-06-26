@@ -68,13 +68,6 @@ include 'connection_database.php';
                         <?php $row['id'] ?> <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                         </div>
 
-<<<<<<< HEAD
-                        <div class='d-flex justify-content-between mb-3'>
-                        <label for='time_game' class='m-0'>Nombre de joueurs : </label>
-                        <input type='text' value="<?php echo $row['number_players'] ?>">
-                        <label for='time_game' class='m-0'>Durée du jeu : </label>
-                        <input type='text' name='time_game' value="<?php echo $row['duration'] ?>">
-=======
                         <div class='input-game-admin mb-3 text-center'>
                             <div class="input-number-admin">
                                 <label for='time_game' class='mb-2'>Nombre de joueurs : </label>
@@ -84,7 +77,6 @@ include 'connection_database.php';
                                 <label for='time_game' class='mb-2'>Durée du jeu : </label>
                                 <input type='text' class='w-25 text-center border mb-3 mb-sm-3' name='time_game' value="<?php echo $row['duration'] ?>">
                             </div>
->>>>>>> 1ba8692a6de4b92f4667286b2d3731daf2430d6b
                         </div>
 
                         <label for='new_history' class=''>Histoire : </label>
