@@ -24,7 +24,7 @@ include 'connection_database.php';
 
 <body>
 <?php
-    // if(isset($_SESSION['id'])) { 
+    if(isset($_SESSION['id'])) { 
         $sql="SELECT * FROM game ";
         $req = $bdd->query($sql);         
 ?>
@@ -116,10 +116,10 @@ include 'connection_database.php';
 
 <!-- sécurité page-->         
 <?php   
-// }
-// else {
-//     header("Location: index.php");
-//     }
+}
+else {
+    header("Location: index.php");
+    }
     ?>
 
 <script>

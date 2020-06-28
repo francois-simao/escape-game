@@ -18,8 +18,9 @@ include 'connection_database.php';
 <body class="bg-color-body">
 
 <?php
-// if(isset($_SESSION['id'])) {  ?>
+if(isset($_SESSION['id'])) {  ?>
 
+<!--header-->
 <div class="page-wrap">
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
             <div class="container">
@@ -60,47 +61,57 @@ include 'connection_database.php';
                         $req = $bdd->query($sql);
                         ?>
 
-                        <form action='' method='post' class='d-flex flex-column mt-5 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0'>
+                        <form action='' method='post' enctype="multipart/form-data" class='d-flex flex-column mt-5 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0'>
 
-                        <?php while ($row=$req->fetch()){ ?>
+                        <?php 
+                        $index = 0;
+                        while ($row=$req->fetch()){ 
+                        $index++ ;
+                        ?>
 
-                        <div class='d-flex '>
-                        <?php $row['id'] ?> <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
-                        </div>
-
-<<<<<<< HEAD
-                        <div class='d-flex justify-content-between mb-3'>
-                        <label for='time_game' class='m-0'>Nombre de joueurs : </label>
-                        <input type='text' value="<?php echo $row['number_players'] ?>">
-                        <label for='time_game' class='m-0'>Durée du jeu : </label>
-                        <input type='text' name='time_game' value="<?php echo $row['duration'] ?>">
-=======
-                        <div class='input-game-admin mb-3 text-center'>
-                            <div class="input-number-admin">
-                                <label for='time_game' class='mb-2'>Nombre de joueurs : </label>
-                                <input type='text' class='w-25 text-center border mb-3 mb-sm-3' value="<?php echo $row['number_players'] ?>">
+                        <?php if ($index == 1) { ?>
+                            <div class='d-flex '>
+                            <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                             </div>
-                            <div class="input-time-admin">
-                                <label for='time_game' class='mb-2'>Durée du jeu : </label>
-                                <input type='text' class='w-25 text-center border mb-3 mb-sm-3' name='time_game' value="<?php echo $row['duration'] ?>">
+                            <div class='d-flex justify-content-between mb-3'>
+                            <label for='time_game' class='m-0'>Nombre de joueurs : </label>
+                            <input type='text' name="new_number_players" value="<?php echo $row['number_players'] ?>">
+                            <label for='time_game' class='m-0'>Durée du jeu : </label>
+                            <input type='text' name="new_duration" value="<?php echo $row['duration'] ?>">
                             </div>
->>>>>>> 1ba8692a6de4b92f4667286b2d3731daf2430d6b
-                        </div>
+                            <label for='new_history' class=''>Histoire : </label>
+                            <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
 
-                        <label for='new_history' class=''>Histoire : </label>
-                        <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
+
+                            <?php if($row['image'] == NULL) { ?>
+                            <div class="img-admin-01">
+                                <img src="membres/jeux/default-game.jpg" alt="" class="img-admin-02 w-100">
+                            </div>
+                            <?php } else {?>
+                            <div class="img-admin-01">
+                                <img src="membres/jeux/<?php echo ($row['image']);?>" alt="" class="img-admin-02 w-100">
+                            </div>
+                            <?php } ?>
+                            <div class="input-text mb-4">
+                            <p>Veuillez choisir votre image de fond :</p>
+                                <input type="file" name="new_image" id="avatar">
+                            </div>
+                                        <?php } ?>
 
                         <div class='d-flex flex-column'>
-                        <textarea name='' placeholder='Enigme 1' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
-                        <textarea name='' placeholder='Solution énigme 1' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
-
-                        
+                        <label for='new_history' class=''>Enigme : </label>
+                        <input type='text' name="new_name_enigma" value="<?php echo $row['name_enigma'] ?>">
+                        <textarea name='new_content_enigma' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
+                        <label for='new_history' class=''>Durée : </label>
+                        <input type='text' name="new_duration_enigma" value="<?php echo $row['duration_enigma'] ?>">
+                        <label for='new_history' class=''>Solution : </label>
+                        <textarea name='new_solution_enigma' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
                         </div>
                                     
-                                                    <?php } ?>    
+                        <?php } ?>    
 
                         <div class='button-edit d-flex justify-content-between d-flex mb-5'>
-                        <a href='#' class='btn-play-header text-light text-center mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0'>Ajouter une énigme</a>
+                        <a href='add_enigma.php' class='btn-play-header text-light text-center mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0'>Ajouter une énigme</a>
                         <input type='submit' class='btn-play-header  text-light text-center' value='Valider'>
                         </div>
                         </form>
@@ -114,16 +125,59 @@ include 'connection_database.php';
 <!-- traitement formulaire -->
 <?php
 if (isset($_POST) AND !empty($_POST) ){
-    if (!empty($_POST['new_name']) AND !empty($_POST['new_history']) ) {	
-                            
-    $update = $bdd->prepare("UPDATE game SET name = ?, history = ?  WHERE id=".$_GET['id']." ");
-    $update->execute(array($_POST['new_name'], $_POST['new_history'] ));
-            // header("Location: page_admin.php");
+    if (!empty($_POST['new_name']) AND !empty($_POST['new_number_players']) AND !empty($_POST['new_duration']) AND !empty($_POST['new_history']) ) {	                            
+    $update = $bdd->prepare("UPDATE game SET name = ?, duration = ?, number_players = ?, history = ?  WHERE id=".$_GET['id']." ");
+    $update->execute(array($_POST['new_name'], $_POST['new_number_players'], $_POST['new_duration'], $_POST['new_history'] ));            
      }
+
+
+    //mise à jour image
+    $reqgame = $bdd->prepare("SELECT * FROM game WHERE id=".$_GET['id']."");
+    $reqgame->execute(array($_GET['id']));
+    $game = $reqgame->fetch(); 
+
+      if(isset($_FILES['new_image']) AND !empty($_FILES['new_image']['name'])) {  
+         $tailleMax = 2097152; 
+         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+         if($_FILES['new_image']['size'] <= $tailleMax) {
+            $extensionUpload = strtolower(substr(strrchr($_FILES['new_image']['name'], '.'), 1)); 
+            if(in_array($extensionUpload, $extensionsValides)) {
+                                if(file_exists("membres/jeux/". $game['id'] . "/" . $game['image']) && isset($game['image'])){
+                                    unlink("membres/jeux/". $game['id'] . "/" . $game['image']);
+                                }
+               $chemin = "membres/jeux/".$game['id'].".".$extensionUpload; 
+               $resultat = move_uploaded_file($_FILES['new_image']['tmp_name'], $chemin); 
+               if($resultat) {
+                  $updateavatar = $bdd->prepare("UPDATE game SET image = :image WHERE id=".$_GET['id']."");
+                  $updateavatar->execute(array(
+                     'image' => $game['id'].".".$extensionUpload,  
+                     ));
+                     $game['image'] = $game['id'].".".$extensionUpload;
+                     $row['image'] = $game['image'];
+                     $msgerror[] = "vos modifications ont été effectuées avec succès";
+               } else {
+                  $msgavatar = "Erreur durant l'importation de votre photo de profil";
+                  $msgerror[] = "Erreur durant l'importation de votre photo de profil";
+               }
+            } else {
+               $msgavatar = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
+               $msgerror[] = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
+            }
+         } else {
+            $msgavatar = "Votre photo de profil ne doit pas dépasser 2Mo";
+            $msgerror[] = "Votre photo de profil ne doit pas dépasser 2Mo";
+         }
+      }
+
+     
+    if (!empty($_POST['new_name_enigma']) AND !empty($_POST['new_content_enigma']) AND !empty($_POST['new_duration_enigma']) AND !empty($_POST['new_solution_enigma']) ) {	                    
+    $update = $bdd->prepare("UPDATE enigma SET name_enigma = ?, id_game = ?, duration_enigma = ?, content_enigma = ?, solution_enigma = ?  WHERE name_enigma = new_name_enigma ");
+    $update->execute(array($_POST['new_name_enigma'], $_GET['id'], $_POST['new_duration_enigma'], $_POST['new_content_enigma'], $_POST['new_solution_enigma'] ));                
+    }
 }
 ?> 
 
-
+<!--footer-->
     <footer>
         <div class="container-fluid site-footer">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
@@ -135,10 +189,10 @@ if (isset($_POST) AND !empty($_POST) ){
 
 <!-- sécurité page-->         
 <?php   
-// }
-// else {
-//     header("Location: index.php");
-//     }
+}
+else {
+    header("Location: index.php");
+    }
     ?>
 
 

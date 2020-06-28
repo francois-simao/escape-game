@@ -15,7 +15,7 @@ include 'connection_database.php';
 <body>
     
 <?php
-    // if(isset($_SESSION['id'])) {  
+    if(isset($_SESSION['id'])) {  
         if (isset($_GET['id'])) {
             $delete="DELETE FROM game WHERE id=".$_GET['id']." ";
             $stmt = $bdd->prepare($delete);
@@ -26,10 +26,10 @@ include 'connection_database.php';
 
 <!-- sécurité page-->         
 <?php   
-// }
-// else {
-//     header("Location: index.php");
-//     }
+}
+else {
+    header("Location: index.php");
+    }
     ?>
 
 </body>

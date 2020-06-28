@@ -17,16 +17,15 @@ include 'connection_database.php';
     
 <?php
 
-    // if(isset($_SESSION['id'])) { 
+    if(isset($_SESSION['id'])) { 
         if(isset($_POST['ajouter'])) { 
        
         
-$reponse = $bdd->query("SELECT MAX(id) FROM game");
-$donnees = $reponse->fetch();
-
-
-        $id_game = intval($donnees);
-        var_dump($id_game);
+// traitement du formulaire
+    $reponse = $bdd->query("SELECT MAX(id) FROM game");
+    $donnees = $reponse->fetch();
+    $id_game = intval($donnees[0]);
+        // var_dump($id_game);
 
         $name = htmlspecialchars($_POST['name_enigma']); 
         $duration = intval(htmlspecialchars($_POST['duration_enigma']));
@@ -37,8 +36,8 @@ $donnees = $reponse->fetch();
             $reqenigma->execute(array($name));
             $nameexist = $reqenigma->rowCount();
                 if($nameexist == 0) {
-                $insertmbr = $bdd->prepare("INSERT INTO enigma(name_enigma, duration_enigma, content_enigma, solution_enigma) VALUES(?, ?, ?, ?)");
-                $insertmbr->execute(array($name, $duration, $content, $solution));
+                $insertmbr = $bdd->prepare("INSERT INTO enigma(name_enigma, id_game, duration_enigma, content_enigma, solution_enigma) VALUES(?, ?, ?, ?, ?)");
+                $insertmbr->execute(array($name, $id_game, $duration, $content, $solution));
                 } else {
                 echo "Ce nom est déjà utilisé";
             }            
@@ -47,26 +46,58 @@ $donnees = $reponse->fetch();
 ?>
 
 
-                            <form action="" method="POST">
-                                <div class="form-group">
-                                    <input type="text" class="form-control h-100"  placeholder="Entrer le nom de l'énigme" name ="name_enigma" required>
-                                </div>
+<!-- formulaire -->
+<form action="" method="POST">
+    <div class="form-group">
+        <input type="text" class="form-control h-100"  placeholder="Entrer le nom de l'énigme" name ="name_enigma" required>
+    </div>
                             
-                                <div class="form-group">
-                                    <input type="number" class="form-control h-100" placeholder="Entrer la durée du jeu" name="duration_enigma" required>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6" name="content_enigma" required></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Entrer la solution" rows="6" name="solution_enigma" required></textarea>
-                                </div>
-                                <div class="d-flex justify-content-center">
-                                     <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5" name="ajouter">Validez</button>
-                                </div>
-                             </form>
+    <div class="form-group">
+        <input type="number" class="form-control h-100" placeholder="Entrer la durée du jeu" name="duration_enigma" required>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6" name="content_enigma" required></textarea>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" placeholder="Entrer la solution" rows="6" name="solution_enigma" required></textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+            <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5" name="ajouter">Enregistrez votre énigme</button>
+    </div>
+</form>
 
-                             <a href="add_game.php">Retour à la page "Ajouter un jeux"</a>
+
+
+
+
+<!-- affichage des énigmes ajoutées -->
+<?php
+   $reponse = $bdd->query("SELECT MAX(id) FROM game");
+   $donnees = $reponse->fetch();
+   $id_game = intval($donnees[0]);
+
+    $sql="SELECT * FROM enigma WHERE id_game = $id_game ";
+    $req = $bdd->query($sql); 
+    while ($row=$req->fetch()){
+?>
+            
+            <label >Enigme : <?php echo $row['name_enigma'] ?> </label>
+            <textarea  class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
+            <label >Durée : <?php echo $row['duration_enigma'] ?> </label>
+            <label >Solution : </label>
+            <textarea class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+<?php
+        }
+?>
+
+
+
+
+
+
+
+            <input type="button" value="Valider votre jeux" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
+            <input type="button" value="Ne pas ajouter d'énigmes" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
 
 
 
@@ -74,10 +105,10 @@ $donnees = $reponse->fetch();
 
 <!-- sécurité page-->         
 <?php   
-// }
-// else {
-//     header("Location: index.php");
-//     }
+}
+else {
+    header("Location: index.php");
+    }
     ?>
 
 

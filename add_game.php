@@ -19,7 +19,7 @@ include 'connection_database.php';
 </head>
 <body class="bg-add-game">
 <?php
-    // if(isset($_SESSION['id'])) {  
+    if(isset($_SESSION['id'])) {  
         
 ?>
 <div class="page-wrap">
@@ -106,7 +106,7 @@ if(isset($_POST['ajouter'])) {
                 }
             }
         }
-    header("Location: page_admin.php");
+    header("Location: add_enigma.php");
 }
 ?>
 
@@ -142,7 +142,6 @@ if(isset($_POST['ajouter'])) {
                                             </div>
                                             <div class="d-flex justify-content-center">
                                                 <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5" name="ajouter">Validez</button>
-                                                <a href="add_enigma.php">Ajouter une énigme</a>
                                             </div>
                                         </form>
                                     </div>
@@ -172,10 +171,10 @@ if(isset($_POST['ajouter'])) {
 
 <!-- sécurité page-->         
 <?php   
-// }
-// else {
-//     header("Location: index.php");
-//     }
+}
+else {
+    header("Location: index.php");
+    }
     ?>
 
 
