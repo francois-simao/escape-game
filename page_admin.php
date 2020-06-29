@@ -30,6 +30,7 @@ include 'connection_database.php';
 ?>
     <div class="page-wrap">
 
+<!--header -->
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
             <div class="container">
                 <div class="row">
@@ -54,14 +55,14 @@ include 'connection_database.php';
             </div>
         </div>
 
-
+<!-- bouton pour ajouter un jeu-->
         <div class="container-fluid p-0 mb-4">
             <div class="d-flex justify-content-center">
                 <input type="button" value="Ajouter un nouveau jeu" onclick="window.location.href ='add_game.php';"
                     class="text-light btn-play-header button-admin-creation my-3 mt-5">
             </div>
 
-
+<!-- affichage des jeux existants -->
             <div class="container  ">
                 <div class="row row-cols-1 row-cols-md-3">
                     <?php
@@ -83,7 +84,7 @@ include 'connection_database.php';
                                 <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo $row['name'] ?></h4>
                                 <div class="d-flex flex-column align-items-center">
                                     <input type="button" value="Modifier" onclick="window.location.href ='edit_game.php?id=<?= $row['id'] ?>';" class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer" onclick="window.location.href ='delete_game.php?id=<?= $row['id'] ?>';"class="btn-play-header button-admin-slide text-light my-3">
+                                    <input type="button" value="Supprimer" class="btn-play-header button-admin-slide text-light my-3" data-toggle="modal" data-target="#exampleModalCenter">
                                 </div>
                             </div>
                         </div>
@@ -98,6 +99,30 @@ include 'connection_database.php';
 
     </div>
 
+
+<!-- Modal de confirmation de suppression du jeu-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" onclick="window.location.href ='delete_game.php?id=<?= $row['id'] ?>';" class="btn btn-primary">Confirmez la suppression</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--footer-->
     <footer>
         <div class="container-fluid site-footer ">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
@@ -106,9 +131,6 @@ include 'connection_database.php';
             </div>
         </div>
     </footer>
-
-
-
 
 
 
@@ -146,6 +168,7 @@ else {
 </script> 
 
 
+<!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -155,6 +178,7 @@ else {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

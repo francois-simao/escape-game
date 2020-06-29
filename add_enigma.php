@@ -1,4 +1,4 @@
-<!-- page d'ajout de jeux-->
+<!-- page d'ajout d'énigmes-->
 <?php
 session_start();
 // connexion base de données
@@ -70,7 +70,7 @@ include 'connection_database.php';
 
 
 
-<!-- affichage des énigmes ajoutées -->
+<!-- affichage des énigmes ajoutées enregistrées-->
 <?php
    $reponse = $bdd->query("SELECT MAX(id) FROM game");
    $donnees = $reponse->fetch();
@@ -86,22 +86,17 @@ include 'connection_database.php';
             <label >Durée : <?php echo $row['duration_enigma'] ?> </label>
             <label >Solution : </label>
             <textarea class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+            <input type="button" value="Supprimer une énigme" onclick="window.location.href ='delete_enigma.php?id=<?= $row['id'] ?>';" class="btn-play-header button-admin-slide text-light my-3">
 <?php
         }
 ?>
+    
 
 
 
-
-
-
-
-            <input type="button" value="Valider votre jeux" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
-            <input type="button" value="Ne pas ajouter d'énigmes" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
-
-
-
-
+<!-- validation du jeu -->
+<input type="button" value="Validez votre jeu" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
+<input type="button" value="Annuler" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
 
 <!-- sécurité page-->         
 <?php   
@@ -112,6 +107,7 @@ else {
     ?>
 
 
+<!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

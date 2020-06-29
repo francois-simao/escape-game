@@ -234,7 +234,7 @@ include 'connection_database.php';
 
 
 
-
+<!--scripts-->
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -245,6 +245,8 @@ include 'connection_database.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
+<!--affichage modal -->
         <?php if( isset($msgavatar) || isset($msgmail) || isset($msgmdp) || isset($msgpseudo) ){ ?>
         <script>$("#exampleModalCenter").modal('show');</script>
         <?php } ?>

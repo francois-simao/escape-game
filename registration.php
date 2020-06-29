@@ -64,7 +64,7 @@ if(isset($_POST['inscription'])) {
 
 
 
-
+//ajout d'un avatar
       $requser->execute(array($mail));
       $mailexist = $requser->rowCount();      
       if($mailexist == 1) {
@@ -98,6 +98,7 @@ if(isset($_POST['inscription'])) {
       }
       }
 
+    //connexion automatique après enregistrement de l'utilisateur
     $mailconnect = htmlspecialchars($_POST['email']);
     $mdpconnect = sha1($_POST['password']);
     if(!empty($mailconnect) AND !empty($mdpconnect)) {
@@ -185,7 +186,7 @@ if(!empty($userinfo['image'])){
     </header>
 
 
-
+<!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

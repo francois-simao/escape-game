@@ -5,3 +5,8 @@
 
 
 
+// $delete = document.getElementById("test").onclick
+// if( $delete == true  ){
+//     $("#exampleModalCenter").modal('show');
+//     window.location.href ='delete_game.php?id=<?= $row['id'] ?>';
+//  } 

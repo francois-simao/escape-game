@@ -22,6 +22,7 @@ session_start();
     if(isset($_SESSION['id'])) {  
         
 ?>
+<!--header -->
 <div class="page-wrap">
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
             <div class="container ">
@@ -69,7 +70,7 @@ session_start();
         </div>
 
 
-
+<!-- choix du jeu -->
     <div class="container-fluid p-0 mb-4">
         <div class="page-wrapper">
             <div class="post-slider position-relative">
@@ -195,6 +196,7 @@ session_start();
     </div>
 </div>
 
+<!--footer -->
     <footer>
         <div class="container-fluid site-footer">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
@@ -297,7 +299,7 @@ else {
     }
     ?>
 
-
+<!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

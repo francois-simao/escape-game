@@ -18,8 +18,22 @@ include 'connection_database.php';
 <body class="bg-color-body">
 
 <?php
-if(isset($_SESSION['id'])) {  ?>
+if(isset($_SESSION['id'])) {  
 
+    if(isset($_POST['enigmaIds']) && count($_POST['enigmaIds']) > 0){
+        // $i = 0;
+        // while ($i < count($_POST['enigmaIds'])) {
+        //     $enigmaId = $_POST['enigmaIds'][$i];
+        //     $i++;
+        // }
+        foreach($_POST['enigmaIds'] as $enigmaId){
+            if (!empty($_POST['new_name_enigma'][$enigmaId]) AND !empty($_POST['new_content_enigma'][$enigmaId]) AND !empty($_POST['new_duration_enigma'][$enigmaId]) AND !empty($_POST['new_solution_enigma'][$enigmaId]) ) {	                    
+                $update = $bdd->prepare("UPDATE enigma SET name_enigma = ?, id_game = ?, duration_enigma = ?, content_enigma = ?, solution_enigma = ?  WHERE id = ? ");
+                $update->execute(array($_POST['new_name_enigma'][$enigmaId], $_GET['id'], $_POST['new_duration_enigma'][$enigmaId], $_POST['new_content_enigma'][$enigmaId], $_POST['new_solution_enigma'][$enigmaId], $enigmaId ));                
+            }
+        }
+    }
+?>
 <!--header-->
 <div class="page-wrap">
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
@@ -57,7 +71,7 @@ if(isset($_SESSION['id'])) {  ?>
                     <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 px-2">
                         <h1 class="title-form text-uppercase text-center mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0 mb-0 mb-sm-0 mb-md-0 mb-lg-4 mb-xl-4">Modifications du jeu</h1>
                         <?php                                
-                        $sql="SELECT * FROM game INNER JOIN enigma ON enigma.id_game = game.id WHERE game.id=".$_GET['id']." ";
+                        $sql="SELECT *, enigma.id AS idEnigma FROM game INNER JOIN enigma ON enigma.id_game = game.id WHERE game.id=".$_GET['id']." ";
                         $req = $bdd->query($sql);
                         ?>
 
@@ -65,19 +79,20 @@ if(isset($_SESSION['id'])) {  ?>
 
                         <?php 
                         $index = 0;
-                        while ($row=$req->fetch()){ 
+                        while ($row=$req->fetch()){
                         $index++ ;
                         ?>
 
+<!-- affichage détails jeu-->
                         <?php if ($index == 1) { ?>
                             <div class='d-flex '>
-                            <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
+                                <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                             </div>
                             <div class='d-flex justify-content-between mb-3'>
-                            <label for='time_game' class='m-0'>Nombre de joueurs : </label>
-                            <input type='text' name="new_number_players" value="<?php echo $row['number_players'] ?>">
-                            <label for='time_game' class='m-0'>Durée du jeu : </label>
-                            <input type='text' name="new_duration" value="<?php echo $row['duration'] ?>">
+                                <label for='time_game' class='m-0'>Nombre de joueurs : </label>
+                                <input type='text' name="new_number_players" value="<?php echo $row['number_players'] ?>">
+                                <label for='time_game' class='m-0'>Durée du jeu : </label>
+                                <input type='text' name="new_duration" value="<?php echo $row['duration'] ?>">
                             </div>
                             <label for='new_history' class=''>Histoire : </label>
                             <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
@@ -98,14 +113,16 @@ if(isset($_SESSION['id'])) {  ?>
                             </div>
                                         <?php } ?>
 
+<!-- affichage des énigmes du jeu -->
+                        <input type="hidden" name="enigmaIds[]" value="<?php echo $row['idEnigma'] ?>">
                         <div class='d-flex flex-column'>
-                        <label for='new_history' class=''>Enigme : </label>
-                        <input type='text' name="new_name_enigma" value="<?php echo $row['name_enigma'] ?>">
-                        <textarea name='new_content_enigma' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
-                        <label for='new_history' class=''>Durée : </label>
-                        <input type='text' name="new_duration_enigma" value="<?php echo $row['duration_enigma'] ?>">
-                        <label for='new_history' class=''>Solution : </label>
-                        <textarea name='new_solution_enigma' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+                            <label for='new_history' class=''>Enigme : </label>
+                            <input type='text' name="new_name_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['name_enigma'] ?>">
+                            <textarea name='new_content_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
+                            <label for='new_history' class=''>Durée : </label>
+                            <input type='text' name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
+                            <label for='new_history' class=''>Solution : </label>
+                            <textarea name='new_solution_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
                         </div>
                                     
                         <?php } ?>    
@@ -169,11 +186,7 @@ if (isset($_POST) AND !empty($_POST) ){
          }
       }
 
-     
-    if (!empty($_POST['new_name_enigma']) AND !empty($_POST['new_content_enigma']) AND !empty($_POST['new_duration_enigma']) AND !empty($_POST['new_solution_enigma']) ) {	                    
-    $update = $bdd->prepare("UPDATE enigma SET name_enigma = ?, id_game = ?, duration_enigma = ?, content_enigma = ?, solution_enigma = ?  WHERE name_enigma = new_name_enigma ");
-    $update->execute(array($_POST['new_name_enigma'], $_GET['id'], $_POST['new_duration_enigma'], $_POST['new_content_enigma'], $_POST['new_solution_enigma'] ));                
-    }
+    
 }
 ?> 
 
@@ -219,7 +232,7 @@ else {
         x.addListener(closeNav) // Attach listener function on state changes
 </script> 
 
-
+<!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

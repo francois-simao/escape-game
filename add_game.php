@@ -23,7 +23,7 @@ include 'connection_database.php';
         
 ?>
 <div class="page-wrap">
-
+    <!-- header-->
     <div class="container-fluid bg-color p-0">
         <div class="container">
             <div class="row">
@@ -57,6 +57,7 @@ include 'connection_database.php';
 <!-- traitement du formulaire-->
 <?php
 if(isset($_POST['ajouter'])) {
+    // ajout d'un jeu
     $name = htmlspecialchars($_POST['name']);
     $number = intval(htmlspecialchars($_POST['number']));
     $duration = intval(htmlspecialchars($_POST['duration']));
@@ -74,7 +75,7 @@ if(isset($_POST['ajouter'])) {
             }            
         }
 
-
+        // ajout d'une image pour illustrer le jeu
         $reqgame->execute(array($name));    
         $nameexist = $reqgame->rowCount(); 
         if($nameexist == 1) {
@@ -155,7 +156,7 @@ if(isset($_POST['ajouter'])) {
 
 
 
-
+<!--footer-->
 <footer>
     <div class="container-fluid site-footer ">
         <div class="col-12">
@@ -202,7 +203,7 @@ else {
 </script> 
 
 
-
+<!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

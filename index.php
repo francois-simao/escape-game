@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<!-- partie utilisateur -->
 <div class="page-wrap">
     <header>
         <div class="container-fluid bg-header">
@@ -56,6 +57,7 @@
         </div>
     </header>
 
+<!-- centre de la page -->
     <div class="container-fluid explication-escape  mt-5 mb-5">
         <div class="container">
             <div class="row ">
@@ -93,7 +95,7 @@
         </div>
     </div>
 
-
+<!-- partie administrateur -->
     <div class="container-fluid create-game w-100 h-auto position-relative pt-5 pb-5">
         <div class="container">
             <div class="content-text-create-game d-flex flex-column align-items-center text-light text-center">
@@ -107,6 +109,8 @@
         </div>
     </div>
 </div>
+
+<!--footer -->
 <footer>
         <div class="container-fluid site-footer ">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
@@ -143,7 +147,7 @@
 
 
 
-
+<!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
