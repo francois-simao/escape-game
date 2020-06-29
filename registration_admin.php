@@ -119,11 +119,7 @@ if(isset($_POST['inscription'])) {
 
 
 <!--formulaire-->
-<<<<<<< HEAD
-    <header class="bg-header-sombre">
-=======
     <header class="create-game">
->>>>>>> bc8f83caaa921ddd39cd620458ebf01f8d66f151
         <div class="container-fluid bg-opac p-0">
             <div class="h-100 d-flex justify-content-center py-0 py-sm-3 py-md-3 py-lg-3 py-xl-3">
 
