@@ -88,11 +88,20 @@ if(isset($_SESSION['id'])) {
                             <div class='d-flex '>
                                 <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                             </div>
+<<<<<<< HEAD
                             <div class='d-flex justify-content-between mb-3'>
                                 <label for='time_game' class='m-0'>Nombre de joueurs : </label>
                                 <input type='text' name="new_number_players" value="<?php echo $row['number_players'] ?>">
                                 <label for='time_game' class='m-0'>Durée du jeu : </label>
                                 <input type='text' name="new_duration" value="<?php echo $row['duration'] ?>">
+=======
+                            <div class='d-flex justify-content-between mb-3 text-center input-game-admin'>
+                            <label for='time_game' class='m-0'>Nombre de joueurs : </label>
+                            <input type='text' name="new_number_players" class='new_number border mx-2 text-center' value="<?php echo $row['number_players'] ?>">
+                            
+                            <label for='time_game' class='m-0'>Durée du jeu : </label>
+                            <input type='text' name="new_duration" class='new_duration border mx-2 text-center' value="<?php echo $row['duration'] ?>">
+>>>>>>> b91b3d4d6f49a7898638b925387b7ace53e2e1ae
                             </div>
                             <label for='new_history' class=''>Histoire : </label>
                             <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
@@ -116,6 +125,7 @@ if(isset($_SESSION['id'])) {
 <!-- affichage des énigmes du jeu -->
                         <input type="hidden" name="enigmaIds[]" value="<?php echo $row['idEnigma'] ?>">
                         <div class='d-flex flex-column'>
+<<<<<<< HEAD
                             <label for='new_history' class=''>Enigme : </label>
                             <input type='text' name="new_name_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['name_enigma'] ?>">
                             <textarea name='new_content_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
@@ -123,11 +133,22 @@ if(isset($_SESSION['id'])) {
                             <input type='text' name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
                             <label for='new_history' class=''>Solution : </label>
                             <textarea name='new_solution_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+=======
+                        <label for='new_history' class='text-uppercase'>Enigme : </label>
+                        <input type='text' name="new_name_enigma" value="<?php echo $row['name_enigma'] ?>">
+                        <textarea name='new_content_enigma' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
+                        <div class="d-flex mx-0">
+                        <label for='new_history' class='mr-2'>Durée : </label>
+                        <input type='text' name="new_duration_enigma" class="w-25 border text-center" value="<?php echo $row['duration_enigma'] ?>">
+                        </div>
+                        <label for='new_history' class=''>Solution : </label>
+                        <textarea name='new_solution_enigma' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+>>>>>>> b91b3d4d6f49a7898638b925387b7ace53e2e1ae
                         </div>
                                     
                         <?php } ?>    
 
-                        <div class='button-edit d-flex justify-content-between d-flex mb-5'>
+                        <div class='button-edit d-flex justify-content-between mb-5'>
                         <a href='add_enigma.php' class='btn-play-header text-light text-center mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0'>Ajouter une énigme</a>
                         <input type='submit' class='btn-play-header  text-light text-center' value='Valider'>
                         </div>
