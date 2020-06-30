@@ -95,13 +95,16 @@ include 'connection_database.php';
                             <?php } ?>
                         <div class="circle-singleline">
                             <p><?php echo ($row['number_players']);?> personnes</p>
+                            <p><?php echo ($row['duration']);?> minutes</p>
                         </div>
                         <div class="post-info p-2">
                             <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo ($row['name']);?></h4>
+                            <div class="text-overflow-game">
                             <p class="text-game-slider"><?php echo ($row['history']);?></p>
                             <div class="d-flex justify-content-around">
                                 <!-- <p class="note-games">18/20</p> -->
                                 <!-- <p class="text-right mx-3"><a href="#">En savoir plus</a></p> -->
+                            </div>
                             </div>
                         </div>
                     </div>

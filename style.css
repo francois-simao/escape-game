@@ -92,13 +92,14 @@ ul{list-style: none; margin: 12px;}
 .post-slider .slider-title{ margin: 30px auto;}
 .post-slider .next{ top: 50%; right: 30px; font-size: 2em; color: black; cursor: pointer;}
 .post-slider .prev{ top: 50%; left: 30px; font-size: 2em; color: black; cursor: pointer;}
-.post-slider .post-wrapper{ width: 84%; height: auto; margin: 0px auto;  overflow: hidden; padding: 10px 0px 10px 0px;}
+.post-slider .post-wrapper{ width: 84%; height: auto; margin: 0px auto;  overflow: hidden; padding: 55px 0px 10px 0px; }
 .post-slider .post-wrapper .post{ width: 300px; height: 500px; display: inline-block; background-color: white; margin: 0px 10px; border-radius: 30px; box-shadow: 1rem 1rem 1rem -1rem #0000003a;}
 .post-slider .post-wrapper .post .slider-image{height: 200px; border-top-left-radius: 30px; border-top-right-radius: 30px;}
 .post, a{outline: none;}
 .title-game-slider{ font-size: 21px;}
 .text-game-slider{ font-size: 17px; font-weight: bold;}
-.circle-singleline { display: flex;  justify-content: center; align-items: center; width: 70px; height: 70px; border-radius: 50%; font-size: 13px; background: white; color: black; margin-left: 7px; padding-top: 13px; line-height: 16px; position: absolute; top: 123px; text-align: center;}
+.circle-singleline { display: flex;  justify-content: center; align-items: center; flex-direction: column; width: 90px; height: 90px; font-size: 13px; background: white; color: black; margin-left: 7px; padding-top: 13px; border-radius: 50%; line-height: 0px; position: absolute; top: 104px; text-align: center;}
+.text-overflow-game{overflow: auto; height: 205px;}
 
 
 /**************** FOOTER ****************/
@@ -319,6 +320,7 @@ ul{padding: 0;}
 
 /**************** MENU ****************/
 .sidenav a, li{margin-left: 15px; margin-right: 15px;}
+
 
 
 }
