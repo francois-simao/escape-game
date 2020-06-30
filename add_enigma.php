@@ -121,40 +121,41 @@ include 'connection_database.php';
     $req = $bdd->query($sql); 
     while ($row=$req->fetch()){
 ?>
-
                         <div class="d-flex flex-column ">
                             <label>Enigme : <?php echo $row['name_enigma'] ?> </label>
-                            <textarea class="mb-3"><?php echo $row['content_enigma'] ?></textarea>
-
+                            <textarea class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
                             <label>Durée : <?php echo $row['duration_enigma'] ?> </label>
-
                             <label>Solution : </label>
-                            <textarea class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+                            <textarea><?php echo $row['solution_enigma'] ?></textarea>
+                            <div class="d-flex justify-content-center">
+                            <input type="button" value="Supprimer une énigme"
+                                onclick="window.location.href ='delete_enigma.php?id=<?= $row['id'] ?>';"
+                                class=" btn btn-primary mb-5 mt-3 ">
+                            </div>
                         </div>
-
                         <?php
         }
 ?>
 
 
-                        <div class="button-edit d-flex justify-content-center mb-5">
-                            <input type="button" value="Valider votre jeux"
+                        <div class="button-edit d-flex justify-content-center">
+                            <!-- validation du jeu -->
+                            <input type="button" value="Validez votre jeu"
                                 onclick="window.location.href ='page_admin.php';"
-                                class="btn-play-header button-admin-slide text-light my-3 mx-2">
-                            <input type="button" value="Ne pas ajouter d'énigmes"
-                                onclick="window.location.href ='page_admin.php';"
-                                class="btn-play-header button-admin-slide text-light my-3 mx-2">
-
+                                class="btn-play-header text-light mb-5 mx-2">
+                            <input type="button" value="Annuler" onclick="window.location.href ='page_admin.php';"
+                                class="btn-play-header text-light mb-5 mx-2">
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
+    
+    <!--footer-->
     <footer>
-        <div class="container-fluid site-footer">
+        <div class="container-fluid site-footer ">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
                 <p class="footer-realisation my-2 py-3">World Escape Game 2020 - Mentions légales</p>
 

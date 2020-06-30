@@ -41,7 +41,7 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .note-games{font-family: 17px; }
 .title-form{font-size: 38px;}
 .footer-realisation{ font-size: 18px;}
-.btn-add-game{font-size: 23px; }
+.btn-add-game{font-size: 23px; width: auto;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
 .btn-inscription-width, .btn-connexion-width, .button-admin-creation{width: auto; font-size: 27px;}
 
