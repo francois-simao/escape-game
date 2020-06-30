@@ -1,6 +1,8 @@
 <!--page des jeux-->
 <?php
 session_start();
+// connexion base de données
+include 'connection_database.php';
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +73,10 @@ session_start();
 
 
 <!-- choix du jeu -->
+<?php
+        $sql="SELECT * FROM game ";
+        $req = $bdd->query($sql);         
+?>
     <div class="container-fluid p-0 mb-4">
         <div class="page-wrapper">
             <div class="post-slider position-relative">
@@ -78,121 +84,33 @@ session_start();
                 <i class="fas fa-chevron-right next position-absolute"></i>
 
                 <div class="post-wrapper">
+                    <?php
+                    while ($row=$req->fetch()){
+                    ?>
                     <div class="post">
-                        <img src="img/monde-post-apo.jpg" alt="" class="slider-image w-100">
+                    <?php if($row['image'] == NULL) { ?>
+                                <img src="membres/jeux/default-game.jpg" alt="" class="slider-image w-100">
+                            <?php } else {?>
+                                <img src="membres/jeux/<?php echo ($row['image']);?>" alt="" class="slider-image w-100">
+                            <?php } ?>
                         <div class="circle-singleline">
-                            <p>2-3 personnes</p>
+                            <p><?php echo ($row['number_players']);?> personnes</p>
                         </div>
                         <div class="post-info p-2">
-                            <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                            <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam
-                                ducimus tempore, qui
-                                recusandae, quidem possimus in architecto rerum cupiditate...</p>
+                            <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo ($row['name']);?></h4>
+                            <p class="text-game-slider"><?php echo ($row['history']);?></p>
                             <div class="d-flex justify-content-around">
-                                <p class="note-games">18/20</p>
-                                <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
+                                <!-- <p class="note-games">18/20</p> -->
+                                <!-- <p class="text-right mx-3"><a href="#">En savoir plus</a></p> -->
                             </div>
                         </div>
                     </div>
-
-                    <div class="post">
-                        <img src="img/princess-world.jpg" alt="" class="slider-image w-100">
-                        <div class="circle-singleline">
-                            <p>1 personne</p>
-                        </div>
-                        <div class="post-info p-2">
-                            <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                            <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam
-                                ducimus tempore, qui
-                                recusandae, quidem possimus in architecto rerum cupiditate...</p>
-                            <div class="d-flex justify-content-around">
-                                <p class="note-games">18/20</p>
-                                <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="img/escape-the-planet.jpg" alt="" class="slider-image w-100">
-                        <div class="circle-singleline">
-                            <p>2-6 personnes</p>
-                        </div>
-                        <div class="post-info p-2">
-                            <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                            <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam
-                                ducimus tempore, qui
-                                recusandae, quidem possimus in architecto rerum cupiditate...</p>
-
-                            <div class="d-flex justify-content-around">
-                                <p class="note-games">18/20</p>
-                                <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="img/monde-post-apo.jpg" alt="" class="slider-image w-100">
-                        <div class="circle-singleline">
-                            <p>2-3 personnes</p>
-                        </div>
-                        <div class="post-info p-2">
-                            <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                            <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam
-                                ducimus tempore, qui
-                                recusandae, quidem possimus in architecto rerum cupiditate...</p>
-                            <div class="d-flex justify-content-around">
-                                <p class="note-games">18/20</p>
-                                <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="img/princess-world.jpg" alt="" class="slider-image w-100">
-                        <div class="circle-singleline">
-                            <p>1 personne</p>
-                        </div>
-                        <div class="post-info p-2">
-                            <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                            <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam
-                                ducimus tempore, qui
-                                recusandae, quidem possimus in architecto rerum cupiditate...</p>
-                            <div class="d-flex justify-content-around">
-                                <p class="note-games">18/20</p>
-                                <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="img/escape-the-planet.jpg" alt="" class="slider-image w-100">
-                        <div class="circle-singleline">
-                            <p>2-6 personnes</p>
-                        </div>
-                        <div class="post-info p-2">
-                            <h4 class="title-game-slider text-center my-2 text-uppercase">warrior game</h4>
-                            <p class="text-game-slider">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam
-                                ducimus tempore, qui
-                                recusandae, quidem possimus in architecto rerum cupiditate...</p>
-
-                            <div class="d-flex justify-content-around">
-                                <p class="note-games">18/20</p>
-                                <p class="text-right mx-3"><a href="#">En savoir plus</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
-
-
         </div>
-
     </div>
 </div>
 

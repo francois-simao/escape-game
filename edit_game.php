@@ -20,6 +20,56 @@ include 'connection_database.php';
 <?php
 if(isset($_SESSION['id'])) {  
 
+    // traitement formulaire 
+if (isset($_POST) AND !empty($_POST) ){
+    if (!empty($_POST['new_name']) AND !empty($_POST['new_number_players']) AND !empty($_POST['new_duration']) AND !empty($_POST['new_history']) ) {	                            
+    $update = $bdd->prepare("UPDATE game SET name = ?, duration = ?, number_players = ?, history = ?  WHERE id=".$_GET['id']." ");
+    $update->execute(array($_POST['new_name'], $_POST['new_number_players'], $_POST['new_duration'], $_POST['new_history'] ));            
+     }
+
+
+    //mise à jour image
+    $reqgame = $bdd->prepare("SELECT * FROM game WHERE id=".$_GET['id']."");
+    $reqgame->execute(array($_GET['id']));
+    $game = $reqgame->fetch(); 
+
+      if(isset($_FILES['new_image']) AND !empty($_FILES['new_image']['name'])) {  
+         $tailleMax = 2097152; 
+         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+         if($_FILES['new_image']['size'] <= $tailleMax) {
+            $extensionUpload = strtolower(substr(strrchr($_FILES['new_image']['name'], '.'), 1)); 
+            if(in_array($extensionUpload, $extensionsValides)) {
+                                if(file_exists("membres/jeux/". $game['id'] . "/" . $game['image']) && isset($game['image'])){
+                                    unlink("membres/jeux/". $game['id'] . "/" . $game['image']);
+                                }
+               $chemin = "membres/jeux/".$game['id'].".".$extensionUpload; 
+               $resultat = move_uploaded_file($_FILES['new_image']['tmp_name'], $chemin); 
+               if($resultat) {
+                  $updateavatar = $bdd->prepare("UPDATE game SET image = :image WHERE id=".$_GET['id']."");
+                  $updateavatar->execute(array(
+                     'image' => $game['id'].".".$extensionUpload,  
+                     ));
+                     $game['image'] = $game['id'].".".$extensionUpload;
+                     $row['image'] = $game['image'];
+                     $msgerror = "vos modifications ont été effectuées avec succès";
+               } else {
+                  $msgavatar = "Erreur durant l'importation de votre photo de profil";
+                  $msgerror = "Erreur durant l'importation de votre photo de profil";
+               }
+            } else {
+               $msgavatar = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
+               $msgerror = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
+            }
+         } else {
+            $msgavatar = "Votre photo de profil ne doit pas dépasser 2Mo";
+            $msgerror = "Votre photo de profil ne doit pas dépasser 2Mo";
+         }
+      }
+   
+}
+
+
+// mise à jour des énigmes
     if(isset($_POST['enigmaIds']) && count($_POST['enigmaIds']) > 0){
         // $i = 0;
         // while ($i < count($_POST['enigmaIds'])) {
@@ -34,6 +84,7 @@ if(isset($_SESSION['id'])) {
         }
     }
 ?>
+
 <!--header-->
 <div class="page-wrap">
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
@@ -139,56 +190,6 @@ if(isset($_SESSION['id'])) {
         </div>
 </div>
 
-<!-- traitement formulaire -->
-<?php
-if (isset($_POST) AND !empty($_POST) ){
-    if (!empty($_POST['new_name']) AND !empty($_POST['new_number_players']) AND !empty($_POST['new_duration']) AND !empty($_POST['new_history']) ) {	                            
-    $update = $bdd->prepare("UPDATE game SET name = ?, duration = ?, number_players = ?, history = ?  WHERE id=".$_GET['id']." ");
-    $update->execute(array($_POST['new_name'], $_POST['new_number_players'], $_POST['new_duration'], $_POST['new_history'] ));            
-     }
-
-
-    //mise à jour image
-    $reqgame = $bdd->prepare("SELECT * FROM game WHERE id=".$_GET['id']."");
-    $reqgame->execute(array($_GET['id']));
-    $game = $reqgame->fetch(); 
-
-      if(isset($_FILES['new_image']) AND !empty($_FILES['new_image']['name'])) {  
-         $tailleMax = 2097152; 
-         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
-         if($_FILES['new_image']['size'] <= $tailleMax) {
-            $extensionUpload = strtolower(substr(strrchr($_FILES['new_image']['name'], '.'), 1)); 
-            if(in_array($extensionUpload, $extensionsValides)) {
-                                if(file_exists("membres/jeux/". $game['id'] . "/" . $game['image']) && isset($game['image'])){
-                                    unlink("membres/jeux/". $game['id'] . "/" . $game['image']);
-                                }
-               $chemin = "membres/jeux/".$game['id'].".".$extensionUpload; 
-               $resultat = move_uploaded_file($_FILES['new_image']['tmp_name'], $chemin); 
-               if($resultat) {
-                  $updateavatar = $bdd->prepare("UPDATE game SET image = :image WHERE id=".$_GET['id']."");
-                  $updateavatar->execute(array(
-                     'image' => $game['id'].".".$extensionUpload,  
-                     ));
-                     $game['image'] = $game['id'].".".$extensionUpload;
-                     $row['image'] = $game['image'];
-                     $msgerror[] = "vos modifications ont été effectuées avec succès";
-               } else {
-                  $msgavatar = "Erreur durant l'importation de votre photo de profil";
-                  $msgerror[] = "Erreur durant l'importation de votre photo de profil";
-               }
-            } else {
-               $msgavatar = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
-               $msgerror[] = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
-            }
-         } else {
-            $msgavatar = "Votre photo de profil ne doit pas dépasser 2Mo";
-            $msgerror[] = "Votre photo de profil ne doit pas dépasser 2Mo";
-         }
-      }
-
-    
-}
-?> 
 
 <!--footer-->
     <footer>
