@@ -62,13 +62,8 @@ include 'connection_database.php';
                     class="text-light btn-play-header button-admin-creation my-3 mt-5 px-3">
             </div>
 
-<<<<<<< HEAD
-<!-- affichage des jeux existants -->
-            <div class="container  ">
-=======
 
             <div class="container">
->>>>>>> b91b3d4d6f49a7898638b925387b7ace53e2e1ae
                 <div class="row row-cols-1 row-cols-md-3">
                     <?php
                     while ($row=$req->fetch()){

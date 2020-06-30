@@ -50,35 +50,6 @@ include 'connection_database.php';
     }
 ?>
 
-<<<<<<< HEAD
-
-<!-- formulaire -->
-<form action="" method="POST">
-    <div class="form-group">
-        <input type="text" class="form-control h-100"  placeholder="Entrer le nom de l'énigme" name ="name_enigma" required>
-    </div>
-                            
-    <div class="form-group">
-        <input type="number" class="form-control h-100" placeholder="Entrer la durée du jeu" name="duration_enigma" required>
-    </div>
-    <div class="form-group">
-        <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6" name="content_enigma" required></textarea>
-    </div>
-    <div class="form-group">
-        <textarea class="form-control" placeholder="Entrer la solution" rows="6" name="solution_enigma" required></textarea>
-    </div>
-    <div class="d-flex justify-content-center">
-            <button type="submit" class="btn-add-game btn btn-primary mb-4 px-5" name="ajouter">Enregistrez votre énigme</button>
-    </div>
-</form>
-
-
-
-
-
-<!-- affichage des énigmes ajoutées enregistrées-->
-<?php
-=======
     <div class="page-wrap">
         <div class="container-fluid bg-color p-0">
             <div class="container">
@@ -142,7 +113,6 @@ include 'connection_database.php';
 
                         <!-- affichage des énigmes ajoutées -->
                         <?php
->>>>>>> b91b3d4d6f49a7898638b925387b7ace53e2e1ae
    $reponse = $bdd->query("SELECT MAX(id) FROM game");
    $donnees = $reponse->fetch();
    $id_game = intval($donnees[0]);
@@ -151,31 +121,11 @@ include 'connection_database.php';
     $req = $bdd->query($sql); 
     while ($row=$req->fetch()){
 ?>
-<<<<<<< HEAD
-            
-            <label >Enigme : <?php echo $row['name_enigma'] ?> </label>
-            <textarea  class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
-            <label >Durée : <?php echo $row['duration_enigma'] ?> </label>
-            <label >Solution : </label>
-            <textarea class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
-            <input type="button" value="Supprimer une énigme" onclick="window.location.href ='delete_enigma.php?id=<?= $row['id'] ?>';" class="btn-play-header button-admin-slide text-light my-3">
-<?php
-        }
-?>
-    
-
-=======
->>>>>>> b91b3d4d6f49a7898638b925387b7ace53e2e1ae
 
                         <div class="d-flex flex-column ">
                             <label>Enigme : <?php echo $row['name_enigma'] ?> </label>
                             <textarea class="mb-3"><?php echo $row['content_enigma'] ?></textarea>
 
-<<<<<<< HEAD
-<!-- validation du jeu -->
-<input type="button" value="Validez votre jeu" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
-<input type="button" value="Annuler" onclick="window.location.href ='page_admin.php';" class="btn-play-header button-admin-slide text-light my-3">
-=======
                             <label>Durée : <?php echo $row['duration_enigma'] ?> </label>
 
                             <label>Solution : </label>
@@ -211,7 +161,6 @@ include 'connection_database.php';
             </div>
         </div>
     </footer>
->>>>>>> b91b3d4d6f49a7898638b925387b7ace53e2e1ae
 
     <!-- sécurité page-->
     <?php   
@@ -222,9 +171,6 @@ else {
     ?>
 
 
-<<<<<<< HEAD
-<!--scripts-->
-=======
     <script>
         function openNav(y) {
             if (y.matches) { //openNav est le nom donné au onclick qui, lorsqu'on clique sur le menu, il s'ouvrira grâce au getElementById qui récupère l'id "mySidenav" dans la div principale
@@ -249,7 +195,6 @@ else {
     </script>
 
 
->>>>>>> b91b3d4d6f49a7898638b925387b7ace53e2e1ae
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
