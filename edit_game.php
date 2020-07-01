@@ -136,20 +136,12 @@ if (isset($_POST) AND !empty($_POST) ){
                             <div class='d-flex '>
                                 <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                             </div>
-<<<<<<< HEAD
-                            <div class='d-flex justify-content-between mb-3'>
-                                <label for='time_game' class='m-0'>Nombre de joueurs : </label>
-                                <input type='text' name="new_number_players" value="<?php echo $row['number_players'] ?>">
-                                <label for='time_game' class='m-0'>Durée du jeu : </label>
-                                <input type='text' name="new_duration" value="<?php echo $row['duration'] ?>">
-=======
                             <div class='d-flex justify-content-between mb-3 text-center input-game-admin'>
                             <label for='new_number_players' class='m-0'>Nombre de joueurs : </label>
                             <input type='text' name="new_number_players" class='new_number border mx-2 text-center' value="<?php echo $row['number_players'] ?>">
                             
                             <label for='new_duration' class='m-0'>Durée du jeu : </label>
                             <input type='text' name="new_duration" class='new_duration border mx-2 text-center' value="<?php echo $row['duration'] ?>">
->>>>>>> a5ec38aad3ed83d456eb6730584cd50297991c1e
                             </div>
                             <label for='new_history' class=''>Histoire : </label>
                             <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
@@ -173,25 +165,15 @@ if (isset($_POST) AND !empty($_POST) ){
 <!-- affichage des énigmes du jeu -->
                         <input type="hidden" name="enigmaIds[]" value="<?php echo $row['idEnigma'] ?>">
                         <div class='d-flex flex-column'>
-<<<<<<< HEAD
-                            <label for='new_history' class=''>Enigme : </label>
+                            <label for='new_history' class='text-uppercase'>Enigme : </label>
                             <input type='text' name="new_name_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['name_enigma'] ?>">
                             <textarea name='new_content_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
+                            <div class="d-flex mx-0">
                             <label for='new_history' class=''>Durée : </label>
-                            <input type='text' name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
+                            <input type='text' class="w-25 border text-center" name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
+                            </div>
                             <label for='new_history' class=''>Solution : </label>
                             <textarea name='new_solution_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
-=======
-                        <label for='new_history' class='text-uppercase'>Enigme : </label>
-                        <input type='text' name="new_name_enigma" value="<?php echo $row['name_enigma'] ?>">
-                        <textarea name='new_content_enigma' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
-                        <div class="d-flex mx-0">
-                        <label for='new_history' class='mr-2'>Durée : </label>
-                        <input type='text' name="new_duration_enigma" class="w-25 border text-center" value="<?php echo $row['duration_enigma'] ?>">
-                        </div>
-                        <label for='new_history' class=''>Solution : </label>
-                        <textarea name='new_solution_enigma' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
->>>>>>> a5ec38aad3ed83d456eb6730584cd50297991c1e
                         </div>
                                     
                         <?php } ?>    
