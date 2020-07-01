@@ -36,12 +36,9 @@ include 'connection_database.php';
                 <div class="row">
                     <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
                         <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
-                        <div class="contenu-menu">
+                        <div class="contenu-menu-admin">
                             <ul class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
-                                <div class=" w-50">
-                                    <!-- <li class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
-                                    </li> -->
-                                </div>
+                                
                                     <li><a href="page_logout.php" onclick="closeNav(x)"
                                             class="title-menu">Déconnexion</a>
                                     </li>
@@ -62,13 +59,8 @@ include 'connection_database.php';
                     class="text-light btn-play-header button-admin-creation my-3 mt-5 px-3">
             </div>
 
-<<<<<<< HEAD
 <!-- affichage des jeux existants -->
-            <div class="container  ">
-=======
-
             <div class="container">
->>>>>>> a5ec38aad3ed83d456eb6730584cd50297991c1e
                 <div class="row row-cols-1 row-cols-md-3">
                     <?php
                     while ($row=$req->fetch()){

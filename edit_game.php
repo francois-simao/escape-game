@@ -92,7 +92,7 @@ if (isset($_POST) AND !empty($_POST) ){
                 <div class="row">
                     <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
                         <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
-                        <div class="contenu-menu">
+                        <div class="contenu-menu-admin">
                             <ul class="d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
                             
                                 <li><a href="page_admin.php" onclick="closeNav(x)"

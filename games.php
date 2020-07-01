@@ -32,7 +32,7 @@ include 'connection_database.php';
 
                     <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
                         <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
-                        <div class=" contenu-menu ">
+                        <div class=" contenu-menu-user ">
                             <ul class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
                                     <div class=" w-50">
                                         <li

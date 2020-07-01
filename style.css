@@ -76,7 +76,8 @@ a.text-light:focus, a.text-light:hover {color: white!important; }
 
 /**************** MENU ****************/
 ul{list-style: none; margin: 12px;}
-.contenu-menu ul{display: flex; justify-content: space-between;}
+.contenu-menu-user ul{display: flex; justify-content: space-between;}
+.contenu-menu-admin ul{display: flex; justify-content: flex-end;}
 .sidenav a:hover { color: #f1f1f1;}
 .btn-orange-create{display: unset;}
 .nav-link{margin-top: 2px;}
@@ -136,7 +137,7 @@ ul{list-style: none; margin: 12px;}
 .sidenav, .sidenav-color { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.87); overflow-x: hidden; transition: 0.5s; padding-top: 60px; z-index:2;}
 .sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 55px; cursor: pointer; color: white;}
 .icon-menu{cursor: pointer; font-size: 40px;  position: relative;} 
-.contenu-menu ul{display: flex; flex-direction: column; align-items: center;}
+.contenu-menu-user ul, .contenu-menu-admin ul{display: flex; flex-direction: column; align-items: center;}
 .sidenav{margin-top: 0;}
 ul{padding: 0;}
 .sidenav{background-color: rgba(0, 0, 0, 0.87);}
@@ -175,7 +176,7 @@ ul{padding: 0;}
 .button-edit{display: flex; flex-direction: column; align-items: center;}
 
 /**************** MENU ****************/
-.contenu-menu{ margin-top: 50px;} 
+.contenu-menu-user, .contenu-menu-admin ul{ margin-top: 50px;} 
 .sidenav a{font-size: 15px; line-height: 35px;}
 
 /**************** CAROUSEL ****************/
@@ -217,7 +218,7 @@ ul{padding: 0;}
 .button-edit{display: flex; flex-direction: column; align-items: center;}
 
 /**************** MENU ****************/
-.contenu-menu{ margin-top: 50px;} 
+.contenu-menu-user, .contenu-menu-admin ul{ margin-top: 50px;} 
 .sidenav a{font-size: 23px; line-height: 54px;}
 .sidenav li {font-size: 35px;}
 
@@ -250,7 +251,7 @@ ul{padding: 0;}
 .button-admin-creation{ width: 53%;}
 
 /**************** MENU ****************/
-.contenu-menu{ margin-top: 50px;} 
+.contenu-menu-user, .contenu-menu-admin ul{ margin-top: 50px;} 
 .sidenav a{font-size: 23px; line-height: 54px;}
 .sidenav li {font-size: 35px;}
 
@@ -278,7 +279,7 @@ ul{padding: 0;}
 .button-admin-creation{ width: 43%;}
 
 /**************** MENU ****************/
-.contenu-menu{ margin-top: 50px;} 
+.contenu-menu-user, .contenu-menu-admin ul{ margin-top: 50px;} 
 .sidenav a{font-size: 23px; line-height: 54px;}
 .sidenav li {font-size: 35px;}
 

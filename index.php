@@ -18,10 +18,10 @@
                 <div class="row  ">
                     <div id="mySidenav" class="sidenav size-width-menu">
                         <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
-                        <div class=" contenu-menu text-center">
+                        <div class=" contenu-menu-user text-center">
                             <ul>
                                 <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
-                                <li><a href="#" onclick="closeNav(x)" class="title-menu btn-orange-create ">Créer son
+                                <li><a href="connection_admin.php" onclick="closeNav(x)" class="title-menu btn-orange-create ">Créer son
                                         escape game</a></li>
                             </div>
                             <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
