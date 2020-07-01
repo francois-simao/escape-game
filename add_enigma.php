@@ -171,7 +171,7 @@ include 'connection_database.php';
 ?>
 
                         <div class="button-edit d-flex justify-content-center">
-                            <!-- validation du jeu -->
+    <!-- validation du jeu -->
                             <input type="button" value="Validez votre jeu"
                                 onclick="window.location.href ='page_admin.php';"
                                 class="btn-play-header text-light mb-5 mx-2">
