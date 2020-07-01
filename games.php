@@ -78,6 +78,7 @@ include 'connection_database.php';
         $req = $bdd->query($sql);         
 ?>
     <div class="container-fluid p-0 mb-4">
+        <h1 class="title-form text-center text-uppercase mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0">Choix des jeux</h1>
         <div class="page-wrapper">
             <div class="post-slider position-relative">
                 <i class="fas fa-chevron-left prev position-absolute"></i>
