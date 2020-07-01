@@ -62,13 +62,8 @@ include 'connection_database.php';
                     class="text-light btn-play-header button-admin-creation my-3 mt-5 px-3">
             </div>
 
-<<<<<<< HEAD
 <!-- affichage des jeux existants -->
             <div class="container  ">
-=======
-
-            <div class="container">
->>>>>>> 051f224833ba066f1886fdc97e5951e8f7758d6b
                 <div class="row row-cols-1 row-cols-md-3">
                     <?php
                     while ($row=$req->fetch()){
@@ -106,25 +101,30 @@ include 'connection_database.php';
 
 
 <!-- Modal de confirmation de suppression du jeu-->
+<?php
+$req = $bdd->query($sql);
+while ($row=$req->fetch()){
+?>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Confirmez la suppression</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        Voulez-vous supprimez le jeu <?php echo $row['name']; ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" onclick="window.location.href ='delete_game.php?id=<?= $row['id'] ?>';" class="btn btn-primary">Confirmez la suppression</button>
+        <button type="button" onclick="window.location.href ='delete_game.php?id=<?php echo $row['id']; ?>';" class="btn btn-primary">Confirmez la suppression</button>
       </div>
     </div>
   </div>
 </div>
+<?php } ?>
 
 
 <!--footer-->

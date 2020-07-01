@@ -176,7 +176,7 @@ include 'connection_database.php';
 
                         <div class="d-flex justify-content-around mt-2 mb-3 text-center">
                             <!-- suppression compte-->
-                            <a href="delete_account.php" onclick="return confirm('Etes-vous sûr de vouloir supprimer votre compte?');" class=" text-danger">Supprimer mon compte</a>
+                            <a href="delete_account.php" class=" text-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer mon compte</a>
                             <a href="games.php">Revenir à la page des jeux</a>
                         </div>
                     </div>
@@ -184,8 +184,32 @@ include 'connection_database.php';
             </div>
         </div>
     </div>
-
 </div>
+
+
+<!-- Modal pour afficher un message de confirmation de la suppression du compte-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Confirmez la suppression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Voulez-vous supprimez votre compte?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" onclick="window.location.href ='delete_account.php';" class="btn btn-primary">Confirmez la suppression</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- footer -->
 <footer>
         <div class="container-fluid site-footer">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
@@ -196,7 +220,7 @@ include 'connection_database.php';
     </footer>
 
 
-<!-- Modal -->
+<!-- Modal d'affichage messages d'erreur-->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
