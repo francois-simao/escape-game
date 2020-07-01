@@ -78,6 +78,7 @@ include 'connection_database.php';
         $req = $bdd->query($sql);         
 ?>
     <div class="container-fluid p-0 mb-4">
+        <h1 class="title-form text-center text-uppercase mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0">Choix des jeux</h1>
         <div class="page-wrapper">
             <div class="post-slider position-relative">
                 <i class="fas fa-chevron-left prev position-absolute"></i>
@@ -95,13 +96,16 @@ include 'connection_database.php';
                             <?php } ?>
                         <div class="circle-singleline">
                             <p><?php echo ($row['number_players']);?> personnes</p>
+                            <p><?php echo ($row['duration']);?> minutes</p>
                         </div>
                         <div class="post-info p-2">
                             <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo ($row['name']);?></h4>
+                            <div class="text-overflow-game">
                             <p class="text-game-slider"><?php echo ($row['history']);?></p>
                             <div class="d-flex justify-content-around">
                                 <!-- <p class="note-games">18/20</p> -->
                                 <!-- <p class="text-right mx-3"><a href="#">En savoir plus</a></p> -->
+                            </div>
                             </div>
                         </div>
                     </div>

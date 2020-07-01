@@ -6,7 +6,7 @@ include 'connection_database.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@ if(isset($_SESSION['id'])) {
 if (isset($_POST) AND !empty($_POST) ){
     if (!empty($_POST['new_name']) AND !empty($_POST['new_number_players']) AND !empty($_POST['new_duration']) AND !empty($_POST['new_history']) ) {	                            
     $update = $bdd->prepare("UPDATE game SET name = ?, duration = ?, number_players = ?, history = ?  WHERE id=".$_GET['id']." ");
-    $update->execute(array($_POST['new_name'], $_POST['new_number_players'], $_POST['new_duration'], $_POST['new_history'] ));            
+    $update->execute(array($_POST['new_name'], $_POST['new_duration'], $_POST['new_number_players'], $_POST['new_history'] ));            
      }
 
 
@@ -93,11 +93,8 @@ if (isset($_POST) AND !empty($_POST) ){
                     <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
                         <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
                         <div class="contenu-menu">
-                            <ul class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
-                                <div class=" w-50">
-                                    <!-- <li class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
-                                    </li> -->
-                                </div>
+                            <ul class="d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
+                            
                                 <li><a href="page_admin.php" onclick="closeNav(x)"
                                                 class="title-menu">Retour à la page admin</a>
                                 </li>
@@ -139,11 +136,20 @@ if (isset($_POST) AND !empty($_POST) ){
                             <div class='d-flex '>
                                 <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                             </div>
+<<<<<<< HEAD
                             <div class='d-flex justify-content-between mb-3'>
                                 <label for='time_game' class='m-0'>Nombre de joueurs : </label>
                                 <input type='text' name="new_number_players" value="<?php echo $row['number_players'] ?>">
                                 <label for='time_game' class='m-0'>Durée du jeu : </label>
                                 <input type='text' name="new_duration" value="<?php echo $row['duration'] ?>">
+=======
+                            <div class='d-flex justify-content-between mb-3 text-center input-game-admin'>
+                            <label for='new_number_players' class='m-0'>Nombre de joueurs : </label>
+                            <input type='text' name="new_number_players" class='new_number border mx-2 text-center' value="<?php echo $row['number_players'] ?>">
+                            
+                            <label for='new_duration' class='m-0'>Durée du jeu : </label>
+                            <input type='text' name="new_duration" class='new_duration border mx-2 text-center' value="<?php echo $row['duration'] ?>">
+>>>>>>> a5ec38aad3ed83d456eb6730584cd50297991c1e
                             </div>
                             <label for='new_history' class=''>Histoire : </label>
                             <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
@@ -167,6 +173,7 @@ if (isset($_POST) AND !empty($_POST) ){
 <!-- affichage des énigmes du jeu -->
                         <input type="hidden" name="enigmaIds[]" value="<?php echo $row['idEnigma'] ?>">
                         <div class='d-flex flex-column'>
+<<<<<<< HEAD
                             <label for='new_history' class=''>Enigme : </label>
                             <input type='text' name="new_name_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['name_enigma'] ?>">
                             <textarea name='new_content_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
@@ -174,13 +181,24 @@ if (isset($_POST) AND !empty($_POST) ){
                             <input type='text' name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
                             <label for='new_history' class=''>Solution : </label>
                             <textarea name='new_solution_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+=======
+                        <label for='new_history' class='text-uppercase'>Enigme : </label>
+                        <input type='text' name="new_name_enigma" value="<?php echo $row['name_enigma'] ?>">
+                        <textarea name='new_content_enigma' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
+                        <div class="d-flex mx-0">
+                        <label for='new_history' class='mr-2'>Durée : </label>
+                        <input type='text' name="new_duration_enigma" class="w-25 border text-center" value="<?php echo $row['duration_enigma'] ?>">
+                        </div>
+                        <label for='new_history' class=''>Solution : </label>
+                        <textarea name='new_solution_enigma' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
+>>>>>>> a5ec38aad3ed83d456eb6730584cd50297991c1e
                         </div>
                                     
                         <?php } ?>    
 
                         <div class='button-edit d-flex justify-content-between mb-5'>
                         <a href='add_enigma.php' class='btn-play-header text-light text-center mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0'>Ajouter une énigme</a>
-                        <input type='submit' class='btn-play-header  text-light text-center' value='Valider'>
+                        <input type='submit' class='btn-play-header text-light text-center' value='Valider'>
                         </div>
                         </form>
 
@@ -212,25 +230,23 @@ else {
 
 <script>
     function openNav(y) {
-            if (y.matches) { //openNav est le nom donné au onclick qui, lorsqu'on clique sur le menu, il s'ouvrira grâce au getElementById qui récupère l'id "mySidenav" dans la div principale
-                document.getElementById("mySidenav").style.width = "100%"; //style.width permet de donner une largeur au menu lorsque celui-ci est ouvert (mettre en 100% pour qu'il puisse prendre toute la page)
-                // document.getElementById("ecart-menu").style.marginLeft = "50%"; // permet de faire décaler le texte et l'icon du menu
+            if (y.matches) { 
+                document.getElementById("mySidenav").style.width = "100%";
             }
         }
 
         function closeNav(x) {
-            if (x.matches) {//closeNav est le nom donné au onclick pour fermer le menu (même système que celui du openNav)
-                document.getElementById("mySidenav").style.width = "0"; // mettre 0 pour qu'il ne soit pas visible
-                // document.getElementById("ecart-menu").style.marginLeft = "0";
+            if (x.matches) {
+                document.getElementById("mySidenav").style.width = "0";
             }
         }
 
         var y = window.matchMedia("(max-width: 1199.98px)")
-        openNav(y) // Call listener function at run time
-        y.addListener(openNav) // Attach listener function on state changes
+        openNav(y)
+        y.addListener(openNav)
         var x = window.matchMedia("(max-width: 1199.98px)")
-        closeNav(x) // Call listener function at run time
-        x.addListener(closeNav) // Attach listener function on state changes
+        closeNav(x)
+        x.addListener(closeNav)
 </script> 
 
 <!--scripts-->
