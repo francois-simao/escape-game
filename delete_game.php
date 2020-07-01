@@ -17,6 +17,12 @@ include 'connection_database.php';
 <?php
     if(isset($_SESSION['id'])) {  
         if (isset($_GET['id'])) {
+            //suppression des énigmes associées au jeu
+            $delete="DELETE FROM enigma WHERE id_game=".$_GET['id']." ";
+            $stmt = $bdd->prepare($delete);
+            $stmt->execute();
+
+            //suppression du jeu
             $delete="DELETE FROM game WHERE id=".$_GET['id']." ";
             $stmt = $bdd->prepare($delete);
             $stmt->execute();

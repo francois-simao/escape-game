@@ -81,7 +81,7 @@ include 'connection_database.php';
                                 <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo $row['name'] ?></h4>
                                 <div class="d-flex flex-column align-items-center">
                                     <input type="button" value="Modifier" onclick="window.location.href ='edit_game.php?id=<?= $row['id'] ?>';" class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer" class="btn-play-header button-admin-slide text-light my-3" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <input type="button" value="Supprimer" class="btn-play-header button-admin-slide text-light my-3" data-toggle="modal" data-target="#exampleModalCenter<?php echo $row['id']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ include 'connection_database.php';
 $req = $bdd->query($sql);
 while ($row=$req->fetch()){
 ?>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
