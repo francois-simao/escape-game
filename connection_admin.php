@@ -7,17 +7,19 @@ include 'connection_database.php';
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Connection_admin</title>
 </head>
+
 <body>
-   <!--formulaire-->
-   <header class="create-game">
+    <!--formulaire-->
+    <header class="create-game">
         <div class="container-fluid p-0">
             <!-- <div class="container "> -->
             <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" id="container-escape">
@@ -29,24 +31,23 @@ include 'connection_database.php';
                                 <input type="email" class="form-control" placeholder="Email" name="email" required>
                             </div>
                             <div class="input-text mb-2">
-                                <input type="password" class="form-control" placeholder="Mot de passe" name="password" required>
+                                <input type="password" class="form-control" placeholder="Mot de passe" name="password"
+                                    required>
                             </div>
                             <a href="forgot_password.php" class="mb-3 text-left">Mot de passe oublié ?</a>
                             <div class="d-flex justify-content-center">
-                                <input type="submit" value="Validez" class="btn-play-header text-light btn-connexion-width" name="connection">
+                                <input type="submit" value="Validez"
+                                    class="btn-play-header text-light btn-connexion-width" name="connection">
                             </div>
                         </div>
                     </form>
-                        <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a
-                                href="registration_admin.php">Inscrivez-vous maintenant</a> <br>ou<br> </p>
-                        <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
-                   
+                    <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a href="registration_admin.php">Inscrivez-vous
+                            maintenant</a> <br>ou<br> </p>
+                    <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
                 </div>
             </div>
         </div>
-    
-
-    </header> 
+    </header>
 
 <!--traitement du formulaire-->
 <?php
@@ -64,17 +65,17 @@ if(isset($_POST['connection'])) {
           $_SESSION['mail'] = $userinfo['e_mail'];
           $_SESSION['avatar'] = $userinfo['image'];
           header("Location: page_admin.php?id=".$_SESSION['id']);
-       } else {
+        } else {
           $erreur = "Mauvais mail ou mot de passe !";
-       }
+        }
     } else {
        $erreur = "Tous les champs doivent être complétés !";
     }
     echo($erreur);
- }
+}
 ?>
 
-<!--scripts-->
+    <!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -86,10 +87,6 @@ if(isset($_POST['connection'])) {
         crossorigin="anonymous"></script>
 
 
-
-
-
-
-
 </body>
+
 </html>

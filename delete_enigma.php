@@ -15,21 +15,20 @@ include 'connection_database.php';
 <body>
     
 <?php
-    if(isset($_SESSION['id'])) {  
-        if (isset($_GET['id'])) {
-            $sql = $bdd->prepare("DELETE FROM enigma WHERE id = ?");
-            $sql->execute(array($_GET['id']));
-            header("Location: add_enigma.php");
-        }
+if(isset($_SESSION['id'])) {  
+    if (isset($_GET['id'])) {
+        $sql = $bdd->prepare("DELETE FROM enigma WHERE id = ?");
+        $sql->execute(array($_GET['id']));
+        header("Location: add_enigma.php");
+    }
 ?>
 
 <!-- sécurité page-->         
 <?php   
-}
-else {
+} else {
     header("Location: index.php");
-    }
-    ?>
+}
+?>
 
 </body>
 </html>

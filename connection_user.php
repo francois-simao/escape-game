@@ -17,11 +17,11 @@ include 'connection_database.php';
 </head>
 
 <body>
-<!--formulaire-->
+    <!--formulaire-->
     <header class="bg-header">
         <div class="container-fluid p-0">
             <!-- <div class="container "> -->
-            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac" >
+            <div class="vh-100 d-flex justify-content-center align-items-center bg-opac">
                 <div class="bloc-form bg-light p-5 text-center">
                     <h2 class="title-form text-uppercase mb-4">Se connecter</h2>
                     <form action="" method="POST">
@@ -30,23 +30,22 @@ include 'connection_database.php';
                                 <input type="email" class="form-control" placeholder="Email" name="email" required>
                             </div>
                             <div class="input-text mb-2">
-                                <input type="password" class="form-control" placeholder="Mot de passe" name="password" required>
+                                <input type="password" class="form-control" placeholder="Mot de passe" name="password"
+                                    required>
                             </div>
                             <a href="forgot_password.php" class="mb-3 text-left">Mot de passe oublié ?</a>
                             <div class="d-flex justify-content-center">
-                                <input type="submit" value="Validez" class="btn-play-header text-light btn-connexion-width" name="connection">
+                                <input type="submit" value="Validez"
+                                    class="btn-play-header text-light btn-connexion-width" name="connection">
                             </div>
                         </div>
                     </form>
-                        <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a
-                                href="registration.php">Inscrivez-vous maintenant</a> <br>ou<br> </p>
-                        <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
-                   
+                    <p class="mt-3 mb-0 ">Pas encore inscrit(e) ? <a href="registration.php">Inscrivez-vous
+                            maintenant</a> <br>ou<br> </p>
+                    <a href="index.php" class="mb-3 ">Revenir à la page d'accueil</a>
                 </div>
             </div>
         </div>
-    
-
     </header>
 
 <!--traitement du formulaire-->
@@ -65,17 +64,17 @@ if(isset($_POST['connection'])) {
           $_SESSION['mail'] = $userinfo['e_mail'];
           $_SESSION['avatar'] = $userinfo['image'];
           header("Location: games.php?id=".$_SESSION['id']);
-       } else {
+        } else {
           $erreur = "Mauvais mail ou mot de passe !";
-       }
+        }
     } else {
        $erreur = "Tous les champs doivent être complétés !";
     }
     echo($erreur);
- }
+}
 ?>
 
-<!--scripts-->
+    <!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

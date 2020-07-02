@@ -20,37 +20,33 @@ include 'connection_database.php';
 
 <body>
 
-    <?php
-
+<?php
     if(isset($_SESSION['id'])) { 
-        if(isset($_POST['ajouter'])) { 
-       
+        if(isset($_POST['ajouter'])) {       
         
-// traitement du formulaire
-    $reponse = $bdd->query("SELECT MAX(id) FROM game");
-    $donnees = $reponse->fetch();
-    $id_game = intval($donnees[0]);
-        // var_dump($id_game);
-
-        $name = htmlspecialchars($_POST['name_enigma']); 
-        $duration = intval(htmlspecialchars($_POST['duration_enigma']));
-        $content = htmlspecialchars($_POST['content_enigma']);
-        $solution = htmlspecialchars($_POST['solution_enigma']);
+            // traitement du formulaire
+            $reponse = $bdd->query("SELECT MAX(id) FROM game");
+            $donnees = $reponse->fetch();
+            $id_game = intval($donnees[0]);
+            $name = htmlspecialchars($_POST['name_enigma']); 
+            $duration = intval(htmlspecialchars($_POST['duration_enigma']));
+            $content = htmlspecialchars($_POST['content_enigma']);
+            $solution = htmlspecialchars($_POST['solution_enigma']);
             if(!empty($_POST['name_enigma']) AND !empty($_POST['duration_enigma']) AND !empty($_POST['content_enigma']) AND !empty($_POST['solution_enigma']) ) {
-            $reqenigma = $bdd->prepare("SELECT * FROM enigma WHERE name = ?");
-            $reqenigma->execute(array($name));
-            $nameexist = $reqenigma->rowCount();
+                $reqenigma = $bdd->prepare("SELECT * FROM enigma WHERE name = ?");
+                $reqenigma->execute(array($name));
+                $nameexist = $reqenigma->rowCount();
                 if($nameexist == 0) {
-                $insertmbr = $bdd->prepare("INSERT INTO enigma(name_enigma, id_game, duration_enigma, content_enigma, solution_enigma) VALUES(?, ?, ?, ?, ?)");
-                $insertmbr->execute(array($name, $id_game, $duration, $content, $solution));
+                    $insertmbr = $bdd->prepare("INSERT INTO enigma(name_enigma, id_game, duration_enigma, content_enigma, solution_enigma) VALUES(?, ?, ?, ?, ?)");
+                    $insertmbr->execute(array($name, $id_game, $duration, $content, $solution));
                 } else {
-                echo "Ce nom est déjà utilisé";
-            }            
+                    echo "Ce nom est déjà utilisé";
+                }            
+            }
         }
-    }
 ?>
 
-<!-- header -->
+    <!-- header -->
     <div class="page-wrap">
         <div class="container-fluid bg-color p-0">
             <div class="container">
@@ -77,7 +73,7 @@ include 'connection_database.php';
             </div>
         </div>
 
-<!-- formulaire -->
+        <!-- formulaire -->
         <div class="container-fluid">
             <div class="container">
                 <div class="row justify-content-center">
@@ -112,7 +108,7 @@ include 'connection_database.php';
                         <h1 class="title-form text-uppercase text-center my-3">
                             Récapitulatif</h1>
 
-<!-- affichage des énigmes ajoutées -->
+    <!-- affichage des énigmes ajoutées -->
 <?php
     $reponse = $bdd->query("SELECT MAX(id) FROM game");
     $donnees = $reponse->fetch();
@@ -130,12 +126,13 @@ include 'connection_database.php';
                             <label>Solution : </label>
                             <textarea><?php echo $row['solution_enigma'] ?></textarea>
                             <div class="d-flex justify-content-center">
-                            <input type="button" value="Supprimer une énigme" class=" btn btn-primary mb-5 mt-3 " data-toggle="modal" data-target="#exampleModalCenter">
+                                <input type="button" value="Supprimer une énigme" class=" btn btn-primary mb-5 mt-3 "
+                                    data-toggle="modal" data-target="#exampleModalCenter">
                             </div>
                         </div>
                         <?php
-        }
-?>
+                        }
+                        ?>
 
 
 <!-- Modal de confirmation de la suppression d'une jeu-->
@@ -148,44 +145,47 @@ include 'connection_database.php';
     $sql->execute(array($id_game));
     while ($row=$sql->fetch()){
 ?>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Confirmez la suppression</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      Voulez-vous supprimez le jeu <?php echo $row['name_enigma']; ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" onclick="window.location.href ='delete_enigma.php?id=<?= $row['id'] ?>';" class="btn btn-primary">Confirmez la suppression</button>
-      </div>
-    </div>
-  </div>
-</div>
-<?php
-    }
-?>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Confirmez la suppression</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Voulez-vous supprimez le jeu <?php echo $row['name_enigma']; ?>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Annuler</button>
+                                        <button type="button"
+                                            onclick="window.location.href ='delete_enigma.php?id=<?= $row['id'] ?>';"
+                                            class="btn btn-primary">Confirmez la suppression</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                        }
+                        ?>
 
                         <div class="button-edit d-flex justify-content-center">
-    <!-- validation du jeu -->
+                            <!-- validation du jeu -->
                             <input type="button" value="Validez votre jeu"
                                 onclick="window.location.href ='page_admin.php';"
                                 class="btn-play-header text-light mb-5 mx-2">
                             <input type="button" value="Annuler" onclick="window.location.href ='page_admin.php';"
                                 class="btn-play-header text-light mb-5 mx-2">
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!--footer-->
     <footer>
         <div class="container-fluid site-footer ">
@@ -196,13 +196,12 @@ include 'connection_database.php';
         </div>
     </footer>
 
-    <!-- sécurité page-->
-    <?php   
-}
-else {
+<!-- sécurité page-->
+<?php   
+} else {
     header("Location: index.php");
-    }
-    ?>
+}
+?>
 
 
     <script>

@@ -30,10 +30,7 @@ session_destroy();
     </div>
 
 
-
-
-
-    <script>
+<script>
 // une fois la page completement chargée
 document.addEventListener('DOMContentLoaded', function() {
     // mise en attente 5sec et redirection
@@ -42,12 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 5000);
     }, false);
 </script>
-
-
-
-
-
-
 
 <!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -59,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

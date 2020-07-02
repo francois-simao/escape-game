@@ -16,23 +16,18 @@ include 'connection_database.php';
     
 <?php
 if(isset($_SESSION['id'])) {
-
     $id = $_SESSION['id'];
     if(!empty($id) && is_numeric($id)){
         $sql = $bdd->prepare("DELETE FROM user WHERE id = ?");
         $sql->execute(array($id));
         header("Location: index.php");
     }
-}
 
 //sécurité page           
-   else {
-      header("Location: index.php");
-   }
-
+} else {
+    header("Location: index.php");
+}
 ?>
-
-
 
 </body>
 </html>

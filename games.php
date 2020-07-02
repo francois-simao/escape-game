@@ -21,48 +21,50 @@ include 'connection_database.php';
 
 <body>
 <?php
-    if(isset($_SESSION['id'])) {  
-        
+if(isset($_SESSION['id'])) {          
 ?>
-<!--header -->
-<div class="page-wrap">
+    <!--header -->
+    <div class="page-wrap">
         <div class="container-fluid bg-color p-0 mb-lg-5 mb-xl-5">
             <div class="container ">
                 <div class="row  ">
-
                     <div id="mySidenav" class="sidenav sidenav-color size-width-menu">
                         <div class="closebtn text-center text-light" onclick="closeNav(x)">&times;</div>
                         <div class=" contenu-menu-user ">
-                            <ul class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
-                                    <div class=" w-50">
-                                        <li
-                                            class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
-                                            <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
+                            <ul
+                                class="d-flex d-flex flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center">
+                                <div class=" w-50">
+                                    <li
+                                        class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
+                                        <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
                                                 ?>
-                                                <div class="img-avatar-ronde-games-01 mr-xl-3">
-                                                <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100" class="img-fluid img-avatar"/>
-                                                </div>
-                                                <?php
+                                        <div class="img-avatar-ronde-games-01 mr-xl-3">
+                                            <img src="membres/avatars/<?php echo ($_SESSION['avatar']);?>" width="100"
+                                                class="img-fluid img-avatar" />
+                                        </div>
+                                        <?php
                                                 } else {
                                                 ?>
-                                                <div class="img-avatar-ronde-games-02">
-                                                <img src="membres/avatars/default-avatar.jpg" width="100" class="img-fluid img-avatar "/>
-                                                </div>
-                                                <?php
+                                        <div class="img-avatar-ronde-games-02">
+                                            <img src="membres/avatars/default-avatar.jpg" width="100"
+                                                class="img-fluid img-avatar " />
+                                        </div>
+                                        <?php
                                                 }
                                                 ?>
-                                            <p class="pl-3 pt-3"><?php echo ($_SESSION['pseudo']);?></p></li>
-                                    </div>
-                                <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
-                                    <li><a href="my_account.php" onclick="closeNav(x)" class="title-menu">Mon compte</a></li>
-                                    <li><a href="page_logout.php" onclick="closeNav(x)" class="title-menu">Déconnexion</a>
+                                        <p class="pl-3 pt-3"><?php echo ($_SESSION['pseudo']);?></p>
                                     </li>
                                 </div>
-
+                                <div
+                                    class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
+                                    <li><a href="my_account.php" onclick="closeNav(x)" class="title-menu">Mon compte</a>
+                                    </li>
+                                    <li><a href="page_logout.php" onclick="closeNav(x)"
+                                            class="title-menu">Déconnexion</a>
+                                    </li>
+                                </div>
                             </ul>
-
                         </div>
-
                     </div>
                     <div id="ecart-menu">
                         <div class="icon-menu ml-3 text-light" onclick="openNav(y)">&#9776;</div>
@@ -72,53 +74,54 @@ include 'connection_database.php';
         </div>
 
 
-<!-- choix du jeu -->
-<?php
+    <!-- choix du jeu -->
+    <?php
     $sql = $bdd->prepare("SELECT * FROM game ");
     $sql->execute(array());         
-?>
-    <div class="container-fluid p-0 mb-4">
-        <h1 class="title-form text-center text-uppercase mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0">Choix des jeux</h1>
-        <div class="page-wrapper">
-            <div class="post-slider position-relative">
-                <i class="fas fa-chevron-left prev position-absolute"></i>
-                <i class="fas fa-chevron-right next position-absolute"></i>
+    ?>
+        <div class="container-fluid p-0 mb-4">
+            <h1 class="title-form text-center text-uppercase mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0">Choix des jeux</h1>
+            <div class="page-wrapper">
+                <div class="post-slider position-relative">
+                    <i class="fas fa-chevron-left prev position-absolute"></i>
+                    <i class="fas fa-chevron-right next position-absolute"></i>
 
-                <div class="post-wrapper">
-                    <?php
+                    <div class="post-wrapper">
+                        <?php
                     while ($row=$sql->fetch()){
                     ?>
-                    <div class="post">
-                    <?php if($row['image'] == NULL) { ?>
-                                <img src="membres/jeux/default-game.jpg" alt="" class="slider-image w-100">
+                        <div class="post">
+                            <?php if($row['image'] == NULL) { ?>
+                            <img src="membres/jeux/default-game.jpg" alt="" class="slider-image w-100">
                             <?php } else {?>
-                                <img src="membres/jeux/<?php echo ($row['image']);?>" alt="" class="slider-image w-100">
+                            <img src="membres/jeux/<?php echo ($row['image']);?>" alt="" class="slider-image w-100">
                             <?php } ?>
-                        <div class="circle-singleline">
-                            <p><?php echo ($row['number_players']);?> personnes</p>
-                            <p><?php echo ($row['duration']);?> minutes</p>
-                        </div>
-                        <div class="post-info p-2">
-                            <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo ($row['name']);?></h4>
-                            <div class="text-overflow-game">
-                            <p class="text-game-slider"><?php echo ($row['history']);?></p>
-                            <div class="d-flex justify-content-around">
-                                <!-- <p class="note-games">18/20</p> -->
-                                <!-- <p class="text-right mx-3"><a href="#">En savoir plus</a></p> -->
+                            <div class="circle-singleline">
+                                <p><?php echo ($row['number_players']);?> personnes</p>
+                                <p><?php echo ($row['duration']);?> minutes</p>
                             </div>
+                            <div class="post-info p-2">
+                                <h4 class="title-game-slider text-center my-2 text-uppercase">
+                                    <?php echo ($row['name']);?></h4>
+                                <div class="text-overflow-game">
+                                    <p class="text-game-slider"><?php echo ($row['history']);?></p>
+                                    <div class="d-flex justify-content-around">
+                                        <!-- <p class="note-games">18/20</p> -->
+                                        <!-- <p class="text-right mx-3"><a href="#">En savoir plus</a></p> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php
+                        <?php
                     }
                     ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--footer -->
+    <!--footer -->
     <footer>
         <div class="container-fluid site-footer">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
@@ -213,15 +216,14 @@ include 'connection_database.php';
 
     </script>
 
-<!-- sécurité page-->         
+<!-- sécurité page-->
 <?php   
-}
-else {
+} else {
     header("Location: index.php");
-    }
-    ?>
+}
+?>
 
-<!--scripts-->
+    <!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -231,6 +233,7 @@ else {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+        
 </body>
 
 </html>

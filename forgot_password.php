@@ -47,39 +47,29 @@ require_once 'recaptcha/autoload.php';
 <?php
 if(isset($_POST['valider'])) {
     if(isset($_POST['g-recaptcha-response'])){
-    $recaptcha = new \ReCaptcha\ReCaptcha('6LfbQf0UAAAAADc4ysxuTUD9sOXc15VY6zI--4_q');
-    $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
-        if ($resp->isSuccess()) {
-            if(isset($_POST['reset_password'])){
-            $password = uniqid(); /* génère un identifiant unique */
-            $hashedPassword = sha1($password); /*password_hash hash l'identifiant contenu dans $password - PASSWORD_DEFAULT est l'algorithme de chiffrement par défaut à utiliser pour le hachage si aucun algorithme n'est fourni */
+        $recaptcha = new \ReCaptcha\ReCaptcha('6LfbQf0UAAAAADc4ysxuTUD9sOXc15VY6zI--4_q');
+        $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
+            if ($resp->isSuccess()) {
+                if(isset($_POST['reset_password'])){
+                    $password = uniqid(); /* génère un identifiant unique */
+                    $hashedPassword = sha1($password); /*password_hash hash l'identifiant contenu dans $password - PASSWORD_DEFAULT est l'algorithme de chiffrement par défaut à utiliser pour le hachage si aucun algorithme n'est fourni */
 
-            $message = "Bonjour, voici votre nouveau mot de passe: $password";
-            $headers = 'Content-Type: text/plain; charset="utf-8"'." ";
+                    $message = "Bonjour, voici votre nouveau mot de passe: $password";
+                    $headers = 'Content-Type: text/plain; charset="utf-8"'." ";
 
-                if(mail($_POST['reset_password'], 'Mot de passe oublié', $message, $headers)) { /* fonction mail (à qui , le sujet, le message, le header que l'on passe) */               
-                $sql = $bdd->prepare("UPDATE user SET password = ? WHERE e_mail = ?");
-                $sql->execute(array($hashedPassword, $_POST['reset_password']));
-                echo "Mail envoyé";
+                    if(mail($_POST['reset_password'], 'Mot de passe oublié', $message, $headers)) { /* fonction mail (à qui , le sujet, le message, le header que l'on passe) */               
+                        $sql = $bdd->prepare("UPDATE user SET password = ? WHERE e_mail = ?");
+                        $sql->execute(array($hashedPassword, $_POST['reset_password']));
+                        echo "Mail envoyé";
+                    }
                 }
-            }
-        }
-        else{
+            } else{
             $errors = $resp->getErrorCodes();
             echo "captcha invalide";
             }
     }
 }
 ?>
-
-
-
-
-
-
-
-
-
 
 <!--scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -91,6 +81,7 @@ if(isset($_POST['valider'])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+        
 </body>
 
 </html>
