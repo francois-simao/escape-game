@@ -118,9 +118,10 @@ include 'connection_database.php';
     $donnees = $reponse->fetch();
     $id_game = intval($donnees[0]);
 
-    $sql="SELECT * FROM enigma WHERE id_game = $id_game ";
-    $req = $bdd->query($sql); 
-    while ($row=$req->fetch()){
+
+    $sql = $bdd->prepare("SELECT * FROM enigma WHERE id_game = ?");
+    $sql->execute(array($id_game));
+    while ($row=$sql->fetch()){
 ?>
                         <div class="d-flex flex-column ">
                             <label>Enigme : <?php echo $row['name_enigma'] ?> </label>
@@ -143,9 +144,9 @@ include 'connection_database.php';
     $donnees = $reponse->fetch();
     $id_game = intval($donnees[0]);
 
-    $sql="SELECT * FROM enigma WHERE id_game = $id_game ";
-    $req = $bdd->query($sql); 
-    while ($row=$req->fetch()){
+    $sql = $bdd->prepare("SELECT * FROM enigma WHERE id_game = ?");
+    $sql->execute(array($id_game));
+    while ($row=$sql->fetch()){
 ?>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

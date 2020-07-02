@@ -17,9 +17,8 @@ include 'connection_database.php';
 <?php
     if(isset($_SESSION['id'])) {  
         if (isset($_GET['id'])) {
-            $delete="DELETE FROM enigma WHERE id=".$_GET['id']." ";
-            $stmt = $bdd->prepare($delete);
-            $stmt->execute();
+            $sql = $bdd->prepare("DELETE FROM enigma WHERE id = ?");
+            $sql->execute(array($_GET['id']));
             header("Location: add_enigma.php");
         }
 ?>

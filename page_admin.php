@@ -25,8 +25,9 @@ include 'connection_database.php';
 <body>
 <?php
     if(isset($_SESSION['id'])) { 
-        $sql="SELECT * FROM game ";
-        $req = $bdd->query($sql);         
+
+        $sql = $bdd->prepare("SELECT * FROM game ");
+        $sql->execute(array());         
 ?>
     <div class="page-wrap">
 
@@ -63,7 +64,7 @@ include 'connection_database.php';
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3">
                     <?php
-                    while ($row=$req->fetch()){
+                    while ($row=$sql->fetch()){
                     ?>
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
                         <div class="post-admin mx-2 mb-5">
@@ -81,7 +82,7 @@ include 'connection_database.php';
                                 <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo $row['name'] ?></h4>
                                 <div class="d-flex flex-column align-items-center">
                                     <input type="button" value="Modifier" onclick="window.location.href ='edit_game.php?id=<?= $row['id'] ?>';" class="btn-play-header button-admin-slide text-light my-3">
-                                    <input type="button" value="Supprimer" class="btn-play-header button-admin-slide text-light my-3" data-toggle="modal" data-target="#exampleModalCenter<?php echo $row['id']; ?>">
+                                    <input type="button" value="Supprimer" class="btn-play-header button-admin-slide text-light my-3" data-toggle="modal" data-target="#modalConfirmDelete<?php echo $row['id']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -99,14 +100,14 @@ include 'connection_database.php';
 
 <!-- Modal de confirmation de suppression du jeu-->
 <?php
-$req = $bdd->query($sql);
-while ($row=$req->fetch()){
+$sql->execute(array());
+while ($row=$sql->fetch()){
 ?>
-<div class="modal fade" id="exampleModalCenter<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalConfirmDelete<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Confirmez la suppression</h5>
+        <h5 class="modal-title" id="modalConfirmDeleteLongTitle">Confirmez la suppression</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

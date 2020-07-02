@@ -20,8 +20,8 @@ include 'connection_database.php';
 </head>
 
 <body>
-<!-- traitement du formulaire-->
-<?php
+    <!-- traitement du formulaire-->
+    <?php
     if(isset($_SESSION['id'])) {
        //mise à jour username
        $msgerror = array();
@@ -114,103 +114,114 @@ include 'connection_database.php';
 ?>
 
 
-<div class="page-wrap">
-    <!-- formulaire-->
-    <div class="container-fluid create-game p-0">        
-        <div class="container">
-            <div class="row flex-column">
-                <div class="bloc-page bg-light d-flex justify-content-center ">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">                        
-                        <h1 class="title-form text-uppercase mb-4 text-center mt-4">Editer votre profil</h1>
+    <div class="page-wrap">
+        <!-- formulaire-->
+        <div class="container-fluid create-game p-0">
+            <div class="container">
+                <div class="row flex-column">
+                    <div class="bloc-page bg-light d-flex justify-content-center ">
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                            <h1 class="title-form text-uppercase mb-4 text-center mt-4">Editer votre profil</h1>
 
-<div class="d-flex justify-content-center mb-4">
-<!-- affichage de l'avatar-->
-<?php
-    if(!empty($user['image']))
-    {
-    ?>
-    <div class="img-avatar-ronde-account-01">
-        <img src="membres/avatars/<?php echo $user['image'];?>" width="130" class="img-fluid img-avatar"/> <!-- ca va prendre la hauteur automatiquement-->
-    </div>
-    <?php
-    } else {
-    ?>
-    <div class="img-avatar-ronde-account-02">
-        <img src="membres/avatars/default-avatar.jpg" width="130" class="img-fluid img-avatar"/>
-    </div>
-    <?php
-    }
-    ?>
-</div>
+                            <div class="d-flex justify-content-center mb-4">
+                                <!-- affichage de l'avatar-->
+                                <?php
+                                if(!empty($user['image']))
+                                {
+                                ?>
+                                <div class="img-avatar-ronde-account-01">
+                                    <img src="membres/avatars/<?php echo $user['image'];?>" width="130"
+                                        class="img-fluid img-avatar" /> <!-- ca va prendre la hauteur automatiquement-->
+                                </div>
+                                <?php
+                                } else {
+                                ?>
+                                <div class="img-avatar-ronde-account-02">
+                                    <img src="membres/avatars/default-avatar.jpg" width="130"
+                                        class="img-fluid img-avatar" />
+                                </div>
+                                <?php
+                                }
+                                ?>
+                            </div>
 
-                        <form id="myForm" action="" method="POST" enctype="multipart/form-data">
-                            <div class="input-text mb-4">
-                                <input type="text" class="form-control" placeholder="Pseudo" name="newpseudo" value="<?php echo $user['username']; ?>">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="email" class="form-control" placeholder="Email" name="newmail" value="<?php echo $user['e_mail']; ?>">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="email" class="form-control" placeholder="Confirmation de votre email" name="newmail2">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type=password class="form-control" placeholder="Mot de passe" name="newmdp1">
-                            </div>
-                            <div class="input-text mb-4">
-                                <input type="password" class="form-control" placeholder="Confirmation mot de passe" name="newmdp2">
-                            </div>
-                            <div class="input-text mb-4">
-                            <p>Veuillez choisir votre avatar :</p>
-                                <input type="file" name="avatar" id="avatar">
-                            </div>
-                            
+                            <form id="myForm" action="" method="POST" enctype="multipart/form-data">
+                                <div class="input-text mb-4">
+                                    <input type="text" class="form-control" placeholder="Pseudo" name="newpseudo"
+                                        value="<?php echo $user['username']; ?>">
+                                </div>
+                                <div class="input-text mb-4">
+                                    <input type="email" class="form-control" placeholder="Email" name="newmail"
+                                        value="<?php echo $user['e_mail']; ?>">
+                                </div>
+                                <div class="input-text mb-4">
+                                    <input type="email" class="form-control" placeholder="Confirmation de votre email"
+                                        name="newmail2">
+                                </div>
+                                <div class="input-text mb-4">
+                                    <input type=password class="form-control" placeholder="Mot de passe" name="newmdp1">
+                                </div>
+                                <div class="input-text mb-4">
+                                    <input type="password" class="form-control" placeholder="Confirmation mot de passe"
+                                        name="newmdp2">
+                                </div>
+                                <div class="input-text mb-4">
+                                    <p>Veuillez choisir votre avatar :</p>
+                                    <input type="file" name="avatar" id="avatar">
+                                </div>
 
 
-<!-- affichage des messages-->
 
-                        
-                            <div class="d-flex justify-content-center">
-                            <button type="submit" class="mb-4 mt-3 btn-play-header text-light btn-inscription-width">Enregistrez vos modifications</button>
+                                <!-- affichage des messages-->
+
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit"
+                                        class="mb-4 mt-3 btn-play-header text-light btn-inscription-width">Enregistrez
+                                        vos modifications</button>
+                                </div>
+                            </form>
+
+                            <div class="d-flex justify-content-around mt-2 mb-3 text-center">
+                                <!-- suppression compte-->
+                                <a href="delete_account.php" class=" text-danger" data-toggle="modal"
+                                    data-target="#modal_confirm_delete">Supprimer mon compte</a>
+                                <a href="games.php">Revenir à la page des jeux</a>
                             </div>
-                        </form>
-
-                        <div class="d-flex justify-content-around mt-2 mb-3 text-center">
-                            <!-- suppression compte-->
-                            <a href="delete_account.php" class=" text-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer mon compte</a>
-                            <a href="games.php">Revenir à la page des jeux</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<!-- Modal pour afficher un message de confirmation de la suppression du compte-->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Confirmez la suppression</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      Voulez-vous supprimez votre compte?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" onclick="window.location.href ='delete_account.php';" class="btn btn-primary">Confirmez la suppression</button>
-      </div>
+    <!-- Modal pour afficher un message de confirmation de la suppression du compte-->
+    <div class="modal fade" id="modal_confirm_delete" tabindex="-1" role="dialog"
+        aria-labelledby="modal_confirm_deleteTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal_confirm_deleteLongTitle">Confirmez la suppression</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Voulez-vous supprimez votre compte?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="button" onclick="window.location.href ='delete_account.php';"
+                        class="btn btn-primary">Confirmez la suppression</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
-<!-- footer -->
-<footer>
+    <!-- footer -->
+    <footer>
         <div class="container-fluid site-footer">
             <div class="contenu-footer text-light d-flex justify-content-around text-center">
                 <p class="footer-realisation my-2 py-3">World Escape Game 2020 - Mentions légales</p>
@@ -220,36 +231,37 @@ include 'connection_database.php';
     </footer>
 
 
-<!-- Modal d'affichage messages d'erreur-->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <?php if (count($msgerror) == 0 ) {
+    <!-- Modal d'affichage messages d'erreur-->
+    <div class="modal fade" id="Modal_messageCenter" tabindex="-1" role="dialog"
+        aria-labelledby="Modal_messageCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="Modal_messageLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php if (count($msgerror) == 0 ) {
             echo "vos modifications ont été effectuées avec succès";
             } else { ?>
-            <p class="text-success"> <?php echo implode($msgerror, "<br>");?> </p>
-            <?php
+                    <p class="text-success"> <?php echo implode($msgerror, "<br>");?> </p>
+                    <?php
             }?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
 
 
-<!-- sécurité page-->         
-<?php   
+    <!-- sécurité page-->
+    <?php   
    }
    else {
       header("Location: index.php");
@@ -258,7 +270,7 @@ include 'connection_database.php';
 
 
 
-<!--scripts-->
+    <!--scripts-->
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -270,10 +282,10 @@ include 'connection_database.php';
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 
-<!--affichage modal -->
-        <?php if( isset($msgavatar) || isset($msgmail) || isset($msgmdp) || isset($msgpseudo) ){ ?>
-        <script>$("#exampleModalCenter").modal('show');</script>
-        <?php } ?>
+    <!--affichage modal -->
+    <?php if( isset($msgavatar) || isset($msgmail) || isset($msgmdp) || isset($msgpseudo) ){ ?>
+    <script>$("#Modal_messageCenter").modal('show');</script>
+    <?php } ?>
 </body>
 
 </html>
