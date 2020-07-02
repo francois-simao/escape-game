@@ -1,6 +1,8 @@
 <!--page de suppression du compte-->
 <?php
 session_start();
+// connexion base de données
+include 'connection_database.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +19,8 @@ if(isset($_SESSION['id'])) {
 
     $id = $_SESSION['id'];
     if(!empty($id) && is_numeric($id)){
-        include 'connection_database.php';
-        $query = "DELETE FROM user WHERE id=$id";
-        $stmt = $bdd->prepare($query);
-	    $stmt->execute();
+        $sql = $bdd->prepare("DELETE FROM user WHERE id = ?");
+        $sql->execute(array($id));
         header("Location: index.php");
     }
 }

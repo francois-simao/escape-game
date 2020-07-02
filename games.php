@@ -74,8 +74,8 @@ include 'connection_database.php';
 
 <!-- choix du jeu -->
 <?php
-        $sql="SELECT * FROM game ";
-        $req = $bdd->query($sql);         
+    $sql = $bdd->prepare("SELECT * FROM game ");
+    $sql->execute(array());         
 ?>
     <div class="container-fluid p-0 mb-4">
         <h1 class="title-form text-center text-uppercase mt-4 mt-sm-5 mt-md-5 mt-lg-0 mt-xl-0">Choix des jeux</h1>
@@ -86,7 +86,7 @@ include 'connection_database.php';
 
                 <div class="post-wrapper">
                     <?php
-                    while ($row=$req->fetch()){
+                    while ($row=$sql->fetch()){
                     ?>
                     <div class="post">
                     <?php if($row['image'] == NULL) { ?>

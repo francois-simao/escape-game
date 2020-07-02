@@ -58,9 +58,8 @@ if(isset($_POST['valider'])) {
             $headers = 'Content-Type: text/plain; charset="utf-8"'." ";
 
                 if(mail($_POST['reset_password'], 'Mot de passe oublié', $message, $headers)) { /* fonction mail (à qui , le sujet, le message, le header que l'on passe) */               
-                $sql = "UPDATE user SET password = ? WHERE e_mail = ?";
-                $stmt = $bdd->prepare($sql);
-                $stmt->execute([$hashedPassword, $_POST['reset_password']]);
+                $sql = $bdd->prepare("UPDATE user SET password = ? WHERE e_mail = ?");
+                $sql->execute(array($hashedPassword, $_POST['reset_password']));
                 echo "Mail envoyé";
                 }
             }
