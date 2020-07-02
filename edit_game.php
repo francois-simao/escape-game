@@ -170,8 +170,8 @@ if (isset($_POST) AND !empty($_POST) ){
                                 <input type='text' class='border border-secondary text-center w-50 mb-2' name="new_name_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['name_enigma'] ?>">
                             </div>
                             <textarea name='new_content_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
-                            <div class="d-flex mx-0">
-                                <label for='new_history' class='mr-3'>Durée : </label>
+                            <div class="d-flex mx-0 mb-2">
+                                <label for='new_history' class='mr-3 mb-0'>Durée : </label>
                                 <input type='text' class="w-25 border border-secondary text-center" name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
                             </div>
                             <label for='new_history' class=''>Solution : </label>
