@@ -180,9 +180,9 @@ if (isset($_POST) AND !empty($_POST) ){
                                     
                         <?php } ?>    
 
-                        <div class='button-edit d-flex justify-content-between mb-5'>
-                        <a href='add_enigma.php' class='btn-play-header text-light text-center mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0'>Ajouter une énigme</a>
-                        <input type='submit' class='btn-play-header text-light text-center' value='Valider'>
+                        <div class='button-edit d-flex flex-column align-items-center mb-5'>
+                        <a href='add_enigma.php' class='btn-play-header text-light text-center  mb-3 '>Ajouter ou supprimer une énigme</a>
+                        <input type='submit' class='btn-play-header text-light text-center ' value='Valider les modifications'>
                         </div>
                         </form>
 
