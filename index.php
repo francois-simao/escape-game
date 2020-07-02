@@ -75,7 +75,7 @@
                         <div class="content-img-explication d-flex justify-content-center col-12">
                             <div class="content-img-game-01 transition-01">
                                 <img src="img/escape-the-planet.jpg" width="486" height="347"
-                                    class="img-game-explication img-expli-margin-01 img-fluid">
+                                    class="img-game-explication img-fluid">
                                 <p class="title-game-explication-01 text-center bg-light pr-xl-5">Space Escape</p>
                             </div>
                             <div class="content-img-game-absolute transition-02">
@@ -85,7 +85,7 @@
                             </div>
                             <div class="content-img-game-02 ">
                                 <img src="img/princess-world.jpg" width="486" height="347"
-                                    class="img-game-explication img-expli-margin-02 img-fluid">
+                                    class="img-game-explication img-fluid">
                                 <p class="title-game-explication-03 text-center bg-light pl-xl-5">Medieval Escape</p>
                             </div>
                         </div>

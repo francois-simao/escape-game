@@ -135,13 +135,22 @@ if (isset($_POST) AND !empty($_POST) ){
 <!-- affichage détails jeu-->
                         <?php if ($index == 1) { ?>
                             <div class='d-flex '>
-                                <input type='text' class='border text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
+                                <input type='text' class='border border-secondary text-center mb-3 w-100 text-uppercase' name ='new_name' value="<?php echo $row['name'] ?>">
                             </div>
+<<<<<<< HEAD
                             <div class='d-flex justify-content-between mb-3'>
                                 <label for='time_game' class='m-0'>Nombre de joueurs : </label>
                                 <input type='text' name="new_number_players" value="<?php echo $row['number_players'] ?>">
                                 <label for='time_game' class='m-0'>Durée du jeu : </label>
                                 <input type='text' name="new_duration" value="<?php echo $row['duration'] ?>">
+=======
+                            <div class='d-flex justify-content-between mb-3 text-center input-game-admin'>
+                            <label for='new_number_players' class='m-0'>Nombre de joueurs : </label>
+                            <input type='text' name="new_number_players" class='new_number border border-secondary mx-2 text-center' value="<?php echo $row['number_players'] ?>">
+                            
+                            <label for='new_duration' class='m-0'>Durée du jeu : </label>
+                            <input type='text' name="new_duration" class='new_duration border border-secondary mx-2 text-center' value="<?php echo $row['duration'] ?>">
+>>>>>>> 29b5d36357eb528974c320bbdddc4e626b574aaa
                             </div>
                             <label for='new_history' class=''>Histoire : </label>
                             <textarea rows='10' class='mb-4' name='new_history'><?php echo $row['history'] ?> </textarea>
@@ -165,12 +174,19 @@ if (isset($_POST) AND !empty($_POST) ){
 <!-- affichage des énigmes du jeu -->
                         <input type="hidden" name="enigmaIds[]" value="<?php echo $row['idEnigma'] ?>">
                         <div class='d-flex flex-column'>
+<<<<<<< HEAD
                             <label for='new_history' class=''>Enigme : </label>
                             <input type='text' name="new_name_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['name_enigma'] ?>">
+=======
+                            <div class="d-flex">
+                                <label for='new_history' class='text-uppercase mr-3'>Enigme : </label>
+                                <input type='text' class='border border-secondary text-center w-50 mb-2' name="new_name_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['name_enigma'] ?>">
+                            </div>
+>>>>>>> 29b5d36357eb528974c320bbdddc4e626b574aaa
                             <textarea name='new_content_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Enigme' class='mb-3'><?php echo $row['content_enigma'] ?></textarea>
                             <div class="d-flex mx-0">
-                            <label for='new_history' class=''>Durée : </label>
-                            <input type='text' class="w-25 border text-center" name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
+                                <label for='new_history' class='mr-3'>Durée : </label>
+                                <input type='text' class="w-25 border border-secondary text-center" name="new_duration_enigma[<?php echo $row['idEnigma'] ?>]" value="<?php echo $row['duration_enigma'] ?>">
                             </div>
                             <label for='new_history' class=''>Solution : </label>
                             <textarea name='new_solution_enigma[<?php echo $row['idEnigma'] ?>]' placeholder='Solution énigme' class='mb-5'><?php echo $row['solution_enigma'] ?></textarea>
@@ -178,9 +194,9 @@ if (isset($_POST) AND !empty($_POST) ){
                                     
                         <?php } ?>    
 
-                        <div class='button-edit d-flex justify-content-between mb-5'>
-                        <a href='add_enigma.php' class='btn-play-header text-light text-center mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0'>Ajouter une énigme</a>
-                        <input type='submit' class='btn-play-header text-light text-center' value='Valider'>
+                        <div class='button-edit d-flex flex-column align-items-center mb-5'>
+                        <a href='add_enigma.php' class='btn-play-header text-light text-center  mb-3 '>Ajouter ou supprimer une énigme</a>
+                        <input type='submit' class='btn-play-header text-light text-center ' value='Valider les modifications'>
                         </div>
                         </form>
 
@@ -212,14 +228,16 @@ else {
 
 <script>
     function openNav(y) {
-            if (y.matches) { 
-                document.getElementById("mySidenav").style.width = "100%";
+            if (y.matches) { //openNav est le nom donné au onclick qui, lorsqu'on clique sur le menu, il s'ouvrira grâce au getElementById qui récupère l'id "mySidenav" dans la div principale
+                document.getElementById("mySidenav").style.width = "100%"; //style.width permet de donner une largeur au menu lorsque celui-ci est ouvert (mettre en 100% pour qu'il puisse prendre toute la page)
+                // document.getElementById("ecart-menu").style.marginLeft = "50%"; // permet de faire décaler le texte et l'icon du menu
             }
         }
 
         function closeNav(x) {
-            if (x.matches) {
-                document.getElementById("mySidenav").style.width = "0";
+            if (x.matches) {//closeNav est le nom donné au onclick pour fermer le menu (même système que celui du openNav)
+                document.getElementById("mySidenav").style.width = "0"; // mettre 0 pour qu'il ne soit pas visible
+                // document.getElementById("ecart-menu").style.marginLeft = "0";
             }
         }
 
