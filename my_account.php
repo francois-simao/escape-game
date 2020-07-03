@@ -47,11 +47,16 @@ if(isset($_SESSION['id'])) {
         $newmail = htmlspecialchars($_POST['newmail']);
         $newmail2 = htmlspecialchars($_POST['newmail2']);
         $mail = htmlspecialchars($user['e_mail']);
-        if($newmail != $mail AND $newmail == $newmail2){
-            $insertmail = $bdd->prepare("UPDATE user SET e_mail = ? WHERE id = ?");
-            $insertmail->execute(array($newmail, $_SESSION['id']));
-            $msgerror[] = "vos modifications ont été effectuées avec succès";
-            $user['e_mail'] = $newmail;
+        if($newmail != $mail){
+            if($newmail == $newmail2){
+                $insertmail = $bdd->prepare("UPDATE user SET e_mail = ? WHERE id = ?");
+                $insertmail->execute(array($newmail, $_SESSION['id']));
+                $msgerror[] = "vos modifications ont été effectuées avec succès";
+                $user['e_mail'] = $newmail;
+            }else{
+            $msgmail = "votre mail existe déjà dans la base de donnée";
+            $msgerror[] = "vos deux mots de passe ne correspondent pas";
+            }
         } else {
         $msgmail = "votre mail existe déjà dans la base de donnée";
         $msgerror[] = "votre mail existe déjà dans la base de données";
@@ -266,7 +271,6 @@ if(isset($_SESSION['id'])) {
 
 
     <!--scripts-->
-    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

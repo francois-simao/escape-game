@@ -127,7 +127,7 @@ include 'connection_database.php';
                             <textarea><?php echo $row['solution_enigma'] ?></textarea>
                             <div class="d-flex justify-content-center">
                                 <input type="button" value="Supprimer une énigme" class=" btn btn-primary mb-5 mt-3 "
-                                    data-toggle="modal" data-target="#exampleModalCenter">
+                                    data-toggle="modal" data-target="#ModalConfirmDelete<?php echo $row['id']; ?>">
                             </div>
                         </div>
                         <?php
@@ -145,12 +145,12 @@ include 'connection_database.php';
     $sql->execute(array($id_game));
     while ($row=$sql->fetch()){
 ?>
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal fade" id="ModalConfirmDelete<?php echo $row['id']; ?>" tabindex="-1" role="dialog"
+                            aria-labelledby="ModalConfirmDeleteTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Confirmez la suppression</h5>
+                                        <h5 class="modal-title" id="ModalConfirmDeleteLongTitle">Confirmez la suppression</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
