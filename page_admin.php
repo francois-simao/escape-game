@@ -113,7 +113,7 @@ while ($row=$sql->fetch()){
                     </button>
                 </div>
                 <div class="modal-body">
-                    Voulez-vous supprimez le jeu <?php echo $row['name']; ?>
+                    Voulez-vous supprimez le jeu "<?php echo $row['name']; ?>"
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>

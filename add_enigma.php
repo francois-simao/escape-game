@@ -135,7 +135,7 @@ include 'connection_database.php';
                         ?>
 
 
-<!-- Modal de confirmation de la suppression d'une jeu-->
+<!-- Modal de confirmation de la suppression d'une énigme-->
 <?php
     $reponse = $bdd->query("SELECT MAX(id) FROM game");
     $donnees = $reponse->fetch();
@@ -156,7 +156,7 @@ include 'connection_database.php';
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Voulez-vous supprimez le jeu <?php echo $row['name_enigma']; ?>
+                                        Voulez-vous supprimez l'énigme "<?php echo $row['name_enigma']; ?>"
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

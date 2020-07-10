@@ -33,7 +33,8 @@ if(isset($_SESSION['id'])) {
         if($newpseudo != $pseudo){
             $insertpseudo = $bdd->prepare("UPDATE user SET username = ? WHERE id = ?");
             $insertpseudo->execute(array($newpseudo, $_SESSION['id']));
-            $msgerror[] = "vos modifications ont été effectuées avec succès";
+            $msgpseudo = "vos modifications ont été effectuées avec succès";
+            $msgsucces = "vos modifications ont été effectuées avec succès";
             $user['username'] = $newpseudo;
             $_SESSION['pseudo'] = $newpseudo;
         } else {
@@ -51,7 +52,8 @@ if(isset($_SESSION['id'])) {
             if($newmail == $newmail2){
                 $insertmail = $bdd->prepare("UPDATE user SET e_mail = ? WHERE id = ?");
                 $insertmail->execute(array($newmail, $_SESSION['id']));
-                $msgerror[] = "vos modifications ont été effectuées avec succès";
+                $msgmail = "vos modifications ont été effectuées avec succès";
+                $msgsucces = "vos modifications ont été effectuées avec succès";
                 $user['e_mail'] = $newmail;
             }else{
             $msgmail = "votre mail existe déjà dans la base de donnée";
@@ -67,13 +69,20 @@ if(isset($_SESSION['id'])) {
     if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2'])) {
         $mdp1 = sha1($_POST['newmdp1']);
         $mdp2 = sha1($_POST['newmdp2']);
-        if($mdp1 == $mdp2) {
-            $insertmdp = $bdd->prepare("UPDATE user SET password = ? WHERE id = ?");
-            $insertmdp->execute(array($mdp1, $_SESSION['id']));
-            $msgerror[] = "vos modifications ont été effectuées avec succès";
+        $mdp = htmlspecialchars($user['password']);
+        if($mdp1 != $mdp){
+            if($mdp1 == $mdp2) {
+                $insertmdp = $bdd->prepare("UPDATE user SET password = ? WHERE id = ?");
+                $insertmdp->execute(array($mdp1, $_SESSION['id']));
+                $msgmdp = "vos modifications ont été effectuées avec succès";
+                $msgsucces = "vos modifications ont été effectuées avec succès";
+            } else {
+            $msgmdp = "Vos deux mdp ne correspondent pas !";
+            $msgerror[] = "vos deux mot de passe ne correspondent pas !";
+            }
         } else {
-        $msgmdp = "Vos deux mdp ne correspondent pas !";
-        $msgerror[] = "vos deux mot de passe ne correspondent pas !";
+        $msgmdp = "Votre mot de passe est déjà dans la base de données !";
+        $msgerror[] = "Votre mot de passe est déjà dans la base de données !";
         }
     }
 
@@ -100,7 +109,8 @@ if(isset($_SESSION['id'])) {
                     ));
                     $user['image'] = $user['id'].".".$extensionUpload;
                     $_SESSION['avatar'] = $user['image'];
-                    $msgerror[] = "vos modifications ont été effectuées avec succès";
+                    $msgavatar = "vos modifications ont été effectuées avec succès";
+                    $msgsucces = "vos modifications ont été effectuées avec succès";
                 } else {
                 $msgavatar = "Erreur durant l'importation de votre photo de profil";
                 $msgerror[] = "Erreur durant l'importation de votre photo de profil";
@@ -238,18 +248,15 @@ if(isset($_SESSION['id'])) {
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="Modal_messageLongTitle">Modal title</h5>
+                    <h5 class="modal-title" id="Modal_messageLongTitle">Vos modifications :</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <?php if (count($msgerror) == 0 ) {
-                            echo "vos modifications ont été effectuées avec succès";
-                        } else { ?>
-                        <p class="text-success"> <?php echo implode($msgerror, "<br>");?> </p>
-                        <?php
-                        }?>
+                <?php if (count($msgerror) > 0 || isset($msgsucces) ) { ?>
+                          <p class="text-danger"> <?php echo implode($msgerror, "<br>"); ?> </p>
+                          <p class="text-success"><?php echo $msgsucces; }?> </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>

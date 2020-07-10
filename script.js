@@ -1,18 +1,3 @@
-// document.getElementById("test").onclick = function(){
-//     confirm('Etes-vous sûr de vouloir supprimer votre compte?');
-//     window.location.href ='delete_game.php?id=<?= $row['id'] ?>';
-// }
-
-
-
-// $delete = document.getElementById("test").onclick
-// if( $delete == true  ){
-//     $("#exampleModalCenter").modal('show');
-//     window.location.href ='delete_game.php?id=<?= $row['id'] ?>';
-//  } 
-
-
-
 // menu responsif
 function openNav(y) {
     if (y.matches) { //openNav est le nom donné au onclick qui, lorsqu'on clique sur le menu, il s'ouvrira grâce au getElementById qui récupère l'id "mySidenav" dans la div principale

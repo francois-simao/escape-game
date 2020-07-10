@@ -158,9 +158,6 @@ if(isset($_POST['ajouter'])) {
         </div>
     </div>
 
-
-
-
     <!--footer-->
     <footer>
         <div class="container-fluid site-footer ">
@@ -171,8 +168,6 @@ if(isset($_POST['ajouter'])) {
             </div>
         </div>
     </footer>
-
-
 
 
 <!-- sécurité page-->
