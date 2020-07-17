@@ -24,7 +24,7 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .img-admin-01{ display: inline-block;overflow: hidden;}
 .img-admin-01{ height:200px; border-top-left-radius: 30px; border-top-right-radius: 30px;}
 .img-admin-02 { width: inherit; height: inherit; border-radius: inherit; object-fit: cover; object-position:center;}
-.post-admin{height: 460px; display: inline-block; background-color: white; margin: 0px 10px; border-radius: 30px; box-shadow: 1rem 1rem 1rem -1rem #0000003a;}
+.post-admin{width: 269px; height: 460px; display: inline-block; background-color: white; margin: 0px 10px; border-radius: 30px; box-shadow: 1rem 1rem 1rem -1rem #0000003a;}
 
 
 /****************  TITLES & TEXT ****************/
@@ -44,8 +44,8 @@ body, html{margin: 0; padding: 0; height: 100%;}
 .btn-add-game{font-size: 23px; width: auto;}
 .btn-play-width, .btn-create-width{font-size: 49px;}
 .btn-inscription-width, .btn-connexion-width, .button-admin-creation{width: auto; font-size: 27px;}
-
-
+.title-game-slider-width{overflow-wrap: break-word;}
+.title-game-slider{height: 49px;}
 /**************** FORMS ****************/
 .input-text-name{width: 48%;}
 .form-control{height: 29px;}
