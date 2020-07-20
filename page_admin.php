@@ -76,8 +76,10 @@ if(isset($_SESSION['id'])) {
                             <?php } ?>
                             <!-- affichage du titre et des 2 boutons-->
                             <div class="post-info p-2">
+                            <div class="title-game-slider-width">
                                 <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo $row['name'] ?>
                                 </h4>
+                            </div>
                                 <div class="d-flex flex-column align-items-center">
                                     <input type="button" value="Modifier"
                                         onclick="window.location.href ='edit_game.php?id=<?= $row['id'] ?>';"

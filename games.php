@@ -106,8 +106,10 @@ if(isset($_SESSION['id'])) {
                                 <p><?php echo ($row['duration']);?> minutes</p>
                             </div>
                             <div class="post-info p-2">
+                                <div class="title-game-slider-width">
                                 <h4 class="title-game-slider text-center my-2 text-uppercase">
                                     <?php echo ($row['name']);?></h4>
+                                    </div>
                                 <div class="text-overflow-game">
                                     <p class="text-game-slider"><?php echo ($row['history']);?></p>
                                     <div class="d-flex justify-content-around">
@@ -134,6 +136,8 @@ if(isset($_SESSION['id'])) {
         </div>
     </footer>
 
+
+
 <!-- sécurité page-->
 <?php   
 } else {
@@ -141,12 +145,65 @@ if(isset($_SESSION['id'])) {
 }
 ?>
 
+    
+    <!-- Slick Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $('.post-wrapper').slick({
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            nextArrow: $('.next'),
+            prevArrow: ('.prev'),
+            responsive: [
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+
+                    }
+                },
+                {
+                    breakpoint: 1034,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+
+                    }
+                },
+                {
+                    breakpoint: 890,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 660,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 590,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+    </script>
+   
     <!--scripts-->
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Slick Carousel -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
