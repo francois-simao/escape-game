@@ -1,4 +1,4 @@
-<!-- page admin-->
+<!-- page administrateur-->
 <?php
 session_start();
 // connexion base de données
@@ -42,8 +42,6 @@ if(isset($_POST['inscription'])) {
                         if($mdp == $mdp2) {
                             $insertmbr = $bdd->prepare("INSERT INTO user(username, password, e_mail, last_name, first_name) VALUES(?, ?, ?, ?, ?)");
                             $insertmbr->execute(array($pseudo, $mdp, $mail, $name1, $name2));
-                            // var_dump($_POST);
-                            //  $erreur = "Votre compte a bien été créé !";
                         } else {
                         $erreur = "Vos mots de passes ne correspondent pas !";
                         }
@@ -68,7 +66,6 @@ if(isset($_POST['inscription'])) {
     $mailexist = $requser->rowCount();      
     if($mailexist == 1) {
         $userinfo = $requser->fetch();
-        // var_dump($_FILES);
         if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) { 
             $tailleMax = 2097152;
             $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');

@@ -27,9 +27,9 @@ require_once 'recaptcha/autoload.php';
 
         <div class="d-flex justify-content-center align-items-center vh-100 bg-opac " id="container-escape">
             <div class="bloc-form bg-light py-5 px-2 px-sm-2 px-md-5 px-lg-5 px-xl-5 ">
-                <h1>Réinitialiser mot de passe ?</h1>
-                <p>Vous avez oublié votre mot de passe ?<br> Veuillez entrer votre adresse e-mail, vous
-                    receverai un nouveau votre mot de passe.</p>
+                <h1>Réinitialisation de votre mot de passe</h1>
+                <p>Vous avez oublié votre mot de passe ?<br> Veuillez entrer votre adresse e-mail afin d'en
+                    recevoir un nouveau. Vous pourrez ensuite le modifier dans la section "mon compte" de notre site.</p>
 
                 <form action="" method="POST">
                     <div class="input-text mb-4">

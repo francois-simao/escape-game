@@ -36,6 +36,7 @@ if(isset($_SESSION['id'])) {
                                 <div class=" w-50">
                                     <li
                                         class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row align-items-center title-menu ">
+                                        <!--affichage de l'avatar-->
                                         <?php if (isset($_SESSION['pseudo']) AND isset($_SESSION['avatar'])) {
                                                 ?>
                                         <div class="img-avatar-ronde-games-01 mr-xl-3">
@@ -52,11 +53,13 @@ if(isset($_SESSION['id'])) {
                                         <?php
                                                 }
                                                 ?>
+                                        <!--affichage du pseudo-->
                                         <p class="pl-3 pt-3"><?php echo ($_SESSION['pseudo']);?></p>
                                     </li>
                                 </div>
                                 <div
                                     class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row text-center">
+                                    <!--liens-->
                                     <li><a href="my_account.php" onclick="closeNav(x)" class="title-menu">Mon compte</a>
                                     </li>
                                     <li><a href="page_logout.php" onclick="closeNav(x)"
@@ -91,12 +94,14 @@ if(isset($_SESSION['id'])) {
                     while ($row=$sql->fetch()){
                     ?>
                         <div class="post">
+                            <!--affichage de l'image du jeu-->
                             <?php if($row['image'] == NULL) { ?>
                             <img src="membres/jeux/default-game.jpg" alt="" class="slider-image w-100">
                             <?php } else {?>
                             <img src="membres/jeux/<?php echo ($row['image']);?>" alt="" class="slider-image w-100">
                             <?php } ?>
                             <div class="circle-singleline">
+                            <!--affichage des caractéristiques du jeu-->
                                 <p><?php echo ($row['number_players']);?> personnes</p>
                                 <p><?php echo ($row['duration']);?> minutes</p>
                             </div>
@@ -106,8 +111,6 @@ if(isset($_SESSION['id'])) {
                                 <div class="text-overflow-game">
                                     <p class="text-game-slider"><?php echo ($row['history']);?></p>
                                     <div class="d-flex justify-content-around">
-                                        <!-- <p class="note-games">18/20</p> -->
-                                        <!-- <p class="text-right mx-3"><a href="#">En savoir plus</a></p> -->
                                     </div>
                                 </div>
                             </div>

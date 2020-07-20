@@ -138,7 +138,7 @@ if(isset($_POST['ajouter'])) {
                                             placeholder="Entrer la durée du jeu" name="duration" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..."
+                                        <textarea class="form-control" placeholder="Entrer l'histoire"
                                             rows="6" name="enigma" required></textarea>
                                     </div>
                                     <div class="form-group">

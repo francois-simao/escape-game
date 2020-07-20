@@ -92,7 +92,7 @@ include 'connection_database.php';
                                     name="duration_enigma" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Entrer l'enigme/jeux/charades..." rows="6"
+                                <textarea class="form-control" placeholder="Entrer l'enigme" rows="6"
                                     name="content_enigma" required></textarea>
                             </div>
                             <div class="form-group">
@@ -156,7 +156,7 @@ include 'connection_database.php';
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Voulez-vous supprimez l'énigme "<?php echo $row['name_enigma']; ?>"
+                                        Voulez-vous supprimez l'énigme "<?php echo $row['name_enigma']; ?>"?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

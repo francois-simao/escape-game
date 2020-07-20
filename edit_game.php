@@ -155,7 +155,7 @@ if(isset($_SESSION['id'])) {
                             <textarea rows='10' class='mb-4'
                                 name='new_history'><?php echo $row['history'] ?> </textarea>
 
-
+                            <!--affichage de l'image du jeu-->
                             <?php if($row['image'] == NULL) { ?>
                             <div class="img-admin-01">
                                 <img src="membres/jeux/default-game.jpg" alt="" class="img-admin-02 w-100">
@@ -169,13 +169,13 @@ if(isset($_SESSION['id'])) {
                                 <p>Veuillez choisir votre image de fond :</p>
                                 <input type="file" name="new_image" id="avatar">
                             </div>
-                            <?php } ?>
+                                            <?php } ?>
 
                             <!-- affichage des énigmes du jeu -->
                             <input type="hidden" name="enigmaIds[]" value="<?php echo $row['idEnigma'] ?>">
                             <div class='d-flex flex-column'>
                                 <div class="d-flex">
-                                    <label for='new_history' class='text-uppercase mr-3'>Enigme : </label>
+                                    <label for='new_history' class='mr-3'>Enigme : </label>
                                     <input type='text' class='border border-secondary text-center w-50 mb-2'
                                         name="new_name_enigma[<?php echo $row['idEnigma'] ?>]"
                                         value="<?php echo $row['name_enigma'] ?>">

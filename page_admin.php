@@ -63,6 +63,7 @@ if(isset($_SESSION['id'])) {
                     while ($row=$sql->fetch()){
                     ?>
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 p-sm-0 ">
+                        <!--affichage de l'image-->
                         <div class="post-admin mx-2 mb-5">
                             <?php if($row['image'] == NULL) { ?>
                             <div class="img-admin-01">
@@ -73,7 +74,7 @@ if(isset($_SESSION['id'])) {
                                 <img src="membres/jeux/<?php echo ($row['image']);?>" alt="" class="img-admin-02 w-100">
                             </div>
                             <?php } ?>
-
+                            <!-- affichage du titre et des 2 boutons-->
                             <div class="post-info p-2">
                                 <h4 class="title-game-slider text-center my-2 text-uppercase"><?php echo $row['name'] ?>
                                 </h4>
@@ -113,7 +114,7 @@ while ($row=$sql->fetch()){
                     </button>
                 </div>
                 <div class="modal-body">
-                    Voulez-vous supprimez le jeu "<?php echo $row['name']; ?>"
+                    Voulez-vous supprimez le jeu "<?php echo $row['name']; ?>"?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
@@ -124,7 +125,7 @@ while ($row=$sql->fetch()){
             </div>
         </div>
     </div>
-    <?php } ?>
+                    <?php } ?>
 
 
     <!--footer-->

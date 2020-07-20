@@ -1,6 +1,7 @@
 <!--page de connexion administrateur-->
 <?php 
 session_start();
+// connexion base de données
 include 'connection_database.php';
 ?>
 

@@ -17,7 +17,7 @@ include 'connection_database.php';
 <?php
 if(isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
-    if(!empty($id) && is_numeric($id)){
+    if(!empty($id) && is_numeric($id)){   // is_numeric détermine si une variable est de type numérique
         $sql = $bdd->prepare("DELETE FROM user WHERE id = ?");
         $sql->execute(array($id));
         header("Location: index.php");
